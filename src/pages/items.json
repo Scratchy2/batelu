@@ -53,5 +53,13 @@
   { "description": "Nouns can be turned into separate verbs at the discretion of the maintainer", "tags":  ["nouns", "verbs"]},
   { "description": "Separation between exclusive and inclusive 'we'", "tags":  ["grammar", "pronouns"]},
   { "description": "Only prepositions, no postpositions", "tags": ["grammar", "prepositions"]},
-  { "description": "Preposition phrases go after the noun phrase or verb they modify", "tags": ["grammar", "prepositions"]}
+  { "description": "Preposition phrases go after the noun phrase or verb they modify", "tags": ["grammar", "prepositions", "word order"]},
+  { "description": "Two digit numbers are formed as [twelve's digit] itso [one's digit]", "tags": ["grammar", "number system"]},
+  { "description": "Numbers are placed after nouns", "tags": ["grammar", "nouns","number system", "word order"]},
+  { "description": "Ordinal particle law goes between the noun and the number", "tags": ["grammar", "nouns", "number system", "word order"]},
+  { "description": "Ordinal particle law requires definite article al", "tags": ["grammar", "number system"]},
+  { "description": "Comparatives and superlatives are formed via affixes", "tags": ["grammar", "adjectives"]},
+  { "description": "Reflexive verbs exist", "tags": ["grammar", "verbs", "pronouns"]},
+  { "description": "Long vowels can be written with macrons", "tags": ["orthography"]},
+  { "description": "sh and ts can be abbreviated as s and z", "tags": ["orthography"]}
 ]
