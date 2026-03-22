@@ -854,5 +854,221 @@
     "etymology": ["Cherokee", ["ᏌᏚᎢ", "sadui"], "eleven"],
     "type": "numeral",
     "date": "18-02-2026"
+  },
+  {
+    "word": "kakwam",
+    "definition": "writing, text",
+    "ipa": "kak.wam",
+    "etymology": ["Thai", ["ข้อความ", "kɔ̂ɔ-kwaam"], "message"],
+    "type": "noun",
+    "date": "19-02-2026"
+  },
+  {
+    "word": "uwe",
+    "definition": "month",
+    "ipa": "u.we",
+    "etymology": ["Mandarin", ["月", "yuè"], "month"],
+    "type": "noun",
+    "date": "19-02-2026"
+  },
+  {
+    "word": "ami",
+    "definition": "animal",
+    "ipa": "a.mi",
+    "etymology": ["Irish", "ainmhí", "animal"],
+    "type": "noun",
+    "date": "19-02-2026"
+  },
+  {
+    "word": "tso",
+    "definition": "gross (dozenal 100)",
+    "ipa": "tso",
+    "etymology": ["Urdu", ["سو", "sau"], "hundred"],
+    "type": "numeral",
+    "date": "19-02-2026"
+  },
+  {
+    "word": "woshi",
+    "definition": "year",
+    "ipa": "wo.ʃi",
+    "etymology": ["Finnish", "vuosi", "year"],
+    "type": "noun",
+    "date": "20-02-2026"
+  },
+  {
+    "word": "itso",
+    "definition": "twelve (dozenal 10)",
+    "ipa": "i.tso",
+    "etymology": ["Russian", ["яйцо", "jajco"], "egg"],
+    "type": "numeral",
+    "date": "20-02-2026"
+  },
+  {
+    "word": "ishtaware",
+    "definition": "to love",
+    "ipa": "iʃ.ta.wa.re",
+    "etymology": ["Finnish", "ystävä", "-phile"],
+    "type": "noun",
+    "date": "22-02-2026"
+  },
+  {
+    "word": "piktsu",
+    "definition": "mountain",
+    "ipa": "pik.tsu",
+    "etymology": ["Quechua", "pikchu", "mountain"],
+    "type": "noun",
+    "date": "22-02-2026"
+  },
+  {
+    "word": "tsulak",
+    "definition": "part, piece",
+    "ipa": "tsu.lak",
+    "etymology": null,
+    "type": "noun",
+    "date": "24-02-2026"
+  },
+  {
+    "word": "law",
+    "definition": "ordinal particle, -th",
+    "ipa": "law",
+    "etymology": ["Tagalog", "ikalawa", "second"],
+    "type": "particle",
+    "date": "24-02-2026"
+  },
+  {
+    "word": "tsulare",
+    "definition": "to split, to divide",
+    "ipa": "tsu.la.re",
+    "etymology": null,
+    "type": "verb",
+    "date": "25-02-2026"
+  },
+  {
+    "word": "jekhare",
+    "definition": "to search",
+    "ipa": "je.xa.re",
+    "etymology": ["Guarani", "jaheka", "we (incl.) search"],
+    "type": "verb",
+    "date": "28-02-2026"
+  },
+  {
+    "word": "gholo",
+    "definition": "poll",
+    "ipa": "ɣo.lo",
+    "etymology": ["Russian", ["голос", "golos"], "vote"],
+    "type": "noun",
+    "date": "28-02-2026"
+  },
+  {
+    "word": "pani",
+    "definition": "bread",
+    "ipa": "pa.ni",
+    "etymology": ["Spanish", "pan", "bread"],
+    "type": "noun",
+    "date": "01-03-2026"
+  },
+  {
+    "word": "fynet",
+    "definition": "window",
+    "ipa": "fə.net",
+    "etymology": ["French", "fenêtre", "window"],
+    "type": "noun",
+    "date": "11-03-2026"
+  },
+  {
+    "word": "tavolo",
+    "definition": "table",
+    "ipa": "ta.vo.lo",
+    "etymology": ["Italian", "tavolo", "table"],
+    "type": "noun",
+    "date": "11-03-2026"
+  },
+  {
+    "word": "zhutu",
+    "definition": "celestial body",
+    "ipa": "ʒu.tu",
+    "etymology": null,
+    "type": "noun",
+    "date": "11-03-2026"
+  },
+  {
+    "word": "varum",
+    "definition": "car",
+    "ipa": "va.rum",
+    "etymology": null,
+    "type": "noun",
+    "date": "12-03-2026"
+  },
+  {
+    "word": "beshal",
+    "definition": "knowledge, understanding",
+    "ipa": "be.ʃal",
+    "etymology": null,
+    "type": "noun",
+    "date": "12-03-2026"
+  },
+  {
+    "word": "zha",
+    "definition": "with, among",
+    "ipa": "ʒa",
+    "etymology": null,
+    "type": "adposition",
+    "date": "13-03-2026"
+  },
+  {
+    "word": "datamashin",
+    "definition": "computer",
+    "ipa": "da.ta.ma.ʃin",
+    "etymology": ["Norwegian", "datamaskin", "computer"],
+    "type": "noun",
+    "date": "18-03-2026"
+  },
+  {
+    "word": "kova",
+    "definition": "hat",
+    "ipa": "ko.va",
+    "etymology": ["Hebrew", ["כובע", "kova"], "hat"],
+    "type": "noun",
+    "date": "18-03-2026"
+  },
+  {
+    "word": "tsikol",
+    "definition": "school",
+    "ipa": "tsi.kol",
+    "etymology": ["Xhosa", "isikolo", "school"],
+    "type": "noun",
+    "date": "18-03-2026"
+  },
+  {
+    "word": "ifowun",
+    "definition": "phone, smartphone",
+    "ipa": "i.fo.wun",
+    "etymology": ["Xhosa", "ifowuni", "phone"],
+    "type": "noun",
+    "date": "18-03-2026"
+  },
+  {
+    "word": "move",
+    "definition": "bad",
+    "ipa": "mo.ve",
+    "etymology": ["French", "mauvais", "bad"],
+    "type": "modifier",
+    "date": "18-03-2026"
+  },
+  {
+    "word": "wazho",
+    "definition": "bird",
+    "ipa": "wa.ʒo",
+    "etymology": ["French", "oiseau", "bird"],
+    "type": "noun",
+    "date": "19-03-2026"
+  },
+  {
+    "word": "kanja",
+    "definition": "dog",
+    "ipa": "kan.ja",
+    "etymology": ["Italian", "cagna", "female dog"],
+    "type": "noun",
+    "date": "19-03-2026"
   }
 ]
