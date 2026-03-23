@@ -118,7 +118,7 @@
 				<td>ʒ</td>
 				<td></td>
 				<td>ɣ</td>
-				<td>ʁ</td>
+				<td></td>
 				<td></td>
 			</tr>
 			<tr>
