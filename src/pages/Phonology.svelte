@@ -7,6 +7,7 @@
 	<h2>Syllables</h2>
 	<p>Allowed syllable structures are CV, CVC, VC, and V (only as a starting syllable)</p>
 	<p>CV, VC turns into CVVC as a diphthong</p>
+	<p>The sound's spelling is indicated in brackets after the sound. If there are no brackets, the spelling is the same as the IPA symbol.</p>
 
 	<h2>Vowels</h2>
 	<table>
@@ -20,7 +21,7 @@
 		<tbody>
 			<tr>
 				<td>i</td>
-				<td>ə</td>
+				<td>ə (y)</td>
 				<td>u</td>
 			</tr>
 			<tr>
@@ -77,14 +78,14 @@
 				<td>d</td>
 				<td></td>
 				<td></td>
-				<td>g</td>
+				<td>ɡ (g)</td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><b>Unvoiced affricate</b></td>
 				<td></td>
-				<td>t͡s</td>
+				<td>t͡s (z)</td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -95,7 +96,7 @@
 				<td><b>Voiced affricate</b></td>
 				<td></td>
 				<td></td>
-				<td>dʒ</td>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -105,9 +106,9 @@
 				<td><b>Unvoiced fricative</b></td>
 				<td>f</td>
 				<td></td>
-				<td>ʃ</td>
-				<td>ç</td>
-				<td>x</td>
+				<td>ʃ (s)</td>
+				<td>ç (c)</td>
+				<td>x (kh)</td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -115,9 +116,9 @@
 				<td><b>Voiced fricative</b></td>
 				<td>v</td>
 				<td></td>
-				<td>ʒ</td>
+				<td>ʒ (zh)</td>
 				<td></td>
-				<td>ɣ</td>
+				<td>ɣ (gh)</td>
 				<td></td>
 				<td></td>
 			</tr>
