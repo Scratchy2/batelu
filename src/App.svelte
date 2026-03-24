@@ -1,65 +1,76 @@
 <script>
-    import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
-    import Home from './pages/Home.svelte';
-    import NotFound from './pages/errors/404.svelte'
-    import Reference from './pages/Reference.svelte';
-    import Words from './pages/Words.svelte';
-    import About from './pages/About.svelte';
-    import Phonology from './pages/Phonology.svelte';
+  import Home from "./pages/Home.svelte";
+  import NotFound from "./pages/errors/404.svelte";
+  import Reference from "./pages/Reference.svelte";
+  import Words from "./pages/Words.svelte";
+  import About from "./pages/About.svelte";
+  import Phonology from "./pages/Phonology.svelte";
+  import Inflections from "./pages/Inflections.svelte";
 
-    let Component = NotFound;
+  let Component = NotFound;
 
-    function route(pathname = location.pathname) {
-        switch (pathname.replace(/\/$/, '')) {
-            case '/':
-            case '':
-                Component = Home;
-                break;
+  function route(pathname = location.pathname) {
+    window.scrollTo(0, 0);
+    switch (new URL(pathname, location.href).pathname) {
+      case "/":
+      case "":
+        Component = Home;
+        break;
 
-            case '/ref':
-                Component = Reference;
-                break;
+      case "/ref":
+        Component = Reference;
+        break;
 
-            case '/words':
-                Component = Words;
-                break;
+      case "/words":
+        Component = Words;
+        break;
 
-            case '/about':
-                Component = About;
-                break;
+      case "/about":
+        Component = About;
+        break;
 
-			case '/phono':
-                Component = Phonology;
-                break;
+      case "/phono":
+        Component = Phonology;
+        break;
 
-            default:
-                Component = NotFound;
-                break;
-        }
+      case "/inflect":
+        Component = Inflections;
+        break;
+
+      default:
+        Component = NotFound;
+        break;
     }
+  }
 
-    function navigate(path) {
-        if (location.pathname !== path) {
-            history.pushState({}, '', path);
-            route(path);
-        }
+  function navigate(path) {
+    if (location.pathname !== path) {
+      history.pushState({}, "", path);
+      route(path);
     }
+  }
 
-    onMount(() => {
-        route();
-        const onPopState = () => route();
-        window.addEventListener('popstate', onPopState);
-        return () => window.removeEventListener('popstate', onPopState);
-    });
+  onMount(() => {
+    route();
+    const onPopState = () => route();
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  });
 </script>
 
 <nav class="nav">
-	<a href="/" on:click|preventDefault={() => navigate('/')}>Home</a>
-	<a href="/ref" on:click|preventDefault={() => navigate('/ref')}>Reference</a>
-	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
-	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
-	<a href="/phono" on:click|preventDefault={() => navigate('/phono')}>Phonology</a>
+  <a href="/" on:click|preventDefault={() => navigate("/")}>Home</a>
+  <a href="/ref" on:click|preventDefault={() => navigate("/ref")}>Reference</a>
+  <a href="/words" on:click|preventDefault={() => navigate("/words")}>Words</a>
+  <a href="/about" on:click|preventDefault={() => navigate("/about")}>About</a>
+  <a href="/phono" on:click|preventDefault={() => navigate("/phono")}
+    >Phonology</a
+  >
+  <a href="/inflect" on:click|preventDefault={() => navigate("/inflect")}
+    >Inflections</a
+  >
 </nav>
 
-<svelte:component this={Component} />
+<svelte:component this={Component} {navigate} />
