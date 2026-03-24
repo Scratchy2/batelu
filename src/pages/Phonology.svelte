@@ -92,16 +92,6 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td><b>Voiced affricate</b></td>
-				<td></td>
-				<td></td>
-				<td>dʒ</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
 				<td><b>Unvoiced fricative</b></td>
 				<td>f</td>
 				<td></td>
