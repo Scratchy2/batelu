@@ -60,7 +60,7 @@
 </script>
 
 <nav class="nav">
-	<a href="/" on:click|preventDefault={() => navigate('')}>Home</a>
+	<a href="/" on:click|preventDefault={() => navigate('/')}>Home</a>
 	<a href="/ref" on:click|preventDefault={() => navigate('/ref')}>Reference</a>
 	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
 	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
