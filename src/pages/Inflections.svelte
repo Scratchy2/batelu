@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import Conjugate from "./Conjugate.svelte";
 
   let wordType = "verb";
   let initialized = false;
@@ -79,6 +78,14 @@
     {/if}
   </div>
   {#if wordType === "verb"}
+    {#snippet conjugate(ending)}
+      {#if verbWord}
+        <span class="inflections-secondary">{verbWord.stem}</span
+        >{ending.replace("V", verbWord.vowel)}
+      {:else}
+        -{ending}
+      {/if}
+    {/snippet}
     <div>
       <table>
         <thead>
@@ -98,42 +105,42 @@
               ><b>Intentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="a" /></td>
-            <td><Conjugate {verbWord} ending="ad" /></td>
-            <td><Conjugate {verbWord} ending="ak" /></td>
+            <td>{@render conjugate("a")}</td>
+            <td>{@render conjugate("ad")}</td>
+            <td>{@render conjugate("ak")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="e" /></td>
-            <td><Conjugate {verbWord} ending="ed" /></td>
-            <td><Conjugate {verbWord} ending="ek" /></td>
+            <td>{@render conjugate("e")}</td>
+            <td>{@render conjugate("ed")}</td>
+            <td>{@render conjugate("ek")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="i" /></td>
-            <td><Conjugate {verbWord} ending="id" /></td>
-            <td><Conjugate {verbWord} ending="ik" /></td>
+            <td>{@render conjugate("i")}</td>
+            <td>{@render conjugate("id")}</td>
+            <td>{@render conjugate("ik")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="o" /></td>
-            <td><Conjugate {verbWord} ending="od" /></td>
-            <td><Conjugate {verbWord} ending="ok" /></td>
+            <td>{@render conjugate("o")}</td>
+            <td>{@render conjugate("od")}</td>
+            <td>{@render conjugate("ok")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="u" /></td>
-            <td><Conjugate {verbWord} ending="ud" /></td>
-            <td><Conjugate {verbWord} ending="uk" /></td>
+            <td>{@render conjugate("u")}</td>
+            <td>{@render conjugate("ud")}</td>
+            <td>{@render conjugate("uk")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="y" /></td>
-            <td><Conjugate {verbWord} ending="yd" /></td>
-            <td><Conjugate {verbWord} ending="yk" /></td>
+            <td>{@render conjugate("y")}</td>
+            <td>{@render conjugate("yd")}</td>
+            <td>{@render conjugate("yk")}</td>
           </tr>
         </tbody>
       </table>
@@ -155,42 +162,42 @@
               ><b>Intentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="at" /></td>
-            <td><Conjugate {verbWord} ending="ag" /></td>
-            <td><Conjugate {verbWord} ending="ar" /></td>
+            <td>{@render conjugate("at")}</td>
+            <td>{@render conjugate("ag")}</td>
+            <td>{@render conjugate("ar")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="et" /></td>
-            <td><Conjugate {verbWord} ending="eg" /></td>
-            <td><Conjugate {verbWord} ending="er" /></td>
+            <td>{@render conjugate("et")}</td>
+            <td>{@render conjugate("eg")}</td>
+            <td>{@render conjugate("er")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="it" /></td>
-            <td><Conjugate {verbWord} ending="ig" /></td>
-            <td><Conjugate {verbWord} ending="ir" /></td>
+            <td>{@render conjugate("it")}</td>
+            <td>{@render conjugate("ig")}</td>
+            <td>{@render conjugate("ir")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="ot" /></td>
-            <td><Conjugate {verbWord} ending="og" /></td>
-            <td><Conjugate {verbWord} ending="or" /></td>
+            <td>{@render conjugate("ot")}</td>
+            <td>{@render conjugate("og")}</td>
+            <td>{@render conjugate("or")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="ut" /></td>
-            <td><Conjugate {verbWord} ending="ug" /></td>
-            <td><Conjugate {verbWord} ending="ur" /></td>
+            <td>{@render conjugate("ut")}</td>
+            <td>{@render conjugate("ug")}</td>
+            <td>{@render conjugate("ur")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="yt" /></td>
-            <td><Conjugate {verbWord} ending="yg" /></td>
-            <td><Conjugate {verbWord} ending="yr" /></td>
+            <td>{@render conjugate("yt")}</td>
+            <td>{@render conjugate("yg")}</td>
+            <td>{@render conjugate("yr")}</td>
           </tr>
         </tbody>
       </table>
@@ -212,42 +219,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vva" /></td>
-            <td><Conjugate {verbWord} ending="Vfa" /></td>
-            <td><Conjugate {verbWord} ending="Vgha" /></td>
+            <td>{@render conjugate("Vva")}</td>
+            <td>{@render conjugate("Vfa")}</td>
+            <td>{@render conjugate("Vgha")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vve" /></td>
-            <td><Conjugate {verbWord} ending="Vfe" /></td>
-            <td><Conjugate {verbWord} ending="Vghe" /></td>
+            <td>{@render conjugate("Vve")}</td>
+            <td>{@render conjugate("Vfe")}</td>
+            <td>{@render conjugate("Vghe")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vvi" /></td>
-            <td><Conjugate {verbWord} ending="Vfi" /></td>
-            <td><Conjugate {verbWord} ending="Vghi" /></td>
+            <td>{@render conjugate("Vvi")}</td>
+            <td>{@render conjugate("Vfi")}</td>
+            <td>{@render conjugate("Vghi")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vvo" /></td>
-            <td><Conjugate {verbWord} ending="Vfo" /></td>
-            <td><Conjugate {verbWord} ending="Vgho" /></td>
+            <td>{@render conjugate("Vvo")}</td>
+            <td>{@render conjugate("Vfo")}</td>
+            <td>{@render conjugate("Vgho")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vvu" /></td>
-            <td><Conjugate {verbWord} ending="Vvu" /></td>
-            <td><Conjugate {verbWord} ending="Vghu" /></td>
+            <td>{@render conjugate("Vvu")}</td>
+            <td>{@render conjugate("Vvu")}</td>
+            <td>{@render conjugate("Vghu")}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vvy" /></td>
-            <td><Conjugate {verbWord} ending="Vvy" /></td>
-            <td><Conjugate {verbWord} ending="Vghy" /></td>
+            <td>{@render conjugate("Vvy")}</td>
+            <td>{@render conjugate("Vvy")}</td>
+            <td>{@render conjugate("Vghy")}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -257,42 +264,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vab" /></td>
-            <td><Conjugate {verbWord} ending="Vaj" /></td>
-            <td><Conjugate {verbWord} ending="Vazh" /></td>
+            <td>{@render conjugate("Vab")}</td>
+            <td>{@render conjugate("Vaj")}</td>
+            <td>{@render conjugate("Vazh")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Veb" /></td>
-            <td><Conjugate {verbWord} ending="Vej" /></td>
-            <td><Conjugate {verbWord} ending="Vezh" /></td>
+            <td>{@render conjugate("Veb")}</td>
+            <td>{@render conjugate("Vej")}</td>
+            <td>{@render conjugate("Vezh")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vib" /></td>
-            <td><Conjugate {verbWord} ending="Vij" /></td>
-            <td><Conjugate {verbWord} ending="Vizh" /></td>
+            <td>{@render conjugate("Vib")}</td>
+            <td>{@render conjugate("Vij")}</td>
+            <td>{@render conjugate("Vizh")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vob" /></td>
-            <td><Conjugate {verbWord} ending="Voj" /></td>
-            <td><Conjugate {verbWord} ending="Vozh" /></td>
+            <td>{@render conjugate("Vob")}</td>
+            <td>{@render conjugate("Voj")}</td>
+            <td>{@render conjugate("Vozh")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vub" /></td>
-            <td><Conjugate {verbWord} ending="Vuj" /></td>
-            <td><Conjugate {verbWord} ending="Vuzh" /></td>
+            <td>{@render conjugate("Vub")}</td>
+            <td>{@render conjugate("Vuj")}</td>
+            <td>{@render conjugate("Vuzh")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vyb" /></td>
-            <td><Conjugate {verbWord} ending="Vyj" /></td>
-            <td><Conjugate {verbWord} ending="Vyzh" /></td>
+            <td>{@render conjugate("Vyb")}</td>
+            <td>{@render conjugate("Vyj")}</td>
+            <td>{@render conjugate("Vyzh")}</td>
           </tr>
         </tbody>
       </table>
@@ -314,42 +321,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vvas" /></td>
-            <td><Conjugate {verbWord} ending="Vfas" /></td>
-            <td><Conjugate {verbWord} ending="Vghas" /></td>
+            <td>{@render conjugate("Vvas")}</td>
+            <td>{@render conjugate("Vfas")}</td>
+            <td>{@render conjugate("Vghas")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vves" /></td>
-            <td><Conjugate {verbWord} ending="Vfes" /></td>
-            <td><Conjugate {verbWord} ending="Vghes" /></td>
+            <td>{@render conjugate("Vves")}</td>
+            <td>{@render conjugate("Vfes")}</td>
+            <td>{@render conjugate("Vghes")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vvis" /></td>
-            <td><Conjugate {verbWord} ending="Vfis" /></td>
-            <td><Conjugate {verbWord} ending="Vghis" /></td>
+            <td>{@render conjugate("Vvis")}</td>
+            <td>{@render conjugate("Vfis")}</td>
+            <td>{@render conjugate("Vghis")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vvos" /></td>
-            <td><Conjugate {verbWord} ending="Vfos" /></td>
-            <td><Conjugate {verbWord} ending="Vghos" /></td>
+            <td>{@render conjugate("Vvos")}</td>
+            <td>{@render conjugate("Vfos")}</td>
+            <td>{@render conjugate("Vghos")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vvus" /></td>
-            <td><Conjugate {verbWord} ending="Vvus" /></td>
-            <td><Conjugate {verbWord} ending="Vghus" /></td>
+            <td>{@render conjugate("Vvus")}</td>
+            <td>{@render conjugate("Vvus")}</td>
+            <td>{@render conjugate("Vghus")}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vvys" /></td>
-            <td><Conjugate {verbWord} ending="Vvys" /></td>
-            <td><Conjugate {verbWord} ending="Vghys" /></td>
+            <td>{@render conjugate("Vvys")}</td>
+            <td>{@render conjugate("Vvys")}</td>
+            <td>{@render conjugate("Vghys")}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -359,42 +366,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vaby" /></td>
-            <td><Conjugate {verbWord} ending="Vajy" /></td>
-            <td><Conjugate {verbWord} ending="Vazhy" /></td>
+            <td>{@render conjugate("Vaby")}</td>
+            <td>{@render conjugate("Vajy")}</td>
+            <td>{@render conjugate("Vazhy")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Veby" /></td>
-            <td><Conjugate {verbWord} ending="Vejy" /></td>
-            <td><Conjugate {verbWord} ending="Vezhy" /></td>
+            <td>{@render conjugate("Veby")}</td>
+            <td>{@render conjugate("Vejy")}</td>
+            <td>{@render conjugate("Vezhy")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Viby" /></td>
-            <td><Conjugate {verbWord} ending="Vijy" /></td>
-            <td><Conjugate {verbWord} ending="Vizhy" /></td>
+            <td>{@render conjugate("Viby")}</td>
+            <td>{@render conjugate("Vijy")}</td>
+            <td>{@render conjugate("Vizhy")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Voby" /></td>
-            <td><Conjugate {verbWord} ending="Vojy" /></td>
-            <td><Conjugate {verbWord} ending="Vozhy" /></td>
+            <td>{@render conjugate("Voby")}</td>
+            <td>{@render conjugate("Vojy")}</td>
+            <td>{@render conjugate("Vozhy")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vuby" /></td>
-            <td><Conjugate {verbWord} ending="Vujy" /></td>
-            <td><Conjugate {verbWord} ending="Vuzhy" /></td>
+            <td>{@render conjugate("Vuby")}</td>
+            <td>{@render conjugate("Vujy")}</td>
+            <td>{@render conjugate("Vuzhy")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vyby" /></td>
-            <td><Conjugate {verbWord} ending="Vyjy" /></td>
-            <td><Conjugate {verbWord} ending="Vyzhy" /></td>
+            <td>{@render conjugate("Vyby")}</td>
+            <td>{@render conjugate("Vyjy")}</td>
+            <td>{@render conjugate("Vyzhy")}</td>
           </tr>
         </tbody>
       </table>
@@ -416,42 +423,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vra" /></td>
-            <td><Conjugate {verbWord} ending="Vra" /></td>
-            <td><Conjugate {verbWord} ending="Vba" /></td>
+            <td>{@render conjugate("Vra")}</td>
+            <td>{@render conjugate("Vra")}</td>
+            <td>{@render conjugate("Vba")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vren" /></td>
-            <td><Conjugate {verbWord} ending="Vren" /></td>
-            <td><Conjugate {verbWord} ending="Vbe" /></td>
+            <td>{@render conjugate("Vren")}</td>
+            <td>{@render conjugate("Vren")}</td>
+            <td>{@render conjugate("Vbe")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vri" /></td>
-            <td><Conjugate {verbWord} ending="Vri" /></td>
-            <td><Conjugate {verbWord} ending="Vbi" /></td>
+            <td>{@render conjugate("Vri")}</td>
+            <td>{@render conjugate("Vri")}</td>
+            <td>{@render conjugate("Vbi")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vro" /></td>
-            <td><Conjugate {verbWord} ending="Vro" /></td>
-            <td><Conjugate {verbWord} ending="Vbo" /></td>
+            <td>{@render conjugate("Vro")}</td>
+            <td>{@render conjugate("Vro")}</td>
+            <td>{@render conjugate("Vbo")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vru" /></td>
-            <td><Conjugate {verbWord} ending="Vru" /></td>
-            <td><Conjugate {verbWord} ending="Vbu" /></td>
+            <td>{@render conjugate("Vru")}</td>
+            <td>{@render conjugate("Vru")}</td>
+            <td>{@render conjugate("Vbu")}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vry" /></td>
-            <td><Conjugate {verbWord} ending="Vry" /></td>
-            <td><Conjugate {verbWord} ending="Vby" /></td>
+            <td>{@render conjugate("Vry")}</td>
+            <td>{@render conjugate("Vry")}</td>
+            <td>{@render conjugate("Vby")}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -461,42 +468,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vra" /></td>
-            <td><Conjugate {verbWord} ending="Vra" /></td>
-            <td><Conjugate {verbWord} ending="Vba" /></td>
+            <td>{@render conjugate("Vra")}</td>
+            <td>{@render conjugate("Vra")}</td>
+            <td>{@render conjugate("Vba")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vren" /></td>
-            <td><Conjugate {verbWord} ending="Vren" /></td>
-            <td><Conjugate {verbWord} ending="Vbe" /></td>
+            <td>{@render conjugate("Vren")}</td>
+            <td>{@render conjugate("Vren")}</td>
+            <td>{@render conjugate("Vbe")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vri" /></td>
-            <td><Conjugate {verbWord} ending="Vri" /></td>
-            <td><Conjugate {verbWord} ending="Vbi" /></td>
+            <td>{@render conjugate("Vri")}</td>
+            <td>{@render conjugate("Vri")}</td>
+            <td>{@render conjugate("Vbi")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vro" /></td>
-            <td><Conjugate {verbWord} ending="Vro" /></td>
-            <td><Conjugate {verbWord} ending="Vbo" /></td>
+            <td>{@render conjugate("Vro")}</td>
+            <td>{@render conjugate("Vro")}</td>
+            <td>{@render conjugate("Vbo")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vru" /></td>
-            <td><Conjugate {verbWord} ending="Vru" /></td>
-            <td><Conjugate {verbWord} ending="Vbu" /></td>
+            <td>{@render conjugate("Vru")}</td>
+            <td>{@render conjugate("Vru")}</td>
+            <td>{@render conjugate("Vbu")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vry" /></td>
-            <td><Conjugate {verbWord} ending="Vry" /></td>
-            <td><Conjugate {verbWord} ending="Vby" /></td>
+            <td>{@render conjugate("Vry")}</td>
+            <td>{@render conjugate("Vry")}</td>
+            <td>{@render conjugate("Vby")}</td>
           </tr>
         </tbody>
       </table>
@@ -518,42 +525,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vzwa" /></td>
-            <td><Conjugate {verbWord} ending="Vlwa" /></td>
-            <td><Conjugate {verbWord} ending="Vbwa" /></td>
+            <td>{@render conjugate("Vzwa")}</td>
+            <td>{@render conjugate("Vlwa")}</td>
+            <td>{@render conjugate("Vbwa")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vzwe" /></td>
-            <td><Conjugate {verbWord} ending="Vlwe" /></td>
-            <td><Conjugate {verbWord} ending="Vbwe" /></td>
+            <td>{@render conjugate("Vzwe")}</td>
+            <td>{@render conjugate("Vlwe")}</td>
+            <td>{@render conjugate("Vbwe")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vzwi" /></td>
-            <td><Conjugate {verbWord} ending="Vlwi" /></td>
-            <td><Conjugate {verbWord} ending="Vbwi" /></td>
+            <td>{@render conjugate("Vzwi")}</td>
+            <td>{@render conjugate("Vlwi")}</td>
+            <td>{@render conjugate("Vbwi")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vzwo" /></td>
-            <td><Conjugate {verbWord} ending="Vlwo" /></td>
-            <td><Conjugate {verbWord} ending="Vbwo" /></td>
+            <td>{@render conjugate("Vzwo")}</td>
+            <td>{@render conjugate("Vlwo")}</td>
+            <td>{@render conjugate("Vbwo")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vzwu" /></td>
-            <td><Conjugate {verbWord} ending="Vlwu" /></td>
-            <td><Conjugate {verbWord} ending="Vbwu" /></td>
+            <td>{@render conjugate("Vzwu")}</td>
+            <td>{@render conjugate("Vlwu")}</td>
+            <td>{@render conjugate("Vbwu")}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vzwy" /></td>
-            <td><Conjugate {verbWord} ending="Vlwy" /></td>
-            <td><Conjugate {verbWord} ending="Vbwy" /></td>
+            <td>{@render conjugate("Vzwy")}</td>
+            <td>{@render conjugate("Vlwy")}</td>
+            <td>{@render conjugate("Vbwy")}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -563,42 +570,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vzwa" /></td>
-            <td><Conjugate {verbWord} ending="Vlwa" /></td>
-            <td><Conjugate {verbWord} ending="Vbwa" /></td>
+            <td>{@render conjugate("Vzwa")}</td>
+            <td>{@render conjugate("Vlwa")}</td>
+            <td>{@render conjugate("Vbwa")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vzwe" /></td>
-            <td><Conjugate {verbWord} ending="Vlwe" /></td>
-            <td><Conjugate {verbWord} ending="Vbwe" /></td>
+            <td>{@render conjugate("Vzwe")}</td>
+            <td>{@render conjugate("Vlwe")}</td>
+            <td>{@render conjugate("Vbwe")}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vzwi" /></td>
-            <td><Conjugate {verbWord} ending="Vlwi" /></td>
-            <td><Conjugate {verbWord} ending="Vbwi" /></td>
+            <td>{@render conjugate("Vzwi")}</td>
+            <td>{@render conjugate("Vlwi")}</td>
+            <td>{@render conjugate("Vbwi")}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td><Conjugate {verbWord} ending="Vzwa" /></td>
-            <td><Conjugate {verbWord} ending="Vlwa" /></td>
-            <td><Conjugate {verbWord} ending="Vbwa" /></td>
+            <td>{@render conjugate("Vzwa")}</td>
+            <td>{@render conjugate("Vlwa")}</td>
+            <td>{@render conjugate("Vbwa")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td><Conjugate {verbWord} ending="Vzwe" /></td>
-            <td><Conjugate {verbWord} ending="Vlwe" /></td>
-            <td><Conjugate {verbWord} ending="Vbwe" /></td>
+            <td>{@render conjugate("Vzwe")}</td>
+            <td>{@render conjugate("Vlwe")}</td>
+            <td>{@render conjugate("Vbwe")}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td><Conjugate {verbWord} ending="Vzwi" /></td>
-            <td><Conjugate {verbWord} ending="Vlwi" /></td>
-            <td><Conjugate {verbWord} ending="Vbwi" /></td>
+            <td>{@render conjugate("Vzwi")}</td>
+            <td>{@render conjugate("Vlwi")}</td>
+            <td>{@render conjugate("Vbwi")}</td>
           </tr>
         </tbody>
       </table>
