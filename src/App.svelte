@@ -7,7 +7,7 @@
     import Words from './pages/Words.svelte';
     import About from './pages/About.svelte';
     import Phonology from './pages/Phonology.svelte';
-	import Orthology from './pages/Orthology.svelte'; // must create page first
+	import Conjugation from './pages/Conjugation.svelte'; // must create page first! oh mybearworld
 
     let Component = NotFound;
 
@@ -34,8 +34,8 @@
                 Component = Phonology;
                 break;
 
-			case '/ortho':
-				Component = Orthology;
+			case '/conj':
+				Component = Conjugation;
 				break;
 
             default:
@@ -65,7 +65,7 @@
 	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
 	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
 	<a href="/phono" on:click|preventDefault={() => navigate('/phono')}>Phonology</a>
-	<a href="/ortho" on:click|preventDefault={() => navigate('/ortho')}>Orthology</a>
+	<a href="/conj" on:click|preventDefault={() => navigate('/conj')}>Conjugation</a>
 </nav>
 
 <svelte:component this={Component} />
