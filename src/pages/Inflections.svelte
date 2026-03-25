@@ -79,13 +79,11 @@
   </div>
   <div class="inflect-tables">
     {#if wordType === "verb"}
-      {#snippet conjugate(ending)}
-        {#if verbWord}
-          <span class="inflections-secondary">{verbWord.stem}</span
-          >{ending.replace("V", verbWord.vowel)}
-        {:else}
-          -{ending}
-        {/if}
+      {#snippet conjugate(ending, vowel)}
+        <span class="inflections-secondary">{verbWord?.stem ?? "-"}</span
+        >{#if vowel}<span class="inflections-vowel"
+            >{verbWord?.vowel ?? "V"}</span
+          >{/if}{ending}
       {/snippet}
       <table>
         <thead>
@@ -219,42 +217,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vva")}</td>
-            <td>{@render conjugate("Vfa")}</td>
-            <td>{@render conjugate("Vgha")}</td>
+            <td>{@render conjugate("va", true)}</td>
+            <td>{@render conjugate("fa", true)}</td>
+            <td>{@render conjugate("gha", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vve")}</td>
-            <td>{@render conjugate("Vfe")}</td>
-            <td>{@render conjugate("Vghe")}</td>
+            <td>{@render conjugate("ve", true)}</td>
+            <td>{@render conjugate("fe", true)}</td>
+            <td>{@render conjugate("ghe", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vvi")}</td>
-            <td>{@render conjugate("Vfi")}</td>
-            <td>{@render conjugate("Vghi")}</td>
+            <td>{@render conjugate("vi", true)}</td>
+            <td>{@render conjugate("fi", true)}</td>
+            <td>{@render conjugate("ghi", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vvo")}</td>
-            <td>{@render conjugate("Vfo")}</td>
-            <td>{@render conjugate("Vgho")}</td>
+            <td>{@render conjugate("vo", true)}</td>
+            <td>{@render conjugate("fo", true)}</td>
+            <td>{@render conjugate("gho", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vvu")}</td>
-            <td>{@render conjugate("Vvu")}</td>
-            <td>{@render conjugate("Vghu")}</td>
+            <td>{@render conjugate("vu", true)}</td>
+            <td>{@render conjugate("vu", true)}</td>
+            <td>{@render conjugate("ghu", true)}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vvy")}</td>
-            <td>{@render conjugate("Vvy")}</td>
-            <td>{@render conjugate("Vghy")}</td>
+            <td>{@render conjugate("vy", true)}</td>
+            <td>{@render conjugate("vy", true)}</td>
+            <td>{@render conjugate("ghy", true)}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -264,42 +262,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vab")}</td>
-            <td>{@render conjugate("Vaj")}</td>
-            <td>{@render conjugate("Vazh")}</td>
+            <td>{@render conjugate("ab", true)}</td>
+            <td>{@render conjugate("aj", true)}</td>
+            <td>{@render conjugate("azh", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Veb")}</td>
-            <td>{@render conjugate("Vej")}</td>
-            <td>{@render conjugate("Vezh")}</td>
+            <td>{@render conjugate("eb", true)}</td>
+            <td>{@render conjugate("ej", true)}</td>
+            <td>{@render conjugate("ezh", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vib")}</td>
-            <td>{@render conjugate("Vij")}</td>
-            <td>{@render conjugate("Vizh")}</td>
+            <td>{@render conjugate("ib", true)}</td>
+            <td>{@render conjugate("ij", true)}</td>
+            <td>{@render conjugate("izh", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vob")}</td>
-            <td>{@render conjugate("Voj")}</td>
-            <td>{@render conjugate("Vozh")}</td>
+            <td>{@render conjugate("ob", true)}</td>
+            <td>{@render conjugate("oj", true)}</td>
+            <td>{@render conjugate("ozh", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vub")}</td>
-            <td>{@render conjugate("Vuj")}</td>
-            <td>{@render conjugate("Vuzh")}</td>
+            <td>{@render conjugate("ub", true)}</td>
+            <td>{@render conjugate("uj", true)}</td>
+            <td>{@render conjugate("uzh", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vyb")}</td>
-            <td>{@render conjugate("Vyj")}</td>
-            <td>{@render conjugate("Vyzh")}</td>
+            <td>{@render conjugate("yb", true)}</td>
+            <td>{@render conjugate("yj", true)}</td>
+            <td>{@render conjugate("yzh", true)}</td>
           </tr>
         </tbody>
       </table>
@@ -321,42 +319,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vvas")}</td>
-            <td>{@render conjugate("Vfas")}</td>
-            <td>{@render conjugate("Vghas")}</td>
+            <td>{@render conjugate("vas", true)}</td>
+            <td>{@render conjugate("fas", true)}</td>
+            <td>{@render conjugate("ghas", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vves")}</td>
-            <td>{@render conjugate("Vfes")}</td>
-            <td>{@render conjugate("Vghes")}</td>
+            <td>{@render conjugate("ves", true)}</td>
+            <td>{@render conjugate("fes", true)}</td>
+            <td>{@render conjugate("ghes", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vvis")}</td>
-            <td>{@render conjugate("Vfis")}</td>
-            <td>{@render conjugate("Vghis")}</td>
+            <td>{@render conjugate("vis", true)}</td>
+            <td>{@render conjugate("fis", true)}</td>
+            <td>{@render conjugate("ghis", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vvos")}</td>
-            <td>{@render conjugate("Vfos")}</td>
-            <td>{@render conjugate("Vghos")}</td>
+            <td>{@render conjugate("vos", true)}</td>
+            <td>{@render conjugate("fos", true)}</td>
+            <td>{@render conjugate("ghos", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vvus")}</td>
-            <td>{@render conjugate("Vvus")}</td>
-            <td>{@render conjugate("Vghus")}</td>
+            <td>{@render conjugate("vus", true)}</td>
+            <td>{@render conjugate("vus", true)}</td>
+            <td>{@render conjugate("ghus", true)}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vvys")}</td>
-            <td>{@render conjugate("Vvys")}</td>
-            <td>{@render conjugate("Vghys")}</td>
+            <td>{@render conjugate("vys", true)}</td>
+            <td>{@render conjugate("vys", true)}</td>
+            <td>{@render conjugate("ghys", true)}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -366,42 +364,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vaby")}</td>
-            <td>{@render conjugate("Vajy")}</td>
-            <td>{@render conjugate("Vazhy")}</td>
+            <td>{@render conjugate("aby", true)}</td>
+            <td>{@render conjugate("ajy", true)}</td>
+            <td>{@render conjugate("azhy", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Veby")}</td>
-            <td>{@render conjugate("Vejy")}</td>
-            <td>{@render conjugate("Vezhy")}</td>
+            <td>{@render conjugate("eby", true)}</td>
+            <td>{@render conjugate("ejy", true)}</td>
+            <td>{@render conjugate("ezhy", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Viby")}</td>
-            <td>{@render conjugate("Vijy")}</td>
-            <td>{@render conjugate("Vizhy")}</td>
+            <td>{@render conjugate("iby", true)}</td>
+            <td>{@render conjugate("ijy", true)}</td>
+            <td>{@render conjugate("izhy", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Voby")}</td>
-            <td>{@render conjugate("Vojy")}</td>
-            <td>{@render conjugate("Vozhy")}</td>
+            <td>{@render conjugate("oby", true)}</td>
+            <td>{@render conjugate("ojy", true)}</td>
+            <td>{@render conjugate("ozhy", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vuby")}</td>
-            <td>{@render conjugate("Vujy")}</td>
-            <td>{@render conjugate("Vuzhy")}</td>
+            <td>{@render conjugate("uby", true)}</td>
+            <td>{@render conjugate("ujy", true)}</td>
+            <td>{@render conjugate("uzhy", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vyby")}</td>
-            <td>{@render conjugate("Vyjy")}</td>
-            <td>{@render conjugate("Vyzhy")}</td>
+            <td>{@render conjugate("yby", true)}</td>
+            <td>{@render conjugate("yjy", true)}</td>
+            <td>{@render conjugate("yzhy", true)}</td>
           </tr>
         </tbody>
       </table>
@@ -423,42 +421,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vra")}</td>
-            <td>{@render conjugate("Vra")}</td>
-            <td>{@render conjugate("Vba")}</td>
+            <td>{@render conjugate("ra", true)}</td>
+            <td>{@render conjugate("ra", true)}</td>
+            <td>{@render conjugate("ba", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vren")}</td>
-            <td>{@render conjugate("Vren")}</td>
-            <td>{@render conjugate("Vbe")}</td>
+            <td>{@render conjugate("ren", true)}</td>
+            <td>{@render conjugate("ren", true)}</td>
+            <td>{@render conjugate("be", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vri")}</td>
-            <td>{@render conjugate("Vri")}</td>
-            <td>{@render conjugate("Vbi")}</td>
+            <td>{@render conjugate("ri", true)}</td>
+            <td>{@render conjugate("ri", true)}</td>
+            <td>{@render conjugate("bi", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vro")}</td>
-            <td>{@render conjugate("Vro")}</td>
-            <td>{@render conjugate("Vbo")}</td>
+            <td>{@render conjugate("ro", true)}</td>
+            <td>{@render conjugate("ro", true)}</td>
+            <td>{@render conjugate("bo", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vru")}</td>
-            <td>{@render conjugate("Vru")}</td>
-            <td>{@render conjugate("Vbu")}</td>
+            <td>{@render conjugate("ru", true)}</td>
+            <td>{@render conjugate("ru", true)}</td>
+            <td>{@render conjugate("bu", true)}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vry")}</td>
-            <td>{@render conjugate("Vry")}</td>
-            <td>{@render conjugate("Vby")}</td>
+            <td>{@render conjugate("ry", true)}</td>
+            <td>{@render conjugate("ry", true)}</td>
+            <td>{@render conjugate("by", true)}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -468,42 +466,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vra")}</td>
-            <td>{@render conjugate("Vra")}</td>
-            <td>{@render conjugate("Vba")}</td>
+            <td>{@render conjugate("ra", true)}</td>
+            <td>{@render conjugate("ra", true)}</td>
+            <td>{@render conjugate("ba", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vren")}</td>
-            <td>{@render conjugate("Vren")}</td>
-            <td>{@render conjugate("Vbe")}</td>
+            <td>{@render conjugate("ren", true)}</td>
+            <td>{@render conjugate("ren", true)}</td>
+            <td>{@render conjugate("be", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vri")}</td>
-            <td>{@render conjugate("Vri")}</td>
-            <td>{@render conjugate("Vbi")}</td>
+            <td>{@render conjugate("ri", true)}</td>
+            <td>{@render conjugate("ri", true)}</td>
+            <td>{@render conjugate("bi", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header"
               ><b>Unintentional</b></td
             >
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vro")}</td>
-            <td>{@render conjugate("Vro")}</td>
-            <td>{@render conjugate("Vbo")}</td>
+            <td>{@render conjugate("ro", true)}</td>
+            <td>{@render conjugate("ro", true)}</td>
+            <td>{@render conjugate("bo", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vru")}</td>
-            <td>{@render conjugate("Vru")}</td>
-            <td>{@render conjugate("Vbu")}</td>
+            <td>{@render conjugate("ru", true)}</td>
+            <td>{@render conjugate("ru", true)}</td>
+            <td>{@render conjugate("bu", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vry")}</td>
-            <td>{@render conjugate("Vry")}</td>
-            <td>{@render conjugate("Vby")}</td>
+            <td>{@render conjugate("ry", true)}</td>
+            <td>{@render conjugate("ry", true)}</td>
+            <td>{@render conjugate("by", true)}</td>
           </tr>
         </tbody>
       </table>
@@ -525,42 +523,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vzwa")}</td>
-            <td>{@render conjugate("Vlwa")}</td>
-            <td>{@render conjugate("Vbwa")}</td>
+            <td>{@render conjugate("zwa", true)}</td>
+            <td>{@render conjugate("lwa", true)}</td>
+            <td>{@render conjugate("bwa", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vzwe")}</td>
-            <td>{@render conjugate("Vlwe")}</td>
-            <td>{@render conjugate("Vbwe")}</td>
+            <td>{@render conjugate("zwe", true)}</td>
+            <td>{@render conjugate("lwe", true)}</td>
+            <td>{@render conjugate("bwe", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vzwi")}</td>
-            <td>{@render conjugate("Vlwi")}</td>
-            <td>{@render conjugate("Vbwi")}</td>
+            <td>{@render conjugate("zwi", true)}</td>
+            <td>{@render conjugate("lwi", true)}</td>
+            <td>{@render conjugate("bwi", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="horizontal-header td-bottom-strong">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vzwo")}</td>
-            <td>{@render conjugate("Vlwo")}</td>
-            <td>{@render conjugate("Vbwo")}</td>
+            <td>{@render conjugate("zwo", true)}</td>
+            <td>{@render conjugate("lwo", true)}</td>
+            <td>{@render conjugate("bwo", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vzwu")}</td>
-            <td>{@render conjugate("Vlwu")}</td>
-            <td>{@render conjugate("Vbwu")}</td>
+            <td>{@render conjugate("zwu", true)}</td>
+            <td>{@render conjugate("lwu", true)}</td>
+            <td>{@render conjugate("bwu", true)}</td>
           </tr>
           <tr class="tr-bottom-strong">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vzwy")}</td>
-            <td>{@render conjugate("Vlwy")}</td>
-            <td>{@render conjugate("Vbwy")}</td>
+            <td>{@render conjugate("zwy", true)}</td>
+            <td>{@render conjugate("lwy", true)}</td>
+            <td>{@render conjugate("bwy", true)}</td>
           </tr>
           <tr>
             <td rowspan="6" class="horizontal-header">
@@ -570,42 +568,42 @@
               <b>Intentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vzwa")}</td>
-            <td>{@render conjugate("Vlwa")}</td>
-            <td>{@render conjugate("Vbwa")}</td>
+            <td>{@render conjugate("zwa", true)}</td>
+            <td>{@render conjugate("lwa", true)}</td>
+            <td>{@render conjugate("bwa", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vzwe")}</td>
-            <td>{@render conjugate("Vlwe")}</td>
-            <td>{@render conjugate("Vbwe")}</td>
+            <td>{@render conjugate("zwe", true)}</td>
+            <td>{@render conjugate("lwe", true)}</td>
+            <td>{@render conjugate("bwe", true)}</td>
           </tr>
           <tr class="tr-bottom">
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vzwi")}</td>
-            <td>{@render conjugate("Vlwi")}</td>
-            <td>{@render conjugate("Vbwi")}</td>
+            <td>{@render conjugate("zwi", true)}</td>
+            <td>{@render conjugate("lwi", true)}</td>
+            <td>{@render conjugate("bwi", true)}</td>
           </tr>
           <tr>
             <td rowspan="3" class="no-bottom-border horizontal-header">
               <b>Unintentional</b>
             </td>
             <td class="horizontal-header"><b>Past</b></td>
-            <td>{@render conjugate("Vzwa")}</td>
-            <td>{@render conjugate("Vlwa")}</td>
-            <td>{@render conjugate("Vbwa")}</td>
+            <td>{@render conjugate("zwa", true)}</td>
+            <td>{@render conjugate("lwa", true)}</td>
+            <td>{@render conjugate("bwa", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Present</b></td>
-            <td>{@render conjugate("Vzwe")}</td>
-            <td>{@render conjugate("Vlwe")}</td>
-            <td>{@render conjugate("Vbwe")}</td>
+            <td>{@render conjugate("zwe", true)}</td>
+            <td>{@render conjugate("lwe", true)}</td>
+            <td>{@render conjugate("bwe", true)}</td>
           </tr>
           <tr>
             <td class="horizontal-header"><b>Future</b></td>
-            <td>{@render conjugate("Vzwi")}</td>
-            <td>{@render conjugate("Vlwi")}</td>
-            <td>{@render conjugate("Vbwi")}</td>
+            <td>{@render conjugate("zwi", true)}</td>
+            <td>{@render conjugate("lwi", true)}</td>
+            <td>{@render conjugate("bwi", true)}</td>
           </tr>
         </tbody>
       </table>
@@ -620,18 +618,10 @@
         <tbody>
           <tr>
             <td>
-              {#if word}
-                <span class="inflections-secondary">{word}</span>
-              {:else}
-                <span class="inflections-secondary">(no change)</span>
-              {/if}
+              <span class="inflections-secondary">{word || "(no change)"}</span>
             </td>
             <td>
-              {#if word}
-                cu<span class="inflections-secondary">{word}</span>
-              {:else}
-                cu-
-              {/if}
+              cu<span class="inflections-secondary">{word || "-"}</span>
             </td>
           </tr>
         </tbody>
@@ -768,8 +758,11 @@
   .vertical-header {
     text-align: center;
   }
+  .inflections-vowel {
+    color: var(--accent);
+  }
   .inflections-secondary {
-    opacity: 0.5;
+    color: #888;
   }
   .noun-table td {
     width: 50%;
