@@ -9,7 +9,6 @@
 
 <style>
 span {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 1.1em;
 }
 
