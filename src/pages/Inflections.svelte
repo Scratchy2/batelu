@@ -590,7 +590,7 @@
       </table>
     </div>
   {:else if wordType === "noun"}
-    <table>
+    <table class="noun-table">
       <thead>
         <tr>
           <th>Singular</th>
@@ -655,5 +655,8 @@
   }
   .inflections-secondary {
     opacity: 0.5;
+  }
+  .noun-table td {
+    width: 50%;
   }
 </style>
