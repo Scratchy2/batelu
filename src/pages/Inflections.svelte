@@ -77,16 +77,16 @@
       />
     {/if}
   </div>
-  {#if wordType === "verb"}
-    {#snippet conjugate(ending)}
-      {#if verbWord}
-        <span class="inflections-secondary">{verbWord.stem}</span
-        >{ending.replace("V", verbWord.vowel)}
-      {:else}
-        -{ending}
-      {/if}
-    {/snippet}
-    <div>
+  <div class="inflect-tables">
+    {#if wordType === "verb"}
+      {#snippet conjugate(ending)}
+        {#if verbWord}
+          <span class="inflections-secondary">{verbWord.stem}</span
+          >{ending.replace("V", verbWord.vowel)}
+        {:else}
+          -{ending}
+        {/if}
+      {/snippet}
       <table>
         <thead>
           <tr>
@@ -609,124 +609,128 @@
           </tr>
         </tbody>
       </table>
-    </div>
-  {:else if wordType === "noun"}
-    <table class="noun-table">
-      <thead>
-        <tr>
-          <th>Singular</th>
-          <th>Plural</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            {#if word}
-              <span class="inflections-secondary">{word}</span>
-            {:else}
-              <span class="inflections-secondary">(no change)</span>
-            {/if}
-          </td>
-          <td>
-            {#if word}
-              cu<span class="inflections-secondary">{word}</span>
-            {:else}
-              cu-
-            {/if}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  {:else if wordType === "pronoun"}
-    <table>
-      <thead>
-        <tr>
-          <th class="table-name" rowspan="2" colspan="2">Pronouns</th>
-          <th class="vertical-header" colspan="2">Singular</th>
-          <th class="vertical-header" colspan="2">Plural</th>
-        </tr>
-        <tr>
-          <th class="vertical-header">Personal</th>
-          <th class="vertical-header">Possessive</th>
-          <th class="vertical-header">Personal</th>
-          <th class="vertical-header">Possessive</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2" class="td-bottom horizontal-header">
-            <b>1st Person</b>
-          </td>
-          <td class="horizontal-header"><b>Day</b></td>
-          <td>ja</td>
-          <td>jami</td>
-          <td>cuja</td>
-          <td>cujami</td>
-        </tr>
-        <tr class="tr-bottom">
-          <td class="horizontal-header"><b>Night</b></td>
-          <td>jo</td>
-          <td>jomi</td>
-          <td>cujo</td>
-          <td>cujomi</td>
-        </tr>
-        <tr>
-          <td rowspan="2" class="td-bottom horizontal-header">
-            <b>2nd Person</b>
-          </td>
-          <td class="horizontal-header"><b>Animate</b></td>
-          <td>voze</td>
-          <td>vozemi</td>
-          <td>cuvoze</td>
-          <td>cuvozemi</td>
-        </tr>
-        <tr class="tr-bottom">
-          <td class="horizontal-header"><b>Inanimate</b></td>
-          <td>vozi</td>
-          <td>vozimi</td>
-          <td>cuvozi</td>
-          <td>cuvozimi</td>
-        </tr>
-        <tr>
-          <td rowspan="2" class="td-bottom horizontal-header">
-            <b>3rd Person</b>
-          </td>
-          <td class="horizontal-header"><b>Animate</b></td>
-          <td>kal</td>
-          <td>kalami</td>
-          <td>cukal</td>
-          <td>cukalami</td>
-        </tr>
-        <tr class="tr-bottom">
-          <td class="horizontal-header"><b>Inanimate</b></td>
-          <td>kel</td>
-          <td>kelemi</td>
-          <td>cukel</td>
-          <td>cukelemi</td>
-        </tr>
-        <tr>
-          <td rowspan="2" class="horizontal-header">
-            <b>4th Person</b>
-          </td>
-          <td class="horizontal-header"><b>Animate</b></td>
-          <td class="inflections-secondary">(no word yet)</td>
-          <td class="inflections-secondary">(no word yet)</td>
-          <td class="inflections-secondary">(no word yet)</td>
-          <td class="inflections-secondary">(no word yet)</td>
-        </tr>
-        <tr>
-          <td class="horizontal-header"><b>Inanimate</b></td>
-          <td class="inflections-secondary">(no word yet)</td>
-          <td class="inflections-secondary">(no word yet)</td>
-          <td class="inflections-secondary">(no word yet)</td>
-          <td class="inflections-secondary">(no word yet)</td>
-        </tr>
-      </tbody>
-    </table>
-  {/if}
+    {:else if wordType === "noun"}
+      <table class="noun-table">
+        <thead>
+          <tr>
+            <th>Singular</th>
+            <th>Plural</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {#if word}
+                <span class="inflections-secondary">{word}</span>
+              {:else}
+                <span class="inflections-secondary">(no change)</span>
+              {/if}
+            </td>
+            <td>
+              {#if word}
+                cu<span class="inflections-secondary">{word}</span>
+              {:else}
+                cu-
+              {/if}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    {:else if wordType === "pronoun"}
+      <table>
+        <thead>
+          <tr>
+            <th class="table-name" rowspan="2" colspan="2">Pronouns</th>
+            <th class="vertical-header" colspan="2">Singular</th>
+            <th class="vertical-header" colspan="2">Plural</th>
+          </tr>
+          <tr>
+            <th class="vertical-header">Personal</th>
+            <th class="vertical-header">Possessive</th>
+            <th class="vertical-header">Personal</th>
+            <th class="vertical-header">Possessive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" class="td-bottom horizontal-header">
+              <b>1st Person</b>
+            </td>
+            <td class="horizontal-header"><b>Day</b></td>
+            <td>ja</td>
+            <td>jami</td>
+            <td>cuja</td>
+            <td>cujami</td>
+          </tr>
+          <tr class="tr-bottom">
+            <td class="horizontal-header"><b>Night</b></td>
+            <td>jo</td>
+            <td>jomi</td>
+            <td>cujo</td>
+            <td>cujomi</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="td-bottom horizontal-header">
+              <b>2nd Person</b>
+            </td>
+            <td class="horizontal-header"><b>Animate</b></td>
+            <td>voze</td>
+            <td>vozemi</td>
+            <td>cuvoze</td>
+            <td>cuvozemi</td>
+          </tr>
+          <tr class="tr-bottom">
+            <td class="horizontal-header"><b>Inanimate</b></td>
+            <td>vozi</td>
+            <td>vozimi</td>
+            <td>cuvozi</td>
+            <td>cuvozimi</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="td-bottom horizontal-header">
+              <b>3rd Person</b>
+            </td>
+            <td class="horizontal-header"><b>Animate</b></td>
+            <td>kal</td>
+            <td>kalami</td>
+            <td>cukal</td>
+            <td>cukalami</td>
+          </tr>
+          <tr class="tr-bottom">
+            <td class="horizontal-header"><b>Inanimate</b></td>
+            <td>kel</td>
+            <td>kelemi</td>
+            <td>cukel</td>
+            <td>cukelemi</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="horizontal-header">
+              <b>4th Person</b>
+            </td>
+            <td class="horizontal-header"><b>Animate</b></td>
+            <td class="inflections-secondary">(no word yet)</td>
+            <td class="inflections-secondary">(no word yet)</td>
+            <td class="inflections-secondary">(no word yet)</td>
+            <td class="inflections-secondary">(no word yet)</td>
+          </tr>
+          <tr>
+            <td class="horizontal-header"><b>Inanimate</b></td>
+            <td class="inflections-secondary">(no word yet)</td>
+            <td class="inflections-secondary">(no word yet)</td>
+            <td class="inflections-secondary">(no word yet)</td>
+            <td class="inflections-secondary">(no word yet)</td>
+          </tr>
+        </tbody>
+      </table>
+    {/if}
+  </div>
 </main>
 
 <style>
+  .inflect-tables {
+    width: 100%;
+    overflow: auto;
+  }
   .header {
     display: flex;
     gap: 0.5rem;
