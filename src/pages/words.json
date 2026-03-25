@@ -40,7 +40,7 @@
     "date": "11-05-2025"
   },
   {
-    "word": "dzu",
+    "word": "zhu",
     "definition": "tree, bush, plant that bears fruit",
     "ipa": "d͡ʒu",
     "etymology": false,
@@ -416,9 +416,9 @@
     "date": "18-01-2026"
   },
   {
-    "word": "bandzi",
+    "word": "banzhi",
     "definition": "wide",
-    "ipa": "ban.dʒi",
+    "ipa": "ban.ʒi",
     "etymology": ["Zulu", "banzi", "wide"],
     "type": "modifier",
     "date": "18-01-2026"
@@ -680,17 +680,17 @@
     "date": "29-01-2026"
   },
   {
-    "word": "sijaa",
+    "word": "sija",
     "definition": "dark, dim",
-    "ipa": "ʃi.jaː",
+    "ipa": "ʃi.ja",
     "etymology": ["Persian", ["سیاه", "siyâh"], "black"],
     "type": "modifier",
     "date": "30-01-2026"
   },
   {
-    "word": "dzaalim",
+    "word": "zhalim",
     "definition": "harsh, ruthless",
-    "ipa": "dʒaː.lim",
+    "ipa": "ʒa.lim",
     "etymology": ["Hindi", ["ज़ालिम", "zālim"], "cruel"],
     "type": "modifier",
     "date": "31-01-2026"
@@ -728,9 +728,9 @@
     "date": "06-02-2026"
   },
   {
-    "word": "ozdon",
+    "word": "ozhon",
     "definition": "weight",
-    "ipa": "o.dʒon",
+    "ipa": "o.ʒon",
     "etymology": ["Bengali", ["ওজন", "ōjon"], "weight"],
     "type": "noun",
     "date": "08-02-2026"
@@ -752,17 +752,17 @@
     "date": "11-02-2026"
   },
   {
-    "word": "esees",
+    "word": "eses",
     "definition": "descend, fall",
-    "ipa": "e.ʃeːʃ",
+    "ipa": "e.ʃeʃ",
     "etymology": ["Hungarian", "esés", "fall"],
     "type": "noun",
     "date": "11-02-2026"
   },
   {
-    "word": "eseesere",
+    "word": "esesere",
     "definition": "to descend, to fall",
-    "ipa": "e.ʃeː.ʃe.re",
+    "ipa": "e.ʃe.ʃe.re",
     "etymology": ["Hungarian", "esés", "fall"],
     "type": "verb",
     "date": "11-02-2026"

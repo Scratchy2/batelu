@@ -47,8 +47,6 @@
 				<th>Post-Alveolar</th>
 				<th>Palatal</th>
 				<th>Velar</th>
-				<th>Uvular</th>
-				<th>Glottal</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -56,8 +54,6 @@
 				<td><b>Nasal</b></td>
 				<td>m</td>
 				<td>n</td>
-				<td></td>
-				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -69,8 +65,6 @@
 				<td></td>
 				<td></td>
 				<td>k</td>
-				<td></td>
-				<td></td>
 			</tr>
 			<tr>
 				<td><b>Voiced plosive</b></td>
@@ -79,25 +73,11 @@
 				<td></td>
 				<td></td>
 				<td>ɡ (g)</td>
-				<td></td>
-				<td></td>
 			</tr>
 			<tr>
 				<td><b>Unvoiced affricate</b></td>
 				<td></td>
 				<td>t͡s (z)</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><b>Voiced affricate</b></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -109,8 +89,6 @@
 				<td>ʃ (s)</td>
 				<td>ç (c)</td>
 				<td>x (kh)</td>
-				<td></td>
-				<td></td>
 			</tr>
 			<tr>
 				<td><b>Voiced fricative</b></td>
@@ -119,8 +97,6 @@
 				<td>ʒ (zh)</td>
 				<td></td>
 				<td>ɣ (gh)</td>
-				<td></td>
-				<td></td>
 			</tr>
 			<tr>
 				<td><b>Approximant</b></td>
@@ -129,15 +105,11 @@
 				<td></td>
 				<td>j</td>
 				<td>(w)</td>
-				<td></td>
-				<td></td>
 			</tr>
 			<tr>
 				<td><b>Trill</b></td>
 				<td></td>
 				<td>r</td>
-				<td></td>
-				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
