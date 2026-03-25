@@ -7,6 +7,7 @@
     import Words from './pages/Words.svelte';
     import About from './pages/About.svelte';
     import Phonology from './pages/Phonology.svelte';
+	import Conjugation from './pages/Conjugation.svelte'; // must create page first! oh mybearworld
 
     let Component = NotFound;
 
@@ -33,6 +34,10 @@
                 Component = Phonology;
                 break;
 
+			case '/conj':
+				Component = Conjugation;
+				break;
+
             default:
                 Component = NotFound;
                 break;
@@ -55,11 +60,12 @@
 </script>
 
 <nav class="nav">
-	<a href="/" on:click|preventDefault={() => navigate('/')}>Home</a>
+	<a href="/" on:click|preventDefault={() => navigate('')}>Home</a>
 	<a href="/ref" on:click|preventDefault={() => navigate('/ref')}>Reference</a>
 	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
 	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
 	<a href="/phono" on:click|preventDefault={() => navigate('/phono')}>Phonology</a>
+	<a href="/conj" on:click|preventDefault={() => navigate('/conj')}>Conjugation</a>
 </nav>
 
 <svelte:component this={Component} />
