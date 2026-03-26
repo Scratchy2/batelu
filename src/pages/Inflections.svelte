@@ -747,10 +747,23 @@
   }
   .header {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: stretch;
+  }
+  .header button {
+    width: auto;
   }
   .word-entry {
     --input-accent: var(--accent);
+    width: auto;
+    flex: 1;
+  }
+  @media (max-width: 480px) {
+    .word-entry {
+      width: 100%;
+      flex: auto;
+    }
   }
   input.word-entry-error {
     --input-accent: var(--accent-error);
