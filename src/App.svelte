@@ -9,6 +9,7 @@
   import Phonology from "./pages/Phonology.svelte";
   import Inflections from "./pages/Inflections.svelte";
 
+  /** @type {import("svelte").Component<{}> | import("svelte").Component<{ navigate: (path: string) => void }>} */
   let Component = NotFound;
 
   function route(pathname = location.pathname) {
