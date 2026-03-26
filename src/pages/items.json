@@ -18,7 +18,7 @@
   { "description": "Reduplication conveys diminutive", "tags": ["grammar", "affixes", "reduplication"] },
   { "description": "V syllables occur only word-initially", "tags": ["phonotactics", "syllables"] },
   { "description": "Optional head nouns (like Toki Pona)", "tags": ["grammar", "optional"] },
-  { "description": "Language names follow “language [name]” (e.g., bakhen Inlishu; unrelated to head nouns)", "tags": ["grammar"] },
+  { "description": "Language names follow “language [name]” (e.g., baxen Inlishu; unrelated to head nouns)", "tags": ["grammar"] },
   { "description": "Some concepts require multiword definitions (cf. Toki Pona “yupekosi”)", "tags": ["grammar"] },
   { "description": "Verbs inflect for count", "tags": ["grammar", "verbs", "conjugation"] },
   { "description": "Verbs inflect for person (1st, 2nd, 3rd)", "tags": ["grammar", "verbs", "conjugation"] },

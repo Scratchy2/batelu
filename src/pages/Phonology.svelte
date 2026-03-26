@@ -88,7 +88,7 @@
 				<td></td>
 				<td>ʃ (s)</td>
 				<td>ç (c)</td>
-				<td>x (kh)</td>
+				<td>x</td>
 			</tr>
 			<tr>
 				<td><b>Voiced fricative</b></td>
