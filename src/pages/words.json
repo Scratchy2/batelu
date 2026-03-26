@@ -1238,5 +1238,21 @@
     "etymology": ["Finnish", "on", "there is"],
     "type": "noun",
     "date": "26-03-2026"
+  },
+  {
+    "word": "alere",
+    "definition": "to go",
+    "ipa": "a.le.re",
+    "etymology": ["French", "aller", "to go"],
+    "type": "verb",
+    "date": "26-03-2026"
+  },
+  {
+    "word": "azijoni",
+    "definition": "money, stock, rising stock",
+    "ipa": "a.tsi.jo.ni",
+    "etymology": ["Italian", "azioni", "shares"],
+    "type": "noun",
+    "date": "26-03-2026"
   }
 ]
