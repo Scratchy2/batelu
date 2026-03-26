@@ -223,7 +223,7 @@
     <div class="drawer-handle" aria-hidden="true"></div>
     <header class="drawer-header">
       <h2 id="panel-title">{selected.displayWord}</h2>
-      {#if selected.type === "verb" || selected.type === "noun"}
+      {#if selected.type === "verb" || selected.type === "noun" || selected.type === "modifier"}
         <button
           class="aside-top-button"
           on:click={() => {

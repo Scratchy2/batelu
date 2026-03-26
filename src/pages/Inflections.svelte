@@ -20,6 +20,7 @@
       if (
         paramWordType === "noun" ||
         paramWordType === "verb" ||
+        paramWordType === "modifier" ||
         paramWordType === "pronoun"
       ) {
         wordType = paramWordType;
@@ -59,6 +60,10 @@
     <button
       class={{ "btn-primary": wordType === "noun" }}
       on:click={() => (wordType = "noun")}>Nouns</button
+    >
+    <button
+      class={{ "btn-primary": wordType === "modifier" }}
+      on:click={() => (wordType = "modifier")}>Modifiers</button
     >
     <button
       class={{ "btn-primary": wordType === "pronoun" }}
@@ -608,7 +613,7 @@
         </tbody>
       </table>
     {:else if wordType === "noun"}
-      <table class="noun-table">
+      <table class="fixed-table">
         <thead>
           <tr>
             <th>Singular</th>
@@ -622,6 +627,25 @@
             </td>
             <td>
               cu<span class="inflections-secondary">{word || "-"}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    {:else if wordType === "modifier"}
+      <table class="fixed-table">
+        <thead>
+          <tr>
+            <th>Adjective</th>
+            <th>Adverb</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="inflections-secondary">{word || "(no change)"}</span>
+            </td>
+            <td>
+              i<span class="inflections-secondary">{word || "-"}</span>
             </td>
           </tr>
         </tbody>
@@ -764,7 +788,7 @@
   .inflections-secondary {
     color: #888;
   }
-  .noun-table td {
-    width: 50%;
+  .fixed-table {
+    table-layout: fixed;
   }
 </style>
