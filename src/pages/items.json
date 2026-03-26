@@ -1,5 +1,4 @@
 [
-  { "description": "Long and short vowels", "tags": ["phonology"] },
   { "description": "Latin-based writing system", "tags": ["orthography", "latin"] },
   { "description": "Non-Latin writing system, functionally similar to Hangul", "tags": ["orthography", "non-latin"] },
   { "description": "CV syllable structure", "tags": ["phonotactics", "syllables"] },
@@ -60,6 +59,5 @@
   { "description": "Ordinal particle law requires definite article al", "tags": ["grammar", "number system"]},
   { "description": "Comparatives and superlatives are formed via affixes", "tags": ["grammar", "adjectives"]},
   { "description": "Reflexive verbs exist", "tags": ["grammar", "verbs", "pronouns"]},
-  { "description": "Long vowels can be written with macrons", "tags": ["orthography"]},
   { "description": "sh and ts can be abbreviated as s and z", "tags": ["orthography"]}
 ]
