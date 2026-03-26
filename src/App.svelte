@@ -7,11 +7,13 @@
     import Words from './pages/Words.svelte';
     import About from './pages/About.svelte';
     import Phonology from './pages/Phonology.svelte';
-	import Conjugation from './pages/Conjugation.svelte'; // must create page first! oh mybearworld
+    import Inflections from './pages/Inflections.svelte';
 
+    /** @type {import("svelte").Component<{}> | import("svelte").Component<{ navigate: (path: string) => void }>} */
     let Component = NotFound;
 
     function route(pathname = location.pathname) {
+        window.scrollTo(0, 0);
         switch (pathname.replace(/\/$/, '')) {
             case '/':
             case '':
@@ -33,10 +35,10 @@
 			case '/phono':
                 Component = Phonology;
                 break;
-
-			case '/conj':
-				Component = Conjugation;
-				break;
+                
+            case '/inflect':
+                Component = Inflections;
+                break;
 
             default:
                 Component = NotFound;
@@ -65,7 +67,7 @@
 	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
 	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
 	<a href="/phono" on:click|preventDefault={() => navigate('/phono')}>Phonology</a>
-	<a href="/conj" on:click|preventDefault={() => navigate('/conj')}>Conjugation</a>
+	<a href="/inflect" on:click|preventDefault={() => navigate('/inflect')}>Inflections</a>
 </nav>
 
-<svelte:component this={Component} />
+<svelte:component this={Component} {navigate} />

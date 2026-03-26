@@ -1,6 +1,8 @@
 <script>
   import wordsData from "./words.json";
 
+  export let navigate;
+
   const cleanWord = (w) => w.replace(/\d+$/, "");
 
   let words = wordsData.map((w, index) => ({
@@ -221,8 +223,22 @@
     <div class="drawer-handle" aria-hidden="true"></div>
     <header class="drawer-header">
       <h2 id="panel-title">{selected.displayWord}</h2>
-      <button class="close" on:click={close} aria-label="Close details"
-        >×</button
+      {#if selected.type === "verb" || selected.type === "noun" || selected.type === "modifier"}
+        <button
+          class="aside-top-button"
+          on:click={() => {
+            const { type, displayWord } = selected;
+            close();
+            setTimeout(() => {
+              navigate(`/inflect?type=${type}&q=${displayWord}`);
+            });
+          }}>Inflect</button
+        >
+      {/if}
+      <button
+        class="close aside-top-button"
+        on:click={close}
+        aria-label="Close details">×</button
       >
     </header>
     <section class="drawer-body">
@@ -404,11 +420,8 @@
 
     border: 1px solid var(--border);
     border-radius: 14px;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.03),
-        transparent 40%
-      ),
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%),
       #101010;
     padding: 0.8rem 0.9rem;
 
@@ -568,28 +581,30 @@
   }
 
   .drawer-header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
     gap: 0.5rem;
   }
 
   .drawer-header h2 {
+    flex: 1;
     margin: 0.2rem 0 0.1rem;
     font-size: clamp(1.25rem, 2.2vw, 1.7rem);
     letter-spacing: 0.2px;
   }
 
-  .close {
+  .aside-top-button {
     appearance: none;
     background: transparent;
     border: 1px solid var(--border);
     color: var(--fg);
     border-radius: 12px;
     padding: 0.35rem 0.65rem;
-    font-size: 1.6rem; /* bigger X */
     line-height: 1;
     cursor: pointer;
+  }
+  .close {
+    font-size: 1.6rem; /* bigger X */
   }
 
   .drawer-body {
