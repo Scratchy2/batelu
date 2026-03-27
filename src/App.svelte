@@ -13,8 +13,9 @@
     let Component = NotFound;
 
     function route(pathname = location.pathname) {
+        const path = new URL(pathname, location.href).pathname.replace(/\/$/, "");
         window.scrollTo(0, 0);
-        switch (pathname.replace(/\/$/, '')) {
+        switch (path) {
             case '/':
             case '':
                 Component = Home;

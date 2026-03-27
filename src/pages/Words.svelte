@@ -602,6 +602,7 @@
     padding: 0.35rem 0.65rem;
     line-height: 1;
     cursor: pointer;
+    width: auto;
   }
   .close {
     font-size: 1.6rem; /* bigger X */
