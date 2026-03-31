@@ -1254,5 +1254,61 @@
     "etymology": ["Italian", "azioni", "shares"],
     "type": "noun",
     "date": "26-03-2026"
+  },
+  {
+    "word": "kabana",
+    "definition": "sleep",
+    "ipa": "ka.ba.na",
+    "etymology": ["Haitian Creole", "kabann", "bed"],
+    "type": "noun",
+    "date": "26-03-2026"
+  },
+  {
+    "word": "kaliboon",
+    "definition": "god, lord",
+    "ipa": "ka.li.bo.on",
+    "etymology": ["English", "Caliborn", "a Homestuck character"],
+    "type": "noun",
+    "date": "27-03-2026"
+  },
+  {
+    "word": "urkoz",
+    "definition": "bear",
+    "ipa": "ur.kots",
+    "etymology": ["Proto-Indo-European", "*h₂ŕ̥tḱos", "bear"],
+    "type": "noun",
+    "date": "27-03-2026"
+  },
+  {
+    "word": "esture",
+    "definition": "to die",
+    "ipa": "eʃ.tu.re",
+    "etymology": false,
+    "type": "verb",
+    "date": "27-03-2026"
+  },
+  {
+    "word": "koris",
+    "definition": "brown",
+    "ipa": "ko.riʃ",
+    "etymology": ["Ukranian", "коричневий", "brown"],
+    "type": "modifier",
+    "date": "28-03-2026"
+  },
+  {
+    "word": "areda",
+    "definition": "hollow, empty",
+    "ipa": "a.re.da",
+    "etymology": false,
+    "type": "modifier",
+    "date": "29-03-2026"
+  },
+  {
+    "word": "vawva",
+    "definition": "child, kid",
+    "ipa": "vaw.va",
+    "etymology": ["Finnish", "vauva", "baby"],
+    "type": "noun",
+    "date": "29-03-2026"
   }
 ]
