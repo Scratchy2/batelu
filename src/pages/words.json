@@ -48,6 +48,14 @@
     "date": "13-05-2025"
   },
   {
+    "word": "batelu",
+    "definition": "Batelu",
+    "ipa": "ba.te.lu",
+    "etymology": ["Batelu", "baxen tesa ludina"],
+    "type": "noun",
+    "date": "13-05-2025"
+  },
+  {
     "word": "kip",
     "definition": "stone, rock",
     "ipa": "kip",
@@ -299,7 +307,7 @@
     "word": "dijabon",
     "definition": "hello, greetings, (literally) good day",
     "ipa": "di.ja.bon",
-    "etymology": ["Batelu", "dija bon", "good day"],
+    "etymology": ["Batelu", "dija bon"],
     "type": "interjection",
     "date": "05-01-2026"
   },
@@ -315,7 +323,7 @@
     "word": "kabanare",
     "definition": "to sleep, to rest",
     "ipa": "ka.ba.na.re",
-    "etymology": ["Batelu", "kaban", "bed"],
+    "etymology": ["Batelu", "kaban"],
     "type": "verb",
     "date": "07-01-2026"
   },
@@ -355,7 +363,7 @@
     "word": "wanijare",
     "definition": "to jitter, to shake, to move unnaturally",
     "ipa": "wa.ni.ja.re",
-    "etymology": ["Batelu", "wanija", "unstable"],
+    "etymology": ["Batelu", "wanija"],
     "type": "verb",
     "date": "14-01-2026"
   },
@@ -411,7 +419,7 @@
     "word": "citamire",
     "definition": "to hurt, to harm, to damage",
     "ipa": "çi.ta.mi.re",
-    "etymology": ["Batelu", "citami", "pain"],
+    "etymology": ["Batelu", "citami"],
     "type": "verb",
     "date": "18-01-2026"
   },
@@ -571,7 +579,7 @@
     "word": "myrtire",
     "definition": "to kill",
     "ipa": "mər.ti.re",
-    "etymology": ["Czech", "mrtvý", "dead"],
+    "etymology": ["Batelu", "myrti"],
     "type": "verb",
     "date": "22-01-2026"
   },
@@ -627,7 +635,7 @@
     "word": "kilinare",
     "definition": "to tingle, to jingle",
     "ipa": "ki.li.na.re",
-    "etymology": ["Finnish", "kilinä", "jingle"],
+    "etymology": ["Batelu", "kilina"],
     "type": "verb",
     "date": "25-01-2026"
   },
@@ -763,7 +771,7 @@
     "word": "esesere",
     "definition": "to descend, to fall",
     "ipa": "e.ʃe.ʃe.re",
-    "etymology": ["Hungarian", "esés", "fall"],
+    "etymology": ["Batelu", "eses"],
     "type": "verb",
     "date": "11-02-2026"
   },
@@ -819,7 +827,7 @@
     "word": "kausmempaw",
     "definition": "cheeseburger",
     "ipa": "ka.uʃ.mem.paw",
-    "etymology": ["Batelu", "kaush mempaw", "cheese sandwich"],
+    "etymology": ["Batelu", "kaus mempaw"],
     "type": "noun",
     "date": "15-02-2026"
   },
@@ -907,7 +915,7 @@
     "word": "istaware",
     "definition": "to love",
     "ipa": "iʃ.ta.wa.re",
-    "etymology": ["Finnish", "ystävä", "-phile"],
+    "etymology": ["Batelu", "istawa"],
     "type": "noun",
     "date": "22-02-2026"
   },
@@ -939,7 +947,7 @@
     "word": "zalure",
     "definition": "to split, to divide",
     "ipa": "tsa.lu.re",
-    "etymology": false,
+    "etymology": ["Batelu", "zaluk"],
     "type": "verb",
     "date": "25-02-2026"
   },
@@ -1115,7 +1123,7 @@
     "word": "besare",
     "definition": "to know",
     "ipa": "be.ʃa.re",
-    "etymology": false,
+    "etymology": ["Batelu", "besal"],
     "type": "verb",
     "date": "23-03-2026"
   },
@@ -1235,7 +1243,7 @@
     "word": "ono",
     "definition": "existence, being",
     "ipa": "o.no",
-    "etymology": ["Finnish", "on", "there is"],
+    "etymology": ["Batelu", "onore"],
     "type": "noun",
     "date": "26-03-2026"
   },
@@ -1259,7 +1267,7 @@
     "word": "kabana",
     "definition": "sleep",
     "ipa": "ka.ba.na",
-    "etymology": ["Haitian Creole", "kabann", "bed"],
+    "etymology": ["Batelu", "kabanare"],
     "type": "noun",
     "date": "26-03-2026"
   },

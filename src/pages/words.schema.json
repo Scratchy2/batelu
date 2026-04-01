@@ -36,7 +36,7 @@
             ]
           }
         ],
-        "description": "The word's etymology.\nIn the format of [\"Language\", [\"word\", \"transcription\"], \"meaning\"].\nIf the language already uses the Latin script, the format is [\"Language\", \"word\", \"meaning\"].\nIf the word is a priori, use false."
+        "description": "The word's etymology.\nIn the format of [\"Language\", [\"word\", \"transcription\"], \"meaning\"].\nIf the language already uses the Latin script, the format is [\"Language\", \"word\", \"meaning\"].\nIf the word is a priori, use false.\nIf the source language is Batelu or English, don't put a meaning."
       },
       "type": {
         "enum": [
@@ -46,7 +46,8 @@
           "interjection",
           "modifier",
           "numeral",
-          "adposition"
+          "adposition",
+          "conjunction"
         ],
         "description": "The part of speech of the word."
       },

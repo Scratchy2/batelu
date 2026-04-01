@@ -251,40 +251,59 @@
         <p class="detail-text">{selected.definition}</p>
 
         <label class="detail-label">etymology</label>
-        {#if selected.etymology === false}
-          <p class="detail-text">a priori</p>
-        {:else if Array.isArray(selected.etymology)}
-          {#if Array.isArray(selected.etymology[1])}
-            {#if selected.etymology.length > 2 && selected.etymology[2]}
-              <p class="detail-text">
-                <span class="ety-lang">{selected.etymology[0]}</span>
-                <em class="ety-word">{selected.etymology[1][0]}</em>
-                (<span class="ety-roman">{selected.etymology[1][1]}</span>) "<span
-                  class="ety-gloss">{selected.etymology[2]}</span
+        {#snippet etymologyDescription(etymology)}
+          {#if etymology === false}
+            a priori
+          {:else if Array.isArray(etymology)}
+            {#if Array.isArray(etymology[1])}
+              {#if etymology.length > 2 && etymology[2]}
+                <span class="ety-lang">{etymology[0]}</span>
+                <em class="ety-word">{etymology[1][0]}</em>
+                (<span class="ety-roman">{etymology[1][1]}</span>) "<span
+                  class="ety-gloss">{etymology[2]}</span
                 >"
-              </p>
+              {:else}
+                <span class="ety-lang">{etymology[0]}</span>
+                <em class="ety-word">{etymology[1][0]}</em>
+                (<span class="ety-roman">{etymology[1][1]}</span>)
+              {/if}
+            {:else if etymology.length > 2 && etymology[2]}
+              <span class="ety-lang">{etymology[0]}</span>
+              <em class="ety-word">{etymology[1]}</em>
+              "<span class="ety-gloss">{etymology[2]}</span>"
+            {:else if etymology[0] === "Batelu" && etymology[1].includes(" ")}
+              {@const words = etymology[1].split(" ")}
+              {#each words as word, i}
+                {@render etymologyDescription(["Batelu", word])}
+                {#if i !== words.length - 1}
+                  <br />
+                {/if}
+              {/each}
+            {:else if etymology[0] === "Batelu"}
+              {@const word = words.find((word) => word.word === etymology[1])}
+              <span class="ety-lang">{etymology[0]}</span>
+              <em class="ety-word">{etymology[1]}</em>
+              {#if word}
+                "<span class="ety-gloss">{word.definition.split(", ")[0]}</span
+                >"
+                <br />
+                <span class="ety-further">
+                  ⮤ {@render etymologyDescription(word.etymology)}
+                </span>
+              {:else}
+                <span class="ety-error">word not found</span>
+              {/if}
             {:else}
-              <p class="detail-text">
-                <span class="ety-lang">{selected.etymology[0]}</span>
-                <em class="ety-word">{selected.etymology[1][0]}</em>
-                (<span class="ety-roman">{selected.etymology[1][1]}</span>)
-              </p>
+              <span class="ety-lang">{etymology[0]}</span>
+              <em class="ety-word">{etymology[1]}</em>
             {/if}
-          {:else if selected.etymology.length > 2 && selected.etymology[2]}
-            <p class="detail-text">
-              <span class="ety-lang">{selected.etymology[0]}</span>
-              <em class="ety-word">{selected.etymology[1]}</em>
-              "<span class="ety-gloss">{selected.etymology[2]}</span>"
-            </p>
           {:else}
-            <p class="detail-text">
-              <span class="ety-lang">{selected.etymology[0]}</span>
-              <em class="ety-word">{selected.etymology[1]}</em>
-            </p>
+            {etymology}
           {/if}
-        {:else}
-          <p class="detail-text">{selected.etymology}</p>
-        {/if}
+        {/snippet}
+        <p class="detail-text">
+          {@render etymologyDescription(selected.etymology)}
+        </p>
 
         {#if selected.date}
           <label class="detail-label">creation date</label>
@@ -704,6 +723,13 @@
   }
   .ety-gloss {
     opacity: 0.92;
+  }
+  .ety-further {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .ety-error {
+    color: var(--accent-error);
   }
 
   /* Outlined box specifically for the definition content */
