@@ -552,9 +552,9 @@
     "date": "22-01-2026"
   },
   {
-    "word": "krol",
+    "word": "kyrol",
     "definition": "king",
-    "ipa": "krol",
+    "ipa": "kə.rol",
     "etymology": ["Polish", "król", "king"],
     "type": "noun",
     "date": "22-01-2026"
@@ -616,9 +616,9 @@
     "date": "25-01-2026"
   },
   {
-    "word": "pohatta",
+    "word": "poxatta",
     "definition": "tycoon, magnate",
-    "ipa": "po.hat.ta",
+    "ipa": "po.xat.ta",
     "etymology": ["Finnish", "pohatta", "tycoon"],
     "type": "noun",
     "date": "25-01-2026"
@@ -1318,5 +1318,29 @@
     "etymology": ["Finnish", "vauva", "baby"],
     "type": "noun",
     "date": "29-03-2026"
+  },
+  {
+    "word": "liv",
+    "definition": "book",
+    "ipa": "liv",
+    "etymology": ["French", "livre", "book"],
+    "type": "noun",
+    "date": "31-03-2026"
+  },
+  {
+    "word": "terezh",
+    "definition": "rule, law",
+    "ipa": "te.reʒ",
+    "etymology": false,
+    "type": "noun",
+    "date": "31-03-2026"
+  },
+  {
+    "word": "masif",
+    "definition": "big, large",
+    "ipa": "ma.ʃif",
+    "etymology": ["French", "massif", "massive"],
+    "type": "modifier",
+    "date": "31-03-2026"
   }
 ]
