@@ -1,3 +1,6 @@
+<!-- TODO: Maybe add a check for invalid words? Not really a big deal though. I'm just leaving TODOs for MBW and Milo. -->
+<!-- Feel free to delete this one if it's not needed. -->
+
 <script>
   import { onMount } from "svelte";
 
