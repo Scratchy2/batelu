@@ -1,15 +1,22 @@
 <script>
   import wordsData from "./words.json";
+  import { toIPA } from "../lib/toIPA";
 
   export let navigate;
 
   const cleanWord = (w) => w.replace(/\d+$/, "");
 
-  let words = wordsData.map((w, index) => ({
-    ...w,
-    displayWord: cleanWord(w.word),
-    index,
-  }));
+  let words = wordsData.map((w, index) => {
+    const displayWord = cleanWord(w.word);
+    const ipa = toIPA(displayWord);
+    return {
+      ...w,
+      displayWord,
+      index,
+      ipa,
+    };
+  });
+  let errors = words.filter((word) => word.ipa.error);
 
   import { tick, onMount } from "svelte";
 
@@ -179,6 +186,14 @@
       <option value="length-long">Length (longest first)</option>
     </select>
   </div>
+  {#if errors.length !== 0}
+    <b>Some words are invalid!</b>
+    <ul>
+      {#each errors as error}
+        <li>{error.word}: {error.ipa.message}</li>
+      {/each}
+    </ul>
+  {/if}
 </main>
 <section class="cards-wrap">
   <div id="word-grid" class="grid" role="list">
@@ -244,9 +259,10 @@
     <section class="drawer-body">
       <div class="detail-display">
         <h1 class="detail-word">{selected.displayWord}</h1>
-        <p class="detail-syllables">{selected.ipa}</p>
+        <p class="detail-syllables">
+          {selected.ipa?.ipa ?? "this word is invalid"}
+        </p>
         <p class="detail-type">{selected.type}</p>
-
         <label class="detail-label">definition</label>
         <p class="detail-text">{selected.definition}</p>
 

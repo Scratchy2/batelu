@@ -1,8 +1,6 @@
-<!-- TODO: Maybe add a check for invalid words? Not really a big deal though. I'm just leaving TODOs for MBW and Milo. -->
-<!-- Feel free to delete this one if it's not needed. -->
-
 <script>
   import { onMount } from "svelte";
+  import { toIPA } from "../lib/toIPA";
 
   let wordType = "verb";
   let initialized = false;
@@ -14,7 +12,15 @@
     return { stem: match[1], vowel: match[2] };
   };
   $: verbWord = computeVerbWord(word, wordType);
-  $: wordEntryError = word !== "" && wordType === "verb" && !verbWord;
+  const getError = (word, wordType, verbWord) => {
+    if (word === "") return { error: false };
+    const ipa = toIPA(word);
+    if (ipa.error) return ipa;
+    if (wordType === "verb" && !verbWord)
+      return { error: true, message: "Missing -Vre at the end of verb" };
+    return { error: false, ipa: ipa.ipa, verbWord, word };
+  };
+  $: validatedWord = getError(word, wordType, verbWord);
 
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
@@ -72,25 +78,37 @@
       class={{ "btn-primary": wordType === "pronoun" }}
       on:click={() => (wordType = "pronoun")}>Pronouns</button
     >
-    {#if wordType !== "pronoun"}
+    <div class="word-entry-wrapper">
       <input
         type="text"
         placeholder="Word"
         class={{
           "word-entry": true,
-          "word-entry-error": wordEntryError,
+          "word-entry-error": validatedWord.error,
         }}
         bind:value={word}
-        aria-invalid={wordEntryError}
+        disabled={wordType === "pronoun"}
+        aria-invalid={validatedWord.error}
       />
-    {/if}
+      <div
+        class={{
+          "word-entry-status-message": true,
+          "word-entry-status-message-error": validatedWord.error,
+        }}
+      >
+        {validatedWord.error
+          ? validatedWord.message
+          : (validatedWord.ipa ?? "(no word, showing affixes)")}
+      </div>
+    </div>
   </div>
   <div class="inflect-tables">
     {#if wordType === "verb"}
       {#snippet conjugate(ending, vowel)}
-        <span class="inflections-secondary">{verbWord?.stem ?? "-"}</span
+        <span class="inflections-secondary"
+          >{validatedWord.verbWord?.stem ?? "-"}</span
         >{#if vowel}<span class="inflections-vowel"
-            >{verbWord?.vowel ?? "V"}</span
+            >{validatedWord.verbWord?.vowel ?? "V"}</span
           >{/if}{ending}
       {/snippet}
       <table>
@@ -626,10 +644,14 @@
         <tbody>
           <tr>
             <td>
-              <span class="inflections-secondary">{word || "(no change)"}</span>
+              <span class="inflections-secondary"
+                >{validatedWord.word || "(no change)"}</span
+              >
             </td>
             <td>
-              cu<span class="inflections-secondary">{word || "-"}</span>
+              cu<span class="inflections-secondary"
+                >{validatedWord.word || "-"}</span
+              >
             </td>
           </tr>
         </tbody>
@@ -645,10 +667,14 @@
         <tbody>
           <tr>
             <td>
-              <span class="inflections-secondary">{word || "(no change)"}</span>
+              <span class="inflections-secondary"
+                >{validatedWord.word || "(no change)"}</span
+              >
             </td>
             <td>
-              i<span class="inflections-secondary">{word || "-"}</span>
+              i<span class="inflections-secondary"
+                >{validatedWord.word || "-"}</span
+              >
             </td>
           </tr>
         </tbody>
@@ -757,15 +783,25 @@
   .header button {
     width: auto;
   }
+  .word-entry-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
   .word-entry {
     --input-accent: var(--accent);
     width: auto;
     flex: 1;
   }
+  .word-entry-status-message {
+    color: #888;
+    text-align: right;
+    font-size: 0.8rem;
+  }
   @media (max-width: 480px) {
-    .word-entry {
-      width: 100%;
+    .word-entry-wrapper {
       flex: auto;
+      width: 100%;
     }
   }
   input.word-entry-error {

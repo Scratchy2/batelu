@@ -2,7 +2,6 @@
   {
     "word": "baxen",
     "definition": "language",
-    "ipa": "ba.xen",
     "etymology": ["German", "Sprachen", "languages"],
     "type": "noun",
     "date": "07-05-2025"
@@ -10,7 +9,6 @@
   {
     "word": "wabi",
     "definition": "fish, sea creature, marine animal",
-    "ipa": "wa.bi",
     "etymology": false,
     "type": "noun",
     "date": "08-05-2025"
@@ -18,7 +16,6 @@
   {
     "word": "ludina",
     "definition": "person, human being",
-    "ipa": "lu.di.na",
     "etymology": ["Ukranian", ["людина", "lyudyna"], "person, man"],
     "type": "noun",
     "date": "08-05-2025"
@@ -26,7 +23,6 @@
   {
     "word": "tesa",
     "definition": "want, wish, desire",
-    "ipa": "te.ʃa",
     "etymology": ["Welsh", "eisiau", "want"],
     "type": "noun",
     "date": "11-05-2025"
@@ -34,7 +30,6 @@
   {
     "word": "zol",
     "definition": "soil, ground, earth",
-    "ipa": "t͡sol",
     "etymology": ["French", "sol", "ground, soil"],
     "type": "noun",
     "date": "11-05-2025"
@@ -42,7 +37,6 @@
   {
     "word": "zhu",
     "definition": "tree, bush, plant that bears fruit",
-    "ipa": "d͡ʒu",
     "etymology": false,
     "type": "noun",
     "date": "13-05-2025"
@@ -50,7 +44,6 @@
   {
     "word": "batelu",
     "definition": "Batelu",
-    "ipa": "ba.te.lu",
     "etymology": ["Batelu", "baxen tesa ludina"],
     "type": "noun",
     "date": "13-05-2025"
@@ -58,7 +51,6 @@
   {
     "word": "kip",
     "definition": "stone, rock",
-    "ipa": "kip",
     "etymology": ["Afrikaans", "klip", "stone"],
     "type": "noun",
     "date": "14-05-2025"
@@ -66,7 +58,6 @@
   {
     "word": "tesare",
     "definition": "to want, to desire",
-    "ipa": "te.ʃa.re",
     "etymology": ["Welsh", "eisiau", "want"],
     "type": "verb",
     "date": "16-05-2025"
@@ -74,7 +65,6 @@
   {
     "word": "onore",
     "definition": "to be",
-    "ipa": "o.no.re",
     "etymology": ["Finnish", "on", "there is"],
     "type": "verb",
     "date": "18-05-2025"
@@ -82,7 +72,6 @@
   {
     "word": "katare",
     "definition": "to communicate, to speak, to talk",
-    "ipa": "ka.ta.re",
     "etymology": ["Japanese", ["語る", "kataru"], "speak"],
     "type": "verb",
     "date": "28-05-2025"
@@ -90,7 +79,6 @@
   {
     "word": "jesere",
     "definition": "to eat, to drink, to consume",
-    "ipa": "je.ʃe.re",
     "etymology": ["Polish", "jeść", "eat"],
     "type": "verb",
     "date": "29-05-2025"
@@ -98,7 +86,6 @@
   {
     "word": "ko",
     "definition": "[question particle]",
-    "ipa": "ko",
     "etymology": ["Finnish", "ko"],
     "type": "particle",
     "date": "31-05-2025"
@@ -106,7 +93,6 @@
   {
     "word": "languren",
     "definition": "anthropomorphic animal, furry or relating to the furry fandom",
-    "ipa": "lan.gu.ren",
     "etymology": ["Mandarin Chinese", ["狼人", "lángrén"], "werewolf"],
     "type": "noun",
     "date": "09-06-2025"
@@ -114,7 +100,6 @@
   {
     "word": "vi",
     "definition": "air, wind, sky",
-    "ipa": "vi",
     "etymology": false,
     "type": "noun",
     "date": "21-06-2025"
@@ -122,7 +107,6 @@
   {
     "word": "poghu",
     "definition": "ability, capability",
-    "ipa": "po.ɣu",
     "etymology": ["Catalan", "poguer", "to be able to"],
     "type": "noun",
     "date": "23-06-2025"
@@ -130,7 +114,6 @@
   {
     "word": "poghure",
     "definition": "to be able to",
-    "ipa": "po.ɣu.re",
     "etymology": ["Catalan", "poguer", "to be able to"],
     "type": "verb",
     "date": "23-06-2025"
@@ -138,7 +121,6 @@
   {
     "word": "cizujo",
     "definition": "need, requirement, something necessary",
-    "ipa": "çi.t͡su.jo",
     "etymology": ["Japanese", ["必用", "hitsuyō"], "need"],
     "type": "noun",
     "date": "23-06-2025"
@@ -146,7 +128,6 @@
   {
     "word": "cizujore",
     "definition": "to need, to require",
-    "ipa": "çi.t͡su.jo.re",
     "etymology": ["Japanese", ["必用", "hitsuyō"], "need"],
     "type": "verb",
     "date": "23-06-2025"
@@ -154,7 +135,6 @@
   {
     "word": "lios",
     "definition": "light, light source, glow, brightness",
-    "ipa": "li.oʃ",
     "etymology": ["Faroese", "ljós", "light"],
     "type": "noun",
     "date": "29-06-2025"
@@ -162,7 +142,6 @@
   {
     "word": "wakta",
     "definition": "time",
-    "ipa": "wak.ta",
     "etymology": ["Arabic", ["وقت", "waqt"], "time"],
     "type": "noun",
     "date": "23-09-2025"
@@ -170,7 +149,6 @@
   {
     "word": "tote",
     "definition": "all, everything",
-    "ipa": "to.te",
     "etymology": ["Romanian", "toate", "all"],
     "type": "noun",
     "date": "23-09-2025"
@@ -178,7 +156,6 @@
   {
     "word": "sego",
     "definition": "second (time)",
-    "ipa": "ʃe.go",
     "etymology": ["Spanish", "segundo", "second"],
     "type": "noun",
     "date": "28-09-2025"
@@ -186,7 +163,6 @@
   {
     "word": "kurva",
     "definition": "(UNFINISHED) some sort of sex related word",
-    "ipa": "kur.va",
     "etymology": ["Polish", "kurwa", "bitch, whore"],
     "type": "noun",
     "date": "09-10-2025"
@@ -194,7 +170,6 @@
   {
     "word": "karka",
     "definition": "(vulgar) fuck, shit, other vulgar interjections",
-    "ipa": "kar.ka",
     "etymology": false,
     "type": "interjection",
     "date": "09-10-2025"
@@ -202,7 +177,6 @@
   {
     "word": "ryvol",
     "definition": "curve, bend, turn",
-    "ipa": "rə.vol",
     "etymology": ["Catalan", "revolt", "turn around"],
     "type": "noun",
     "date": "09-10-2025"
@@ -210,7 +184,6 @@
   {
     "word": "neje",
     "definition": "close, nearby, in the vicinity",
-    "ipa": "ne.je",
     "etymology": ["German", "Nähe", "vicinity"],
     "type": "modifier",
     "date": "10-10-2025"
@@ -218,7 +191,6 @@
   {
     "word": "bun",
     "definition": "minute (time)",
-    "ipa": "bun",
     "etymology": ["Japanese", ["分", "bun"], "minute"],
     "type": "noun",
     "date": "11-10-2025"
@@ -226,7 +198,6 @@
   {
     "word": "sat",
     "definition": "hour (time)",
-    "ipa": "ʃat",
     "etymology": ["Croatian", "sat", "hour"],
     "type": "noun",
     "date": "20-10-2025"
@@ -234,7 +205,6 @@
   {
     "word": "xuga",
     "definition": "game",
-    "ipa": "xu.ga",
     "etymology": ["Spanish", "jugar", "to play"],
     "type": "noun",
     "date": "04-01-2026"
@@ -242,7 +212,6 @@
   {
     "word": "xugare",
     "definition": "to play",
-    "ipa": "xu.ga.re",
     "etymology": ["Spanish", "jugar", "to play"],
     "type": "verb",
     "date": "04-01-2026"
@@ -250,7 +219,6 @@
   {
     "word": "buf",
     "definition": "food",
-    "ipa": "buf",
     "etymology": ["French", "bouffe", "food"],
     "type": "noun",
     "date": "04-01-2026"
@@ -258,7 +226,6 @@
   {
     "word": "bon",
     "definition": "good",
-    "ipa": "bon",
     "etymology": ["French", "bonne", "good"],
     "type": "modifier",
     "date": "04-01-2026"
@@ -266,7 +233,6 @@
   {
     "word": "mawyr",
     "definition": "cat",
-    "ipa": "ma.wər",
     "etymology": ["Mandarin Chinese", ["猫儿", "māor"], "cat"],
     "type": "noun",
     "date": "05-01-2026"
@@ -274,7 +240,6 @@
   {
     "word": "sini",
     "definition": "true, real, existing",
-    "ipa": "ʃi.ni",
     "etymology": ["Russian", ["истинный", "istinnyy"], "true"],
     "type": "modifier",
     "date": "05-01-2026"
@@ -282,7 +247,6 @@
   {
     "word": "citami",
     "definition": "pain",
-    "ipa": "çi.ta.mi",
     "etymology": ["Japanese", ["痛み", "itami"], "pain"],
     "type": "noun",
     "date": "05-01-2026"
@@ -290,7 +254,6 @@
   {
     "word": "soj",
     "definition": "water",
-    "ipa": "ʃoj",
     "etymology": ["Cantonese", ["水", "seoi2"], "water"],
     "type": "noun",
     "date": "05-01-2026"
@@ -298,7 +261,6 @@
   {
     "word": "dija",
     "definition": "day (measure of time)",
-    "ipa": "di.ja",
     "etymology": ["Spanish", "día", "day"],
     "type": "noun",
     "date": "05-01-2026"
@@ -306,7 +268,6 @@
   {
     "word": "dijabon",
     "definition": "hello, greetings, (literally) good day",
-    "ipa": "di.ja.bon",
     "etymology": ["Batelu", "dija bon"],
     "type": "interjection",
     "date": "05-01-2026"
@@ -314,7 +275,6 @@
   {
     "word": "kaban",
     "definition": "bed",
-    "ipa": "ka.ban",
     "etymology": ["Haitian Creole", "kabann", "bed"],
     "type": "noun",
     "date": "07-01-2026"
@@ -322,7 +282,6 @@
   {
     "word": "kabanare",
     "definition": "to sleep, to rest",
-    "ipa": "ka.ba.na.re",
     "etymology": ["Batelu", "kaban"],
     "type": "verb",
     "date": "07-01-2026"
@@ -330,7 +289,6 @@
   {
     "word": "maku",
     "definition": "mother",
-    "ipa": "ma.ku",
     "etymology": ["Hawaiian", "makuahine", "mother"],
     "type": "noun",
     "date": "07-01-2026"
@@ -338,7 +296,6 @@
   {
     "word": "nezh",
     "definition": "snow",
-    "ipa": "neʒ",
     "etymology": ["Hawaiian", "makuahine", "mother"],
     "type": "noun",
     "date": "07-01-2026"
@@ -346,7 +303,6 @@
   {
     "word": "xefyl",
     "definition": "drug, medicine",
-    "ipa": "xe.fəl",
     "etymology": ["Proto-Indo-European", "*h₂ébōl", "apple"],
     "type": "noun",
     "date": "14-01-2026"
@@ -354,7 +310,6 @@
   {
     "word": "wanija",
     "definition": "unstable, moving unnaturally, jittery",
-    "ipa": "wa.ni.ja",
     "etymology": ["Old English", "wandrian", "to wander"],
     "type": "modifier",
     "date": "14-01-2026"
@@ -362,7 +317,6 @@
   {
     "word": "wanijare",
     "definition": "to jitter, to shake, to move unnaturally",
-    "ipa": "wa.ni.ja.re",
     "etymology": ["Batelu", "wanija"],
     "type": "verb",
     "date": "14-01-2026"
@@ -370,7 +324,6 @@
   {
     "word": "pentu",
     "definition": "pencil, pen, (physical) writing device",
-    "ipa": "pen.tu",
     "etymology": ["English", "pencil"],
     "type": "noun",
     "date": "16-01-2026"
@@ -378,7 +331,6 @@
   {
     "word": "va",
     "definition": "what, which",
-    "ipa": "va",
     "etymology": ["Norwegian", "hva", "what"],
     "type": "modifier",
     "date": "16-01-2026"
@@ -386,7 +338,6 @@
   {
     "word": "va2",
     "definition": "(placeholder for missing info), what",
-    "ipa": "va",
     "etymology": ["Norwegian", "hva", "what"],
     "type": "particle",
     "date": "16-01-2026"
@@ -394,7 +345,6 @@
   {
     "word": "mesi",
     "definition": "thank you",
-    "ipa": "me.si",
     "etymology": ["French", "merci", "thank you"],
     "type": "interjection",
     "date": "17-01-2026"
@@ -402,7 +352,6 @@
   {
     "word": "byr",
     "definition": "no, not, (negation word)",
-    "ipa": "bər",
     "etymology": ["Serbian", "бр", "no"],
     "type": "modifier",
     "date": "17-01-2026"
@@ -410,7 +359,6 @@
   {
     "word": "ori",
     "definition": "this, that, (reflexive pronoun)",
-    "ipa": "o.ri",
     "etymology": ["Basque", "hori", "that"],
     "type": "modifier",
     "date": "18-01-2026"
@@ -418,7 +366,6 @@
   {
     "word": "citamire",
     "definition": "to hurt, to harm, to damage",
-    "ipa": "çi.ta.mi.re",
     "etymology": ["Batelu", "citami"],
     "type": "verb",
     "date": "18-01-2026"
@@ -426,7 +373,6 @@
   {
     "word": "banzhi",
     "definition": "wide",
-    "ipa": "ban.ʒi",
     "etymology": ["Zulu", "banzi", "wide"],
     "type": "modifier",
     "date": "18-01-2026"
@@ -434,7 +380,6 @@
   {
     "word": "ad",
     "definition": "one",
-    "ipa": "ad",
     "etymology": ["Hebrew", ["אֶחָד", "ahad"], "one"],
     "type": "numeral",
     "date": "18-01-2026"
@@ -442,7 +387,6 @@
   {
     "word": "ej",
     "definition": "(vocative particle, before noun)",
-    "ipa": "ej",
     "etymology": ["Ukranian", ["ей", "ey"], "hey"],
     "type": "particle",
     "date": "19-01-2026"
@@ -450,7 +394,6 @@
   {
     "word": "do",
     "definition": "two",
-    "ipa": "do",
     "etymology": ["Hindi", ["दो", "do"], "two"],
     "type": "numeral",
     "date": "19-01-2026"
@@ -458,7 +401,6 @@
   {
     "word": "ena",
     "definition": "(indefinite article)",
-    "ipa": "e.na",
     "etymology": ["Greek", ["ένα", "ena"], "a"],
     "type": "particle",
     "date": "20-01-2026"
@@ -466,7 +408,6 @@
   {
     "word": "al",
     "definition": "(definite article)",
-    "ipa": "al",
     "etymology": ["Arabic", ["ال", "al"], "the"],
     "type": "particle",
     "date": "20-01-2026"
@@ -474,7 +415,6 @@
   {
     "word": "nimra",
     "definition": "number, numeral",
-    "ipa": "nim.ra",
     "etymology": ["Arabic", ["نمرة", "nimra"], "number"],
     "type": "noun",
     "date": "20-01-2026"
@@ -482,7 +422,6 @@
   {
     "word": "viwvaw",
     "definition": "confusion, chaos",
-    "ipa": "viw.vaw",
     "etymology": ["German", "Wirrwar", "confusion"],
     "type": "noun",
     "date": "20-01-2026"
@@ -490,7 +429,6 @@
   {
     "word": "sema",
     "definition": "wax",
-    "ipa": "ʃe.ma",
     "etymology": ["Maltese", "xema'", "wav"],
     "type": "noun",
     "date": "21-01-2026"
@@ -498,7 +436,6 @@
   {
     "word": "koja",
     "definition": "goodbye",
-    "ipa": "ko.ja",
     "etymology": false,
     "type": "interjection",
     "date": "21-01-2026"
@@ -506,7 +443,6 @@
   {
     "word": "odi",
     "definition": "where",
-    "ipa": "o.di",
     "etymology": ["Korean", ["어디", "eodi"], "where"],
     "type": "particle",
     "date": "22-01-2026"
@@ -514,7 +450,6 @@
   {
     "word": "kamu",
     "definition": "who",
-    "ipa": "ka.mu",
     "etymology": ["Russian", ["кому", "komu"], "whom"],
     "type": "particle",
     "date": "22-01-2026"
@@ -522,7 +457,6 @@
   {
     "word": "u",
     "definition": "without, -less",
-    "ipa": "u",
     "etymology": ["Cantonese", ["無", "mou4"], "to not have"],
     "type": "modifier",
     "date": "22-01-2026"
@@ -530,7 +464,6 @@
   {
     "word": "mughre",
     "definition": "dirt, filth",
-    "ipa": "muɣ.re",
     "etymology": ["Spanish", "mugre", "dirt"],
     "type": "noun",
     "date": "22-01-2026"
@@ -538,7 +471,6 @@
   {
     "word": "san",
     "definition": "three",
-    "ipa": "ʃan",
     "etymology": ["Mandarin", ["三", "sān"], "three"],
     "type": "numeral",
     "date": "22-01-2026"
@@ -546,7 +478,6 @@
   {
     "word": "fir",
     "definition": "four",
-    "ipa": "fir",
     "etymology": ["German", "fir", "four"],
     "type": "numeral",
     "date": "22-01-2026"
@@ -554,7 +485,6 @@
   {
     "word": "kyrol",
     "definition": "king",
-    "ipa": "kə.rol",
     "etymology": ["Polish", "król", "king"],
     "type": "noun",
     "date": "22-01-2026"
@@ -562,7 +492,6 @@
   {
     "word": "xur",
     "definition": "how",
-    "ipa": "xur",
     "etymology": ["Swedish", "hur", "how"],
     "type": "particle",
     "date": "22-01-2026"
@@ -570,7 +499,6 @@
   {
     "word": "myrti",
     "definition": "dead",
-    "ipa": "mər.ti",
     "etymology": ["Czech", "mrtvý", "dead"],
     "type": "modifier",
     "date": "22-01-2026"
@@ -578,7 +506,6 @@
   {
     "word": "myrtire",
     "definition": "to kill",
-    "ipa": "mər.ti.re",
     "etymology": ["Batelu", "myrti"],
     "type": "verb",
     "date": "22-01-2026"
@@ -586,7 +513,6 @@
   {
     "word": "desol",
     "definition": "sorry, excuse me",
-    "ipa": "de.ʃol",
     "etymology": ["French", "désolé", "sorry"],
     "type": "interjection",
     "date": "23-01-2026"
@@ -594,7 +520,6 @@
   {
     "word": "pan",
     "definition": "five",
-    "ipa": "pan",
     "etymology": false,
     "type": "numeral",
     "date": "23-01-2026"
@@ -602,7 +527,6 @@
   {
     "word": "saspi",
     "definition": "seven",
-    "ipa": "ʃaʃ.pi",
     "etymology": ["Basque", "saspi", "seven"],
     "type": "numeral",
     "date": "25-01-2026"
@@ -610,7 +534,6 @@
   {
     "word": "ejono",
     "definition": "six",
-    "ipa": "e.jo.no",
     "etymology": ["Hawaiian", "ʻeono", "six"],
     "type": "numeral",
     "date": "25-01-2026"
@@ -618,7 +541,6 @@
   {
     "word": "poxatta",
     "definition": "tycoon, magnate",
-    "ipa": "po.xat.ta",
     "etymology": ["Finnish", "pohatta", "tycoon"],
     "type": "noun",
     "date": "25-01-2026"
@@ -626,7 +548,6 @@
   {
     "word": "kilina",
     "definition": "tingle, jingle",
-    "ipa": "ki.li.na",
     "etymology": ["Finnish", "kilinä", "jingle"],
     "type": "noun",
     "date": "25-01-2026"
@@ -634,7 +555,6 @@
   {
     "word": "kilinare",
     "definition": "to tingle, to jingle",
-    "ipa": "ki.li.na.re",
     "etymology": ["Batelu", "kilina"],
     "type": "verb",
     "date": "25-01-2026"
@@ -642,7 +562,6 @@
   {
     "word": "tadmire",
     "definition": "to destroy",
-    "ipa": "tad.mi.re",
     "etymology": ["Arabic", ["تدمير", "tadmīr"], "destruction"],
     "type": "verb",
     "date": "25-01-2026"
@@ -650,7 +569,6 @@
   {
     "word": "falezh",
     "definition": "precipice, crag",
-    "ipa": "fa.leʒ",
     "etymology": ["French", "falaise", "cliff"],
     "type": "noun",
     "date": "26-01-2026"
@@ -658,7 +576,6 @@
   {
     "word": "silvuple",
     "definition": "please",
-    "ipa": "ʃil.vup.le",
     "etymology": ["French", "s'il vous plaît", "please (formal)"],
     "type": "interjection",
     "date": "28-01-2026"
@@ -666,7 +583,6 @@
   {
     "word": "dajak",
     "definition": "support, prop",
-    "ipa": "da.jak",
     "etymology": ["Turkish", "dayak", "support"],
     "type": "noun",
     "date": "28-01-2026"
@@ -674,7 +590,6 @@
   {
     "word": "zudak",
     "definition": "eccentric, oddball",
-    "ipa": "tsu.dak",
     "etymology": ["Russian", ["чудак", "chudak"], "oddball"],
     "type": "noun",
     "date": "29-01-2026"
@@ -682,7 +597,6 @@
   {
     "word": "istawa",
     "definition": "romantic partner, boyfriend, girlfriend, husband, wife",
-    "ipa": "iʃ.ta.wa",
     "etymology": ["Finnish", "ystävä", "-phile"],
     "type": "noun",
     "date": "29-01-2026"
@@ -690,7 +604,6 @@
   {
     "word": "sija",
     "definition": "dark, dim",
-    "ipa": "ʃi.ja",
     "etymology": ["Persian", ["سیاه", "siyâh"], "black"],
     "type": "modifier",
     "date": "30-01-2026"
@@ -698,7 +611,6 @@
   {
     "word": "zhalim",
     "definition": "harsh, ruthless",
-    "ipa": "ʒa.lim",
     "etymology": ["Hindi", ["ज़ालिम", "zālim"], "cruel"],
     "type": "modifier",
     "date": "31-01-2026"
@@ -706,7 +618,6 @@
   {
     "word": "firme",
     "definition": "reliable, secure",
-    "ipa": "fir.me",
     "etymology": ["Spanish", "firme", "firm"],
     "type": "modifier",
     "date": "01-02-2026"
@@ -714,7 +625,6 @@
   {
     "word": "bisal",
     "definition": "large, mighty",
-    "ipa": "bi.ʃal",
     "etymology": ["Bengali", ["বিশাল", "biśal"], "huge"],
     "type": "modifier",
     "date": "02-02-2026"
@@ -722,7 +632,6 @@
   {
     "word": "fem",
     "definition": "metal",
-    "ipa": "fem",
     "etymology": ["Hungarian", "fém", "metal"],
     "type": "noun",
     "date": "05-02-2026"
@@ -730,7 +639,6 @@
   {
     "word": "zuluk",
     "definition": "cigar",
-    "ipa": "tsu.luk",
     "etymology": ["Teochew", ["珠律", "zu1 lug8"], "cigar"],
     "type": "noun",
     "date": "06-02-2026"
@@ -738,7 +646,6 @@
   {
     "word": "ozhon",
     "definition": "weight",
-    "ipa": "o.ʒon",
     "etymology": ["Bengali", ["ওজন", "ōjon"], "weight"],
     "type": "noun",
     "date": "08-02-2026"
@@ -746,7 +653,6 @@
   {
     "word": "zy",
     "definition": "thorn, fishbone",
-    "ipa": "tsə",
     "etymology": ["Mandarin", ["刺", "cì"], "to stab"],
     "type": "noun",
     "date": "09-02-2026"
@@ -754,7 +660,6 @@
   {
     "word": "mydosa",
     "definition": "mallet, hammer",
-    "ipa": "mə.do.ʃa",
     "etymology": ["Amharic", ["መዶሻ", "mädoša"], "hammer"],
     "type": "noun",
     "date": "11-02-2026"
@@ -762,7 +667,6 @@
   {
     "word": "eses",
     "definition": "descend, fall",
-    "ipa": "e.ʃeʃ",
     "etymology": ["Hungarian", "esés", "fall"],
     "type": "noun",
     "date": "11-02-2026"
@@ -770,7 +674,6 @@
   {
     "word": "esesere",
     "definition": "to descend, to fall",
-    "ipa": "e.ʃe.ʃe.re",
     "etymology": ["Batelu", "eses"],
     "type": "verb",
     "date": "11-02-2026"
@@ -778,7 +681,6 @@
   {
     "word": "ewa",
     "definition": "eight",
-    "ipa": "e.wa",
     "etymology": ["Hawaiian", "ʻewalu", "eight"],
     "type": "numeral",
     "date": "12-02-2026"
@@ -786,7 +688,6 @@
   {
     "word": "meme",
     "definition": "sheep, ram",
-    "ipa": "me.me",
     "etymology": ["Kikongo", "dimeme", "sheep"],
     "type": "noun",
     "date": "12-02-2026"
@@ -794,7 +695,6 @@
   {
     "word": "naw",
     "definition": "nine",
-    "ipa": "naw",
     "etymology": ["Hindi", ["नौ", "nau"], "nine"],
     "type": "numeral",
     "date": "13-02-2026"
@@ -802,7 +702,6 @@
   {
     "word": "kaus",
     "definition": "cheese",
-    "ipa": "ka.uʃ",
     "etymology": ["Welsh", "caws", "cheese"],
     "type": "noun",
     "date": "13-02-2026"
@@ -810,7 +709,6 @@
   {
     "word": "pablere",
     "definition": "to change",
-    "ipa": "pab.le.re",
     "etymology": ["Selsimicu", "pabēl", "to change"],
     "type": "verb",
     "date": "15-02-2026"
@@ -818,7 +716,6 @@
   {
     "word": "mempaw",
     "definition": "sandwich",
-    "ipa": "mem.paw",
     "etymology": ["Mandarin", ["面包", "miànbāo"], "bread"],
     "type": "noun",
     "date": "15-02-2026"
@@ -826,7 +723,6 @@
   {
     "word": "kausmempaw",
     "definition": "cheeseburger",
-    "ipa": "ka.uʃ.mem.paw",
     "etymology": ["Batelu", "kaus mempaw"],
     "type": "noun",
     "date": "15-02-2026"
@@ -834,7 +730,6 @@
   {
     "word": "vazoj",
     "definition": "still, unmoving",
-    "ipa": "va.tsoj",
     "etymology": ["Bulgarian", ["в застой", "v zatsoj"], "at a standstill"],
     "type": "modifier",
     "date": "17-02-2026"
@@ -842,7 +737,6 @@
   {
     "word": "je",
     "definition": "at, in (location, environment)",
-    "ipa": "je",
     "etymology": ["Norwegian", "miljø", "environment"],
     "type": "adposition",
     "date": "18-02-2026"
@@ -850,7 +744,6 @@
   {
     "word": "wan",
     "definition": "ten",
-    "ipa": "wan",
     "etymology": ["Ainu", ["ワン", "wan"], "ten"],
     "type": "numeral",
     "date": "18-02-2026"
@@ -858,7 +751,6 @@
   {
     "word": "awi",
     "definition": "eleven",
-    "ipa": "a.wi",
     "etymology": ["Cherokee", ["ᏌᏚᎢ", "sadui"], "eleven"],
     "type": "numeral",
     "date": "18-02-2026"
@@ -866,7 +758,6 @@
   {
     "word": "kakwam",
     "definition": "writing, text",
-    "ipa": "kak.wam",
     "etymology": ["Thai", ["ข้อความ", "kɔ̂ɔ-kwaam"], "message"],
     "type": "noun",
     "date": "19-02-2026"
@@ -874,7 +765,6 @@
   {
     "word": "uwe",
     "definition": "month",
-    "ipa": "u.we",
     "etymology": ["Mandarin", ["月", "yuè"], "month"],
     "type": "noun",
     "date": "19-02-2026"
@@ -882,7 +772,6 @@
   {
     "word": "ami",
     "definition": "animal",
-    "ipa": "a.mi",
     "etymology": ["Irish", "ainmhí", "animal"],
     "type": "noun",
     "date": "19-02-2026"
@@ -890,7 +779,6 @@
   {
     "word": "zo",
     "definition": "gross (dozenal 100)",
-    "ipa": "tso",
     "etymology": ["Urdu", ["سو", "sau"], "hundred"],
     "type": "numeral",
     "date": "19-02-2026"
@@ -898,7 +786,6 @@
   {
     "word": "wosi",
     "definition": "year",
-    "ipa": "wo.ʃi",
     "etymology": ["Finnish", "vuosi", "year"],
     "type": "noun",
     "date": "20-02-2026"
@@ -906,7 +793,6 @@
   {
     "word": "izo",
     "definition": "twelve (dozenal 10)",
-    "ipa": "i.tso",
     "etymology": ["Russian", ["яйцо", "jajco"], "egg"],
     "type": "numeral",
     "date": "20-02-2026"
@@ -914,7 +800,6 @@
   {
     "word": "istaware",
     "definition": "to love",
-    "ipa": "iʃ.ta.wa.re",
     "etymology": ["Batelu", "istawa"],
     "type": "noun",
     "date": "22-02-2026"
@@ -922,7 +807,6 @@
   {
     "word": "pikzu",
     "definition": "mountain",
-    "ipa": "pik.tsu",
     "etymology": ["Quechua", "pikchu", "mountain"],
     "type": "noun",
     "date": "22-02-2026"
@@ -930,7 +814,6 @@
   {
     "word": "zaluk",
     "definition": "part, piece",
-    "ipa": "tsa.luk",
     "etymology": false,
     "type": "noun",
     "date": "24-02-2026"
@@ -938,7 +821,6 @@
   {
     "word": "law",
     "definition": "ordinal particle, -th",
-    "ipa": "law",
     "etymology": ["Tagalog", "ikalawa", "second"],
     "type": "particle",
     "date": "24-02-2026"
@@ -946,7 +828,6 @@
   {
     "word": "zalure",
     "definition": "to split, to divide",
-    "ipa": "tsa.lu.re",
     "etymology": ["Batelu", "zaluk"],
     "type": "verb",
     "date": "25-02-2026"
@@ -954,7 +835,6 @@
   {
     "word": "jexare",
     "definition": "to search",
-    "ipa": "je.xa.re",
     "etymology": ["Guarani", "jaheka", "we (incl.) search"],
     "type": "verb",
     "date": "28-02-2026"
@@ -962,7 +842,6 @@
   {
     "word": "gholo",
     "definition": "poll",
-    "ipa": "ɣo.lo",
     "etymology": ["Russian", ["голос", "golos"], "vote"],
     "type": "noun",
     "date": "28-02-2026"
@@ -970,7 +849,6 @@
   {
     "word": "pani",
     "definition": "bread",
-    "ipa": "pa.ni",
     "etymology": ["Spanish", "pan", "bread"],
     "type": "noun",
     "date": "01-03-2026"
@@ -978,7 +856,6 @@
   {
     "word": "fynet",
     "definition": "window",
-    "ipa": "fə.net",
     "etymology": ["French", "fenêtre", "window"],
     "type": "noun",
     "date": "11-03-2026"
@@ -986,7 +863,6 @@
   {
     "word": "tavolo",
     "definition": "table",
-    "ipa": "ta.vo.lo",
     "etymology": ["Italian", "tavolo", "table"],
     "type": "noun",
     "date": "11-03-2026"
@@ -994,7 +870,6 @@
   {
     "word": "zhutu",
     "definition": "celestial body",
-    "ipa": "ʒu.tu",
     "etymology": false,
     "type": "noun",
     "date": "11-03-2026"
@@ -1002,7 +877,6 @@
   {
     "word": "varum",
     "definition": "car",
-    "ipa": "va.rum",
     "etymology": false,
     "type": "noun",
     "date": "12-03-2026"
@@ -1010,7 +884,6 @@
   {
     "word": "besal",
     "definition": "knowledge, understanding",
-    "ipa": "be.ʃal",
     "etymology": false,
     "type": "noun",
     "date": "12-03-2026"
@@ -1018,7 +891,6 @@
   {
     "word": "zha",
     "definition": "with, among",
-    "ipa": "ʒa",
     "etymology": false,
     "type": "adposition",
     "date": "13-03-2026"
@@ -1026,7 +898,6 @@
   {
     "word": "datamasin",
     "definition": "computer",
-    "ipa": "da.ta.ma.ʃin",
     "etymology": ["Norwegian", "datamaskin", "computer"],
     "type": "noun",
     "date": "18-03-2026"
@@ -1034,7 +905,6 @@
   {
     "word": "kova",
     "definition": "hat",
-    "ipa": "ko.va",
     "etymology": ["Hebrew", ["כובע", "kova"], "hat"],
     "type": "noun",
     "date": "18-03-2026"
@@ -1042,7 +912,6 @@
   {
     "word": "zikol",
     "definition": "school",
-    "ipa": "tsi.kol",
     "etymology": ["Xhosa", "isikolo", "school"],
     "type": "noun",
     "date": "18-03-2026"
@@ -1050,7 +919,6 @@
   {
     "word": "ifowun",
     "definition": "phone, smartphone",
-    "ipa": "i.fo.wun",
     "etymology": ["Xhosa", "ifowuni", "phone"],
     "type": "noun",
     "date": "18-03-2026"
@@ -1058,7 +926,6 @@
   {
     "word": "move",
     "definition": "bad",
-    "ipa": "mo.ve",
     "etymology": ["French", "mauvais", "bad"],
     "type": "modifier",
     "date": "18-03-2026"
@@ -1066,7 +933,6 @@
   {
     "word": "wazho",
     "definition": "bird",
-    "ipa": "wa.ʒo",
     "etymology": ["French", "oiseau", "bird"],
     "type": "noun",
     "date": "19-03-2026"
@@ -1074,7 +940,6 @@
   {
     "word": "kanja",
     "definition": "dog",
-    "ipa": "kan.ja",
     "etymology": ["Italian", "cagna", "female dog"],
     "type": "noun",
     "date": "19-03-2026"
@@ -1082,7 +947,6 @@
   {
     "word": "nes",
     "definition": "but",
-    "ipa": "nes",
     "etymology": false,
     "type": "conjunction",
     "date": "23-03-2026"
@@ -1090,7 +954,6 @@
   {
     "word": "jyr",
     "definition": "south",
-    "ipa": "jər",
     "etymology": ["Macedonian", ["југ", "jug"], "south"],
     "type": "noun",
     "date": "23-03-2026"
@@ -1098,7 +961,6 @@
   {
     "word": "simol",
     "definition": "west",
-    "ipa": "ʃi.mol",
     "etymology": ["Tajik", ["шимол", "shimol"], "north"],
     "type": "noun",
     "date": "23-03-2026"
@@ -1106,7 +968,6 @@
   {
     "word": "li",
     "definition": "or",
-    "ipa": "li",
     "etymology": ["Russian", ["или", "ili"], "or"],
     "type": "conjunction",
     "date": "23-03-2026"
@@ -1114,7 +975,6 @@
   {
     "word": "pasky",
     "definition": "because",
-    "ipa": "pas.kə",
     "etymology": ["French", "parce que", "because"],
     "type": "conjunction",
     "date": "23-03-2026"
@@ -1122,7 +982,6 @@
   {
     "word": "besare",
     "definition": "to know",
-    "ipa": "be.ʃa.re",
     "etymology": ["Batelu", "besal"],
     "type": "verb",
     "date": "23-03-2026"
@@ -1130,7 +989,6 @@
   {
     "word": "jozire",
     "definition": "to think",
-    "ipa": "jo.tsi.re",
     "etymology": ["Kannada", ["ಯೋಚಿಸಲು", "yōcisalu"], "to ponder"],
     "type": "verb",
     "date": "23-03-2026"
@@ -1138,7 +996,6 @@
   {
     "word": "na",
     "definition": "thing",
-    "ipa": "na",
     "etymology": ["Japanese", ["名", "na"], "name"],
     "type": "noun",
     "date": "23-03-2026"
@@ -1146,7 +1003,6 @@
   {
     "word": "kata",
     "definition": "word",
-    "ipa": "ka.ta",
     "etymology": ["Indonesian", "kata", "word"],
     "type": "noun",
     "date": "23-03-2026"
@@ -1154,7 +1010,6 @@
   {
     "word": "fere",
     "definition": "to do",
-    "ipa": "fe.re",
     "etymology": ["French", "faire", "to do"],
     "type": "verb",
     "date": "23-03-2026"
@@ -1162,7 +1017,6 @@
   {
     "word": "alum",
     "definition": "fight",
-    "ipa": "a.lum",
     "etymology": ["Aromanian", "alumtā", "fight"],
     "type": "noun",
     "date": "24-03-2026"
@@ -1170,7 +1024,6 @@
   {
     "word": "to",
     "definition": "and",
-    "ipa": "to",
     "etymology": ["Japanese", ["と", "to"], "and"],
     "type": "conjunction",
     "date": "24-03-2026"
@@ -1178,7 +1031,6 @@
   {
     "word": "tuwa",
     "definition": "north",
-    "ipa": "tu.wa",
     "etymology": ["Scottish Gaelic", "tuwa", "north"],
     "type": "noun",
     "date": "24-03-2026"
@@ -1186,7 +1038,6 @@
   {
     "word": "ever",
     "definition": "east",
-    "ipa": "e.ver",
     "etymology": ["Czech", "sever", "north"],
     "type": "noun",
     "date": "24-03-2026"
@@ -1194,7 +1045,6 @@
   {
     "word": "gamzhi",
     "definition": "funny, goofy",
-    "ipa": "gam.ʒi",
     "etymology": false,
     "type": "modifier",
     "date": "24-03-2026"
@@ -1202,7 +1052,6 @@
   {
     "word": "maxyny",
     "definition": "noose",
-    "ipa": "ma.xə.nə",
     "etymology": ["Maori", "māhanga", "noose"],
     "type": "noun",
     "date": "25-03-2026"
@@ -1210,7 +1059,6 @@
   {
     "word": "tajare",
     "definition": "to see",
-    "ipa": "ta.ja.re",
     "etymology": ["Cantonese", ["睇", "tai2"], "to look, to see"],
     "type": "verb",
     "date": "26-03-2026"
@@ -1218,7 +1066,6 @@
   {
     "word": "adire",
     "definition": "to hear",
-    "ipa": "a.di.re",
     "etymology": ["Latin", "audire", "to hear"],
     "type": "verb",
     "date": "26-03-2026"
@@ -1226,7 +1073,6 @@
   {
     "word": "gustire",
     "definition": "to taste",
-    "ipa": "guʃ.ti.re",
     "etymology": ["Spanish", "gusto", "taste"],
     "type": "verb",
     "date": "26-03-2026"
@@ -1234,7 +1080,6 @@
   {
     "word": "luktere",
     "definition": "to smell",
-    "ipa": "luk.te.re",
     "etymology": ["Danish", "lugte", "to smell"],
     "type": "verb",
     "date": "26-03-2026"
@@ -1242,7 +1087,6 @@
   {
     "word": "ono",
     "definition": "existence, being",
-    "ipa": "o.no",
     "etymology": ["Batelu", "onore"],
     "type": "noun",
     "date": "26-03-2026"
@@ -1250,7 +1094,6 @@
   {
     "word": "alere",
     "definition": "to go",
-    "ipa": "a.le.re",
     "etymology": ["French", "aller", "to go"],
     "type": "verb",
     "date": "26-03-2026"
@@ -1258,7 +1101,6 @@
   {
     "word": "azijoni",
     "definition": "money, stock, rising stock",
-    "ipa": "a.tsi.jo.ni",
     "etymology": ["Italian", "azioni", "shares"],
     "type": "noun",
     "date": "26-03-2026"
@@ -1266,7 +1108,6 @@
   {
     "word": "kabana",
     "definition": "sleep",
-    "ipa": "ka.ba.na",
     "etymology": ["Batelu", "kabanare"],
     "type": "noun",
     "date": "26-03-2026"
@@ -1274,7 +1115,6 @@
   {
     "word": "kaliboon",
     "definition": "god, lord",
-    "ipa": "ka.li.bo.on",
     "etymology": ["English", "Caliborn", "a Homestuck character"],
     "type": "noun",
     "date": "27-03-2026"
@@ -1282,7 +1122,6 @@
   {
     "word": "urkoz",
     "definition": "bear",
-    "ipa": "ur.kots",
     "etymology": ["Proto-Indo-European", "*h₂ŕ̥tḱos", "bear"],
     "type": "noun",
     "date": "27-03-2026"
@@ -1290,7 +1129,6 @@
   {
     "word": "esture",
     "definition": "to die",
-    "ipa": "eʃ.tu.re",
     "etymology": false,
     "type": "verb",
     "date": "27-03-2026"
@@ -1298,7 +1136,6 @@
   {
     "word": "koris",
     "definition": "brown",
-    "ipa": "ko.riʃ",
     "etymology": ["Ukranian", "коричневий", "brown"],
     "type": "modifier",
     "date": "28-03-2026"
@@ -1306,7 +1143,6 @@
   {
     "word": "areda",
     "definition": "hollow, empty",
-    "ipa": "a.re.da",
     "etymology": false,
     "type": "modifier",
     "date": "29-03-2026"
@@ -1314,7 +1150,6 @@
   {
     "word": "vawva",
     "definition": "child, kid",
-    "ipa": "vaw.va",
     "etymology": ["Finnish", "vauva", "baby"],
     "type": "noun",
     "date": "29-03-2026"
@@ -1322,7 +1157,6 @@
   {
     "word": "liv",
     "definition": "book",
-    "ipa": "liv",
     "etymology": ["French", "livre", "book"],
     "type": "noun",
     "date": "31-03-2026"
@@ -1330,7 +1164,6 @@
   {
     "word": "terezh",
     "definition": "rule, law",
-    "ipa": "te.reʒ",
     "etymology": false,
     "type": "noun",
     "date": "31-03-2026"
@@ -1338,7 +1171,6 @@
   {
     "word": "masif",
     "definition": "big, large",
-    "ipa": "ma.ʃif",
     "etymology": ["French", "massif", "massive"],
     "type": "modifier",
     "date": "31-03-2026"
