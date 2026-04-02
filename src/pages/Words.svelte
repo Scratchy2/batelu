@@ -288,7 +288,7 @@
                 >"
                 <br />
                 <span class="ety-further">
-                  ⮤ {@render etymologyDescription(word.etymology)}
+                  ← {@render etymologyDescription(word.etymology)}
                 </span>
               {:else}
                 <span class="ety-error">word not found</span>
