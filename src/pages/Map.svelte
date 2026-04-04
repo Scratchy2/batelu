@@ -89,6 +89,19 @@
     tooltipData = null;
   };
 
+  const inChunksOf = (arr, num) =>
+    arr.reduce(
+      (acc, i) => {
+        if (acc[acc.length - 1].length === num) {
+          acc.push([i]);
+        } else {
+          acc[acc.length - 1].push(i);
+        }
+        return acc;
+      },
+      [[]],
+    );
+
   const attachment = (tooltipData) => (/** @type {HTMLElement} */ el) => {
     delete el.dataset.right;
     el.style.setProperty("--x", "0");
@@ -117,6 +130,7 @@
 
 <div class="container">
   <h1>Map</h1>
+
   <MapImage onmousemove={onMouseOver} bind:this={svg} />
   {#if tooltipData !== null}
     <div
@@ -129,9 +143,15 @@
         {#each Object.entries(tooltipCountryWords) as [language, words]}
           <div>
             <strong>{language}</strong><br />
-            {#each words as word}
-              {word.word} - {word.summary}<br />
-            {/each}
+            <div class="words">
+              {#each inChunksOf(words, 8) as chunk}
+                <div>
+                  {#each chunk as word}
+                    {word.word} - {word.summary}<br />
+                  {/each}
+                </div>
+              {/each}
+            </div>
           </div>
         {/each}
       </div>
@@ -149,6 +169,10 @@
     pointer-events: none;
   }
   .languages {
+    display: flex;
+    gap: 1rem;
+  }
+  .words {
     display: flex;
     gap: 1rem;
   }
