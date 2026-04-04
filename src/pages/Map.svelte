@@ -1,11 +1,7 @@
 <script>
   import MapImage from "./MapImage.svelte";
   import words from "./words.json";
-  import {
-    languagesToCountries,
-    countriesToLanguages,
-  } from "../lib/languagesToCountries";
-  import { onMount } from "svelte";
+  import { languagesToCountries } from "../lib/languagesToCountries";
 
   const KNOWN_MISSING_LANGUAGES = new Set([
     "Batelu",
