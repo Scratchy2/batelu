@@ -39,7 +39,6 @@
     countryAmounts.forEach((amount, country) => {
       const element = svg.element().getElementById(country);
       if (!element) {
-        console.log(country);
         return;
       }
       const distribution = countryAmounts.get(country) / maxAmount;
@@ -113,11 +112,6 @@
       window.innerWidth - tooltipData.mouseX - width < 0
         ? tooltipData.mouseX - width + "px"
         : tooltipData.mouseX + "px",
-    );
-    console.log(
-      parseFloat(tooltipData.mouseY) - height,
-      tooltipData.mouseY,
-      height,
     );
     el.style.setProperty(
       "--y",
