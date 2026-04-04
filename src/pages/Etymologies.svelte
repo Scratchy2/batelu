@@ -269,6 +269,7 @@
   }
   .hoverer {
     padding: 5px 10px;
+    pointer-events: none;
   }
   .hoverer.map-shown {
     background-color: #000d;
