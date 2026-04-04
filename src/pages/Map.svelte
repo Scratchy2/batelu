@@ -42,26 +42,51 @@
     });
   });
 
+  let countryTitles = new Map();
   let svg;
-  onMount(() => {
-    countryAmounts.forEach((amount, country) => {
-      const element = svg.element().getElementById(country);
-      if (!element) {
-        return;
-      }
-      const distribution = countryAmounts.get(country) / maxAmount;
-      const percentage = String(distribution * 100) + "%";
-      const color = `color-mix(in oklch, rgb(255, 0, 0) ${percentage}, #c0c0c0)`;
-      element.style.fill = color;
-      element.querySelectorAll("path").forEach((path) => {
-        path.style.fill = color;
+  $: {
+    if (svg) {
+      countryAmounts.forEach((amount, country) => {
+        const element = svg.element().getElementById(country);
+        if (!element) {
+          return;
+        }
+        const distribution = countryAmounts.get(country) / maxAmount;
+        const percentage = String(distribution * 100) + "%";
+        const color = `color-mix(in oklch, rgb(255, 0, 0) ${percentage}, #c0c0c0)`;
+        element.style.fill = color;
+        element.querySelectorAll("path").forEach((path) => {
+          path.style.fill = color;
+        });
+        if (element.firstChild?.dataset.title) {
+          countryTitles.set(country, element.firstChild.dataset.title);
+        }
+        for (
+          let parent = element;
+          parent.nodeName !== "svg";
+          parent = parent.parentElement
+        ) {
+          if (parent.dataset.title) {
+            countryTitles.set(country, parent.dataset.title);
+            break;
+          }
+        }
       });
-    });
-  });
+      countryTitles = countryTitles;
+    }
+  }
 
-  /** @type {{country: string; name: string} | null} */
-  let infoData = null;
-  $: currentCountryWords = infoData ? countryWords.get(infoData.country) : null;
+  $: sortedCountryAmounts = [...countryAmounts.entries()]
+    .map(([country, amount]) => ({ country, amount }))
+    .sort((a, b) =>
+      countryTitles.get(a.country)?.localeCompare(countryTitles.get(b.country)),
+    );
+
+  /** @type {string | null} */
+  let currentCountry = null;
+  $: currentCountryWords = currentCountry
+    ? countryWords.get(currentCountry)
+    : null;
   $: infoCountryWords = currentCountryWords?.reduce((acc, word) => {
     const displayWord = word.word.replace(/\d+$/, "");
     const summary = word.definition.split(", ")[0];
@@ -74,24 +99,31 @@
     return acc;
   }, {});
   const onMouseOver = (e) => {
-    let title = null;
+    currentCountry = null;
     for (
       let parent = e.target;
       parent.nodeName !== "svg";
       parent = parent.parentElement
     ) {
-      title ??= parent.dataset.title;
       const maybeCountry = parent.id;
       if (countryWords.has(maybeCountry)) {
-        infoData = {
-          country: maybeCountry,
-          name: title,
-        };
+        currentCountry = maybeCountry;
         return;
       }
     }
-    infoData = null;
   };
+
+  let dropdownValue = "";
+  let showMap = true;
+  $: {
+    if (dropdownValue === "") {
+      showMap = true;
+      currentCountry = null;
+    } else {
+      showMap = false;
+      currentCountry = dropdownValue;
+    }
+  }
 
   const inChunksOf = (arr, num) =>
     arr.reduce(
@@ -119,15 +151,32 @@
       </ul>
     </div>
   {/if}
-  <div class="no-coarse">
-    This map isn't a great experience on touchscreens and/or smaller screens.
-    Sorry!
+  <div>
+    Hover on a country on the map, or pick one from this list:
+    <select bind:value={dropdownValue} class="country-dropdown">
+      <option value="" selected>Show map</option>
+      {#each sortedCountryAmounts as { country, amount }}
+        <option value={country}
+          >{countryTitles.get(country) ?? country} - {amount}</option
+        >
+      {/each}
+    </select>
   </div>
+  {#if showMap}
+    <div class="no-coarse">
+      This map isn't a great experience on touchscreens and/or smaller screens.
+      Sorry!
+    </div>
+  {/if}
   <div class="map-wrapper">
-    <MapImage onmousemove={onMouseOver} bind:this={svg} />
-    {#if infoData !== null}
-      <div class="hoverer">
-        <strong>{infoData.name} - {currentCountryWords.length}</strong><br />
+    {#if showMap}
+      <MapImage onmousemove={onMouseOver} bind:this={svg} />
+    {/if}
+    {#if currentCountry !== null}
+      <div class={{ hoverer: true, "map-shown": showMap }}>
+        <div class="country-name">
+          {countryTitles.get(currentCountry) ?? currentCountry} - {currentCountryWords.length}
+        </div>
         <div class="languages">
           {#each Object.entries(infoCountryWords) as [language, words]}
             <div>
@@ -150,6 +199,9 @@
 </div>
 
 <style>
+  .country-dropdown {
+    margin-bottom: 0.5rem;
+  }
   .no-coarse {
     display: none;
   }
@@ -163,16 +215,26 @@
     position: relative;
   }
   .hoverer {
+    padding: 5px 10px;
+  }
+  .hoverer.map-shown {
     background-color: #000d;
     position: absolute;
     left: 0;
     bottom: 0;
-    padding: 5px 10px;
     pointer-events: none;
+  }
+  .country-name {
+    display: none;
+  }
+  .hoverer.map-shown .country-name {
+    display: block;
+    font-weight: bold;
   }
   .languages {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
   .words {
     display: flex;
