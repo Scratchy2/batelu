@@ -2,6 +2,7 @@
   import MapImage from "./MapImage.svelte";
   import words from "./words.json";
   import { languagesToCountries } from "../lib/languagesToCountries";
+  import { onMount } from "svelte";
 
   export let navigate;
 
@@ -96,6 +97,8 @@
     }
     return acc;
   }, {});
+
+  let hoverer;
   const onMouseOver = (e) => {
     currentCountry = null;
     for (
@@ -135,6 +138,30 @@
       },
       [[]],
     );
+
+  let mousePosition = null;
+  onMount(() => {
+    const evt = (m) => {
+      mousePosition = { x: m.clientX, y: m.clientY };
+    };
+    document.body.addEventListener("mousemove", evt);
+    return () => {
+      document.body.removeEventListener("mousemove", evt);
+    };
+  });
+
+  const moveIfHovering =
+    ({ x: mx, y: my }) =>
+    (/** @type {HTMLElement} */ el) => {
+      el.classList.remove("hoverer-top-right");
+      const rect = el.getBoundingClientRect();
+      const { x: ex, y: ey } = rect,
+        ex2 = ex + rect.width,
+        ey2 = ey + rect.height;
+      if (mx >= ex && mx <= ex2 && my >= ey && my <= ey2) {
+        el.classList.add("hoverer-top-right");
+      }
+    };
 </script>
 
 <div class="container">
@@ -174,7 +201,10 @@
       <MapImage onmousemove={onMouseOver} bind:this={svg} />
     {/if}
     {#if currentCountry !== null}
-      <div class={{ hoverer: true, "map-shown": showMap }}>
+      <div
+        class={{ hoverer: true, "map-shown": showMap }}
+        {@attach moveIfHovering(mousePosition)}
+      >
         <div class="country-name">
           {countryTitles.get(currentCountry) ?? currentCountry} - {currentCountryWords.length}
         </div>
@@ -246,7 +276,12 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    pointer-events: none;
+  }
+  .hoverer.map-shown:global(.hoverer-top-right) {
+    left: auto;
+    bottom: auto;
+    top: 0;
+    right: 0;
   }
   .country-name {
     display: none;
