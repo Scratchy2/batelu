@@ -211,18 +211,17 @@
         <div class="words">
           {#each Object.entries(infoCountryWords) as [language, words]}
             {#each words as word, i}
-              <div class="word">
+              <div class={{ word: true, last: i === words.length - 1 }}>
                 {#if i === 0}
                   <div class="language-name">{language}</div>
                 {/if}
                 <div class="word-name">{word.word} - {word.summary}</div>
                 <div class="word-etymology">
-                  ←
-                  <small
-                    >{Array.isArray(word.etymology[1])
+                  <small>
+                    ← {Array.isArray(word.etymology[1])
                       ? `${word.etymology[1][0]} (${word.etymology[1][1]})`
-                      : word.etymology[1]}</small
-                  >
+                      : word.etymology[1]}
+                  </small>
                 </div>
               </div>
             {/each}
@@ -300,15 +299,19 @@
     max-height: 300px;
     writing-mode: vertical-lr;
     row-gap: 2rem;
+    column-gap: 0.25rem;
   }
-  .words * {
+  .word {
     writing-mode: horizontal-tb;
   }
   .language-name {
     font-weight: bold;
   }
-  .word:not(:first-child) .language-name {
-    margin-top: 1rem;
+  .word.last {
+    margin-bottom: 1rem;
+  }
+  .word-etymology {
+    line-height: 1;
   }
   footer {
     text-align: right;
