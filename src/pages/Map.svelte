@@ -80,8 +80,8 @@
         tooltipData = {
           country: maybeCountry,
           name: title,
-          mouseX: e.clientX,
-          mouseY: e.clientY,
+          mouseX: e.clientX + document.documentElement.scrollLeft,
+          mouseY: e.clientY + document.documentElement.scrollTop,
         };
         return;
       }
