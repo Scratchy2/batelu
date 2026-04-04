@@ -91,7 +91,6 @@ export const languagesToCountries = {
     "au",
     "ie",
     "nz",
-    "za",
     "bs",
     "bb",
     "in",
