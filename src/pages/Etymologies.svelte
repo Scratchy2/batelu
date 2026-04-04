@@ -259,6 +259,7 @@
     }
   }
   .map-wrapper {
+    display: flex;
     position: relative;
   }
   .hoverer {
@@ -268,14 +269,17 @@
   .hoverer.map-shown {
     background-color: #000d;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 1px;
+    bottom: 1px;
+    border-bottom-left-radius: 10px;
   }
   .hoverer.map-shown:global(.hoverer-top-right) {
     left: auto;
     bottom: auto;
-    top: 0;
-    right: 0;
+    top: 1px;
+    right: 1px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
   }
   .country-name {
     display: none;
