@@ -52,14 +52,11 @@
     });
   });
 
-  let currentCountry = null;
-  let currentCountryName = null;
-  let mouseX = null;
-  let mouseY = null;
-  $: currentCountryWords = currentCountry
-    ? countryWords.get(currentCountry)
+  let tooltipData = null;
+  $: currentCountryWords = tooltipData
+    ? countryWords.get(tooltipData.country)
     : null;
-  $: displayCurrentCountryWords = currentCountryWords?.reduce((acc, word) => {
+  $: tooltipCountryWords = currentCountryWords?.reduce((acc, word) => {
     const displayWord = word.word.replace(/\d+$/, "");
     const summary = word.definition.split(", ")[0];
     const newWord = { ...word, displayWord, summary };
@@ -80,28 +77,56 @@
       title ??= parent.dataset.title;
       const maybeCountry = parent.id;
       if (countryWords.has(maybeCountry)) {
-        currentCountry = maybeCountry;
-        currentCountryName = title;
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+        tooltipData = {
+          country: maybeCountry,
+          name: title,
+          mouseX: e.clientX,
+          mouseY: e.clientY,
+        };
         return;
       }
     }
-    currentCountry = null;
-    currentCountryName = null;
-    mouseX = null;
-    mouseY = null;
+    tooltipData = null;
+  };
+
+  const attachment = (tooltipData) => (/** @type {HTMLElement} */ el) => {
+    delete el.dataset.right;
+    el.style.setProperty("--x", "0");
+    el.style.setProperty("--y", "0");
+    const width = el.clientWidth;
+    const height = el.clientHeight;
+    el.style.setProperty(
+      "--x",
+      window.innerWidth - tooltipData.mouseX - width < 0
+        ? tooltipData.mouseX - width + "px"
+        : tooltipData.mouseX + "px",
+    );
+    console.log(
+      parseFloat(tooltipData.mouseY) - height,
+      tooltipData.mouseY,
+      height,
+    );
+    el.style.setProperty(
+      "--y",
+      window.innerHeight - tooltipData.mouseY - height < 0
+        ? tooltipData.mouseY - height + "px"
+        : tooltipData.mouseY + "px",
+    );
   };
 </script>
 
 <div class="container">
   <h1>Map</h1>
   <MapImage onmousemove={onMouseOver} bind:this={svg} />
-  {#if currentCountryName !== null && mouseX !== null && mouseY !== null && displayCurrentCountryWords !== null}
-    <div class="hoverer" style={`--left: ${mouseX}px; --top: ${mouseY}px`}>
-      <strong>{currentCountryName}</strong><br />
+  {#if tooltipData !== null}
+    <div
+      class="hoverer"
+      style={`--x: ${tooltipData.mouseX}px; --y: ${tooltipData.mouseY}px`}
+      {@attach attachment(tooltipData)}
+    >
+      <strong>{tooltipData.name}</strong><br />
       <div class="languages">
-        {#each Object.entries(displayCurrentCountryWords) as [language, words]}
+        {#each Object.entries(tooltipCountryWords) as [language, words]}
           <div>
             <strong>{language}</strong><br />
             {#each words as word}
@@ -118,8 +143,8 @@
   .hoverer {
     background-color: black;
     position: absolute;
-    left: var(--left);
-    top: var(--top);
+    left: var(--x);
+    top: var(--y);
     padding: 5px 10px;
     pointer-events: none;
   }
