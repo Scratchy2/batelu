@@ -178,20 +178,24 @@
         <div class="country-name">
           {countryTitles.get(currentCountry) ?? currentCountry} - {currentCountryWords.length}
         </div>
-        <div class="languages">
+        <div class="words">
           {#each Object.entries(infoCountryWords) as [language, words]}
-            <div>
-              <strong>{language}</strong><br />
-              <div class="words">
-                {#each inChunksOf(words, 5) as chunk}
-                  <div>
-                    {#each chunk as word}
-                      {word.word} - {word.summary}<br />
-                    {/each}
-                  </div>
-                {/each}
+            {#each words as word, i}
+              <div class="word">
+                {#if i === 0}
+                  <div class="language-name">{language}</div>
+                {/if}
+                <div class="word-name">{word.word} - {word.summary}</div>
+                <div class="word-etymology">
+                  ←
+                  <small
+                    >{Array.isArray(word.etymology[1])
+                      ? `${word.etymology[1][0]} (${word.etymology[1][1]})`
+                      : word.etymology[1]}</small
+                  >
+                </div>
               </div>
-            </div>
+            {/each}
           {/each}
         </div>
       </div>
@@ -251,14 +255,25 @@
     display: block;
     font-weight: bold;
   }
-  .languages {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+  /*
+   * The writing-mode properties are a slightly insane hack, see
+   * https://stackoverflow.com/a/41209546
+   */
   .words {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    max-height: 300px;
+    writing-mode: vertical-lr;
+    row-gap: 2rem;
+  }
+  .words * {
+    writing-mode: horizontal-tb;
+  }
+  .language-name {
+    font-weight: bold;
+  }
+  .word:not(:first-child) .language-name {
+    margin-top: 1rem;
   }
   footer {
     text-align: right;
