@@ -8,6 +8,7 @@
     import About from './pages/About.svelte';
     import Phonology from './pages/Phonology.svelte';
     import Inflections from './pages/Inflections.svelte';
+    import Etymologies from './pages/Etymologies.svelte';
 
     /** @type {import("svelte").Component<{}> | import("svelte").Component<{ navigate: (path: string) => void }>} */
     let Component = NotFound;
@@ -39,6 +40,10 @@
                 
             case '/inflect':
                 Component = Inflections;
+                break;
+                
+            case '/etymology':
+                Component = Etymologies;
                 break;
 
             default:

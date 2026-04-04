@@ -471,7 +471,7 @@
   {
     "word": "san",
     "definition": "three",
-    "etymology": ["Mandarin", ["三", "sān"], "three"],
+    "etymology": ["Mandarin Chinese", ["三", "sān"], "three"],
     "type": "numeral",
     "date": "22-01-2026"
   },
@@ -653,7 +653,7 @@
   {
     "word": "zy",
     "definition": "thorn, fishbone",
-    "etymology": ["Mandarin", ["刺", "cì"], "to stab"],
+    "etymology": ["Mandarin Chinese", ["刺", "cì"], "to stab"],
     "type": "noun",
     "date": "09-02-2026"
   },
@@ -716,7 +716,7 @@
   {
     "word": "mempaw",
     "definition": "sandwich",
-    "etymology": ["Mandarin", ["面包", "miànbāo"], "bread"],
+    "etymology": ["Mandarin Chinese", ["面包", "miànbāo"], "bread"],
     "type": "noun",
     "date": "15-02-2026"
   },
@@ -765,7 +765,7 @@
   {
     "word": "uwe",
     "definition": "month",
-    "etymology": ["Mandarin", ["月", "yuè"], "month"],
+    "etymology": ["Mandarin Chinese", ["月", "yuè"], "month"],
     "type": "noun",
     "date": "19-02-2026"
   },
