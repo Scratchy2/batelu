@@ -51,11 +51,10 @@
     });
   });
 
-  let tooltipData = null;
-  $: currentCountryWords = tooltipData
-    ? countryWords.get(tooltipData.country)
-    : null;
-  $: tooltipCountryWords = currentCountryWords?.reduce((acc, word) => {
+  /** @type {{country: string; name: string} | null} */
+  let infoData = null;
+  $: currentCountryWords = infoData ? countryWords.get(infoData.country) : null;
+  $: infoCountryWords = currentCountryWords?.reduce((acc, word) => {
     const displayWord = word.word.replace(/\d+$/, "");
     const summary = word.definition.split(", ")[0];
     const newWord = { ...word, displayWord, summary };
@@ -76,16 +75,14 @@
       title ??= parent.dataset.title;
       const maybeCountry = parent.id;
       if (countryWords.has(maybeCountry)) {
-        tooltipData = {
+        infoData = {
           country: maybeCountry,
           name: title,
-          mouseX: e.clientX + document.documentElement.scrollLeft,
-          mouseY: e.clientY + document.documentElement.scrollTop,
         };
         return;
       }
     }
-    tooltipData = null;
+    infoData = null;
   };
 
   const inChunksOf = (arr, num) =>
@@ -100,26 +97,6 @@
       },
       [[]],
     );
-
-  const attachment = (tooltipData) => (/** @type {HTMLElement} */ el) => {
-    delete el.dataset.right;
-    el.style.setProperty("--x", "0");
-    el.style.setProperty("--y", "0");
-    const width = el.clientWidth;
-    const height = el.clientHeight;
-    el.style.setProperty(
-      "--x",
-      window.innerWidth - tooltipData.mouseX - width < 0
-        ? tooltipData.mouseX - width + "px"
-        : tooltipData.mouseX + "px",
-    );
-    el.style.setProperty(
-      "--y",
-      window.innerHeight - tooltipData.mouseY - height < 0
-        ? tooltipData.mouseY - height + "px"
-        : tooltipData.mouseY + "px",
-    );
-  };
 </script>
 
 <div class="container">
@@ -134,40 +111,54 @@
       </ul>
     </div>
   {/if}
-  <MapImage onmousemove={onMouseOver} bind:this={svg} />
-  {#if tooltipData !== null}
-    <div
-      class="hoverer"
-      style={`--x: ${tooltipData.mouseX}px; --y: ${tooltipData.mouseY}px`}
-      {@attach attachment(tooltipData)}
-    >
-      <strong>{tooltipData.name} - {currentCountryWords.length}</strong><br />
-      <div class="languages">
-        {#each Object.entries(tooltipCountryWords) as [language, words]}
-          <div>
-            <strong>{language}</strong><br />
-            <div class="words">
-              {#each inChunksOf(words, 5) as chunk}
-                <div>
-                  {#each chunk as word}
-                    {word.word} - {word.summary}<br />
-                  {/each}
-                </div>
-              {/each}
+  <div class="no-coarse">
+    This map isn't a great experience on touchscreens and/or smaller screens.
+    Sorry!
+  </div>
+  <div class="map-wrapper">
+    <MapImage onmousemove={onMouseOver} bind:this={svg} />
+    {#if infoData !== null}
+      <div class="hoverer">
+        <strong>{infoData.name} - {currentCountryWords.length}</strong><br />
+        <div class="languages">
+          {#each Object.entries(infoCountryWords) as [language, words]}
+            <div>
+              <strong>{language}</strong><br />
+              <div class="words">
+                {#each inChunksOf(words, 5) as chunk}
+                  <div>
+                    {#each chunk as word}
+                      {word.word} - {word.summary}<br />
+                    {/each}
+                  </div>
+                {/each}
+              </div>
             </div>
-          </div>
-        {/each}
+          {/each}
+        </div>
       </div>
-    </div>
-  {/if}
+    {/if}
+  </div>
 </div>
 
 <style>
+  .no-coarse {
+    display: none;
+  }
+  @media (pointer: coarse) {
+    .no-coarse {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+  .map-wrapper {
+    position: relative;
+  }
   .hoverer {
-    background-color: black;
+    background-color: #000d;
     position: absolute;
-    left: var(--x);
-    top: var(--y);
+    left: 0;
+    bottom: 0;
     padding: 5px 10px;
     pointer-events: none;
   }
