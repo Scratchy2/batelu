@@ -7,6 +7,11 @@
   } from "../lib/languagesToCountries";
   import { onMount } from "svelte";
 
+  const KNOWN_MISSING_LANGUAGES = new Set([
+    "Batelu",
+    "Proto-Indo-European",
+    "Selsimicu",
+  ]);
   const missingLanguages = new Set();
   const countryAmounts = new Map();
   const countryWords = new Map();
@@ -15,7 +20,10 @@
     if (!Array.isArray(word.etymology) || typeof word.etymology[0] !== "string")
       return;
     const language = word.etymology[0];
-    if (!Object.hasOwn(languagesToCountries, language)) {
+    if (
+      !Object.hasOwn(languagesToCountries, language) &&
+      !KNOWN_MISSING_LANGUAGES.has(language)
+    ) {
       missingLanguages.add(language);
     }
     const countries = languagesToCountries[language];
