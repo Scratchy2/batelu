@@ -106,7 +106,6 @@
           }, {}),
         ).sort((a, b) => a[0].localeCompare(b[0]));
 
-  let hoverer;
   const onMouseOver = (e) => {
     currentCountry = null;
     for (
@@ -133,19 +132,6 @@
       currentCountry = dropdownValue;
     }
   }
-
-  const inChunksOf = (arr, num) =>
-    arr.reduce(
-      (acc, i) => {
-        if (acc[acc.length - 1].length === num) {
-          acc.push([i]);
-        } else {
-          acc[acc.length - 1].push(i);
-        }
-        return acc;
-      },
-      [[]],
-    );
 
   let mousePosition = null;
   onMount(() => {
