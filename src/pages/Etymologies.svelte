@@ -40,6 +40,9 @@
       }
     });
   });
+  countryWords.forEach((words) => {
+    words.sort((a, b) => a.word.localeCompare(b.word));
+  });
 
   let countryTitles = new Map();
   let svg;
@@ -86,17 +89,22 @@
   $: currentCountryWords = currentCountry
     ? countryWords.get(currentCountry)
     : null;
-  $: infoCountryWords = currentCountryWords?.reduce((acc, word) => {
-    const displayWord = word.word.replace(/\d+$/, "");
-    const summary = word.definition.split(", ")[0];
-    const newWord = { ...word, displayWord, summary };
-    if (Object.hasOwn(acc, word.etymology[0])) {
-      acc[word.etymology[0]].push(newWord);
-    } else {
-      acc[word.etymology[0]] = [newWord];
-    }
-    return acc;
-  }, {});
+  $: infoCountryWords =
+    currentCountryWords === null
+      ? null
+      : Object.entries(
+          currentCountryWords.reduce((acc, word) => {
+            const displayWord = word.word.replace(/\d+$/, "");
+            const summary = word.definition.split(", ")[0];
+            const newWord = { ...word, displayWord, summary };
+            if (Object.hasOwn(acc, word.etymology[0])) {
+              acc[word.etymology[0]].push(newWord);
+            } else {
+              acc[word.etymology[0]] = [newWord];
+            }
+            return acc;
+          }, {}),
+        ).sort((a, b) => a[0].localeCompare(b[0]));
 
   let hoverer;
   const onMouseOver = (e) => {
@@ -209,7 +217,7 @@
           {countryTitles.get(currentCountry) ?? currentCountry} - {currentCountryWords.length}
         </div>
         <div class="words">
-          {#each Object.entries(infoCountryWords) as [language, words]}
+          {#each infoCountryWords as [language, words]}
             {#each words as word, i}
               <div class={{ word: true, last: i === words.length - 1 }}>
                 {#if i === 0}
