@@ -124,7 +124,16 @@
 
 <div class="container">
   <h1>Map</h1>
-
+  {#if missingLanguages.size}
+    <div>
+      The following languages are not displayed on the map:
+      <ul>
+        {#each missingLanguages as language}
+          <li>{language}</li>
+        {/each}
+      </ul>
+    </div>
+  {/if}
   <MapImage onmousemove={onMouseOver} bind:this={svg} />
   {#if tooltipData !== null}
     <div
@@ -138,7 +147,7 @@
           <div>
             <strong>{language}</strong><br />
             <div class="words">
-              {#each inChunksOf(words, 8) as chunk}
+              {#each inChunksOf(words, 5) as chunk}
                 <div>
                   {#each chunk as word}
                     {word.word} - {word.summary}<br />
