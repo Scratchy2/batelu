@@ -124,7 +124,7 @@
       style={`--x: ${tooltipData.mouseX}px; --y: ${tooltipData.mouseY}px`}
       {@attach attachment(tooltipData)}
     >
-      <strong>{tooltipData.name}</strong><br />
+      <strong>{tooltipData.name} - {currentCountryWords.length}</strong><br />
       <div class="languages">
         {#each Object.entries(tooltipCountryWords) as [language, words]}
           <div>
