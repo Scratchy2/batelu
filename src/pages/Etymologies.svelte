@@ -197,6 +197,18 @@
       </div>
     {/if}
   </div>
+  {#if showMap}
+    <footer>
+      <small>
+        map from <a
+          href="https://commons.wikimedia.org/wiki/File:BlankMap-World.svg"
+          target="_blank"
+        >
+          https://commons.wikimedia.org/wiki/File:BlankMap-World.svg
+        </a>
+      </small>
+    </footer>
+  {/if}
 </div>
 
 <style>
@@ -247,5 +259,8 @@
   .words {
     display: flex;
     gap: 1rem;
+  }
+  footer {
+    text-align: right;
   }
 </style>
