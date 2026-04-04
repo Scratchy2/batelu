@@ -44,7 +44,7 @@
       }
       const distribution = countryAmounts.get(country) / maxAmount;
       const percentage = String(distribution * 100) + "%";
-      const color = `rgba(255, 0, 0, ${percentage})`;
+      const color = `color-mix(in oklch, rgb(255, 0, 0) ${percentage}, #c0c0c0)`;
       element.style.fill = color;
       element.querySelectorAll("path").forEach((path) => {
         path.style.fill = color;
