@@ -156,7 +156,12 @@
 <svelte:window on:keydown={onWindowKeydown} />
 
 <main class="container">
-  <h1>Words</h1>
+  <header class="main-header">
+    <h1>Words</h1>
+    <a href="/" on:click|preventDefault={() => navigate("/etymology")}>
+      Show etymology by country
+    </a>
+  </header>
 
   <div class="search">
     <input
@@ -331,6 +336,14 @@
 {/if}
 
 <style>
+  .main-header {
+    display: flex;
+    align-items: baseline;
+  }
+  .main-header h1 {
+    flex: 1;
+  }
+
   /* Search (layout fix for count alignment) */
   .search {
     display: grid;

@@ -8,7 +8,7 @@
     import About from './pages/About.svelte';
     import Phonology from './pages/Phonology.svelte';
     import Inflections from './pages/Inflections.svelte';
-    import Map from './pages/Map.svelte';
+    import Etymologies from './pages/Etymologies.svelte';
 
     /** @type {import("svelte").Component<{}> | import("svelte").Component<{ navigate: (path: string) => void }>} */
     let Component = NotFound;
@@ -42,8 +42,8 @@
                 Component = Inflections;
                 break;
                 
-            case '/map':
-                Component = Map;
+            case '/etymology':
+                Component = Etymologies;
                 break;
 
             default:
@@ -74,7 +74,6 @@
 	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
 	<a href="/phono" on:click|preventDefault={() => navigate('/phono')}>Phonology</a>
 	<a href="/inflect" on:click|preventDefault={() => navigate('/inflect')}>Inflections</a>
-	<a href="/map" on:click|preventDefault={() => navigate('/map')}>Map</a>
 </nav>
 
 <svelte:component this={Component} {navigate} />

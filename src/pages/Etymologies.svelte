@@ -3,6 +3,8 @@
   import words from "./words.json";
   import { languagesToCountries } from "../lib/languagesToCountries";
 
+  export let navigate;
+
   const KNOWN_MISSING_LANGUAGES = new Set([
     "Batelu",
     "Proto-Indo-European",
@@ -136,7 +138,10 @@
 </script>
 
 <div class="container">
-  <h1>Map</h1>
+  <header class="main-header">
+    <h1>Etymology</h1>
+    <a href="/" on:click|preventDefault={() => navigate("/words")}>Back</a>
+  </header>
   {#if missingLanguages.size}
     <div>
       The following languages are not displayed on the map:
@@ -195,6 +200,13 @@
 </div>
 
 <style>
+  .main-header {
+    display: flex;
+    align-items: baseline;
+  }
+  .main-header h1 {
+    flex: 1;
+  }
   .country-dropdown {
     margin-bottom: 0.5rem;
   }
