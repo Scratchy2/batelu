@@ -170,7 +170,7 @@
   {
     "word": "karka",
     "definition": "(vulgar) fuck, shit, other vulgar interjections",
-    "etymology": false,
+    "etymology": ["English", "Karkat Vantas", "a Homestuck character"],
     "type": "interjection",
     "date": "09-10-2025"
   },
@@ -1045,7 +1045,7 @@
   {
     "word": "gamzhi",
     "definition": "funny, goofy",
-    "etymology": false,
+    "etymology": ["English", "Gamzee Makara", "a Homestuck character"],
     "type": "modifier",
     "date": "24-03-2026"
   },
@@ -1164,7 +1164,7 @@
   {
     "word": "terezh",
     "definition": "rule, law",
-    "etymology": false,
+    "etymology": ["English", "Terezi Pyrope", "a Homestuck character"],
     "type": "noun",
     "date": "31-03-2026"
   },
