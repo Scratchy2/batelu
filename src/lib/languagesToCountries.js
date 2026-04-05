@@ -161,6 +161,9 @@ export const languagesToCountries = {
   Maori: ["nz"],
   Latin: ["va"],
   Danish: ["dk"],
+  Georgian: ["ge"],
+  Tamil: ["in", "lk", "my"],
+  Swahili: ["tz", "ke"],
 };
 
 export const countriesToLanguages = {};

@@ -12,10 +12,6 @@
         "type": "string",
         "description": "The word's meaning in English."
       },
-      "ipa": {
-        "type": "string",
-        "description": "The word's phonemic transcription in the IPA."
-      },
       "etymology": {
         "oneOf": [
           { "enum": [false] },
@@ -57,7 +53,7 @@
         "description": "The date the word's poll closed, after all tiebreakers.\nIn DD-MM-YYYY format."
       }
     },
-    "required": ["word", "definition", "ipa", "etymology", "type", "date"],
+    "required": ["word", "definition", "etymology", "type", "date"],
     "additionalProperties": false
   }
 }
