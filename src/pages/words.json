@@ -1269,5 +1269,12 @@
     "etymology": ["Betawi", "dikit", "few"],
     "type": "modifier",
     "date": "06-04-2026"
+  },
+  {
+    "word": "no",
+    "definition": "from",
+    "etymology": ["Latvian", "no", "from"],
+    "type": "adposition",
+    "date": "06-04-2026"
   }
 ]
