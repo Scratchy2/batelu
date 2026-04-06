@@ -164,6 +164,7 @@ export const languagesToCountries = {
   Georgian: ["ge"],
   Tamil: ["in", "lk", "my"],
   Swahili: ["tz", "ke"],
+  Betawi: ["id"],
 };
 
 export const countriesToLanguages = {};

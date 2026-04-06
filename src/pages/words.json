@@ -1262,5 +1262,12 @@
     "etymology": ["Norwegian", "hjem", "home"],
     "type": "noun",
     "date": "06-04-2026"
+  },
+  {
+    "word": "dikit",
+    "definition": "few",
+    "etymology": ["Betawi", "dikit", "few"],
+    "type": "modifier",
+    "date": "06-04-2026"
   }
 ]
