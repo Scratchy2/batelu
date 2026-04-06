@@ -167,11 +167,3 @@ export const languagesToCountries = {
   Betawi: ["id"],
   Latvian: ["lv"],
 };
-
-export const countriesToLanguages = {};
-Object.entries(languagesToCountries).forEach(([language, countries]) => {
-  countries.forEach((country) => {
-    countriesToLanguages[country] ??= [];
-    countriesToLanguages[country].push(language);
-  });
-});
