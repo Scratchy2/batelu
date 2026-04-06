@@ -170,7 +170,7 @@
   {
     "word": "karka",
     "definition": "(vulgar) fuck, shit, other vulgar interjections",
-    "etymology": false,
+    "etymology": ["English", "Karkat Vantas", "a Homestuck character"],
     "type": "interjection",
     "date": "09-10-2025"
   },
@@ -1045,7 +1045,7 @@
   {
     "word": "gamzhi",
     "definition": "funny, goofy",
-    "etymology": false,
+    "etymology": ["English", "Gamzee Makara", "a Homestuck character"],
     "type": "modifier",
     "date": "24-03-2026"
   },
@@ -1164,7 +1164,7 @@
   {
     "word": "terezh",
     "definition": "rule, law",
-    "etymology": false,
+    "etymology": ["English", "Terezi Pyrope", "a Homestuck character"],
     "type": "noun",
     "date": "31-03-2026"
   },
@@ -1174,5 +1174,86 @@
     "etymology": ["French", "massif", "massive"],
     "type": "modifier",
     "date": "31-03-2026"
+  },
+  {
+    "word": "sinibyr",
+    "definition": "not true",
+    "etymology": ["Batelu", "sini byr"],
+    "type": "modifier",
+    "date": "03-04-2026"
+  },
+  {
+    "word": "solo",
+    "definition": "only, alone",
+    "etymology": ["Spanish", "solo", "only"],
+    "type": "modifier",
+    "date": "03-04-2026"
+  },
+  {
+    "word": "atasi",
+    "definition": "great gross, dozenal 1,000",
+    "etymology": ["Georgian", ["ათასი", "atasi"], "thousand"],
+    "type": "numeral",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "mirijona",
+    "definition": "dozenal 1,000,000",
+    "etymology": ["Maori", "miriona", "million"],
+    "type": "numeral",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "robota",
+    "definition": "job",
+    "etymology": ["Ukranian", ["робота", "robota"], "job"],
+    "type": "noun",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "alo",
+    "definition": "other",
+    "etymology": ["Greek", ["άλλος", "állos"], "other"],
+    "type": "modifier",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "lol",
+    "definition": "sound, noise",
+    "etymology": ["Tamil", ["லொள்", "loḷ"], "woof"],
+    "type": "noun",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "abjan",
+    "definition": "noodles, pasta",
+    "etymology": [
+      "Mandarin Chinese",
+      ["𰻞𰻞麵", "biángbiángmiàn"],
+      "Biang Biang noodles"
+    ],
+    "type": "noun",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "emo",
+    "definition": "blood",
+    "etymology": ["French", "hémo-", "blood-"],
+    "type": "noun",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "zhela",
+    "definition": "prison, jail",
+    "etymology": ["Swahili", "jela", "prison"],
+    "type": "noun",
+    "date": "04-04-2026"
+  },
+  {
+    "word": "defnijo",
+    "definition": "using",
+    "etymology": ["Welsh", "defnyddio", "to use"],
+    "type": "adposition",
+    "date": "06-04-2026"
   }
 ]

@@ -2,7 +2,7 @@
 export const languagesToCountries = {
   German: ["de", "at", "ch", "li"],
   Ukranian: ["ua"],
-  Welsh: ["cy"],
+  Welsh: ["gb"],
   // This is arbitrarily all the countries Wikipedia lists as having more than
   // 33.3% French proficiency.
   French: [
@@ -161,6 +161,9 @@ export const languagesToCountries = {
   Maori: ["nz"],
   Latin: ["va"],
   Danish: ["dk"],
+  Georgian: ["ge"],
+  Tamil: ["in", "lk", "my"],
+  Swahili: ["tz", "ke"],
 };
 
 export const countriesToLanguages = {};
