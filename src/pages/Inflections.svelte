@@ -649,7 +649,11 @@
               >
             </td>
             <td>
-              cu<span class="inflections-secondary"
+              cu{validatedWord.word
+                ? /^[aeiouy]/.test(validatedWord.word)
+                  ? "l"
+                  : ""
+                : "(r)"}<span class="inflections-secondary"
                 >{validatedWord.word || "-"}</span
               >
             </td>
@@ -672,7 +676,11 @@
               >
             </td>
             <td>
-              i<span class="inflections-secondary"
+              i{validatedWord.word
+                ? /^[aeiouy]/.test(validatedWord.word)
+                  ? "r"
+                  : ""
+                : "(r)"}<span class="inflections-secondary"
                 >{validatedWord.word || "-"}</span
               >
             </td>
