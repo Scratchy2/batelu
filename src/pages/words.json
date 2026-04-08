@@ -1276,5 +1276,26 @@
     "etymology": ["Latvian", "no", "from"],
     "type": "adposition",
     "date": "06-04-2026"
+  },
+  {
+    "word": "suny",
+    "definition": "red",
+    "etymology": ["Romanian", "căpșună", "strawberry"],
+    "type": "modifier",
+    "date": "07-04-2026"
+  },
+  {
+    "word": "jarok",
+    "definition": "green",
+    "etymology": ["Hebrew", ["ירוק", "yarók"], "green"],
+    "type": "modifier",
+    "date": "07-04-2026"
+  },
+  {
+    "word": "nizhi",
+    "definition": "color, colour",
+    "etymology": ["Japanese", ["虹", "niji"], "rainbow"],
+    "type": "noun",
+    "date": "09-04-2026"
   }
 ]
