@@ -1304,5 +1304,19 @@
     "etymology": ["Spanish", ["azul"], "blue"],
     "type": "modifier",
     "date": "09-04-2026"
+  },
+  {
+    "word": "xyvid",
+    "definition": "white",
+    "etymology": ["Danish", "hvid", "white"],
+    "type": "modifier",
+    "date": "09-04-2026"
+  },
+  {
+    "word": "luny",
+    "definition": "moon",
+    "etymology": ["Romanian", "lună", "moon"],
+    "type": "modifier",
+    "date": "09-04-2026"
   }
 ]
