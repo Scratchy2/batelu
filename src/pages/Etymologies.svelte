@@ -10,6 +10,7 @@
     "Batelu",
     "Proto-Indo-European",
     "Selsimicu",
+    "Akkadian",
   ]);
   const missingLanguages = new Set();
   const countryAmounts = new Map();
