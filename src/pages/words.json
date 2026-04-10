@@ -1318,5 +1318,26 @@
     "etymology": ["Romanian", "lună", "moon"],
     "type": "modifier",
     "date": "09-04-2026"
+  },
+  {
+    "word": "zhon",
+    "definition": "yellow",
+    "etymology": ["French", "jaune", "yellow"],
+    "type": "modifier",
+    "date": "09-04-2026"
+  },
+  {
+    "word": "viej",
+    "definition": "old",
+    "etymology": ["French", "vielle", "old"],
+    "type": "modifier",
+    "date": "10-04-2026"
+  },
+  {
+    "word": "istar",
+    "definition": "alien, extraterrestrial being",
+    "etymology": ["Akkadian", "ištar", "Venus"],
+    "type": "noun",
+    "date": "10-04-2026"
   }
 ]
