@@ -1339,5 +1339,82 @@
     "etymology": ["Akkadian", "ištar", "Venus"],
     "type": "noun",
     "date": "10-04-2026"
+  },
+  {
+    "word": "cafuc",
+    "definition": "sun",
+    "etymology": ["Central Atlas Tamazight", ["ⵜⴰⴼⵓⴽⵜ", "tafukt"], "sun"],
+    "type": "noun",
+    "date": "10-04-2026"
+  },
+  {
+    "word": "kala",
+    "definition": "black",
+    "etymology": ["Hindi", ["काला", "kālā"], "black"],
+    "type": "modifier",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "viseni",
+    "definition": "TV, television",
+    "etymology": ["Swahili", "televisheni", "TV"],
+    "type": "noun",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "kiwa",
+    "definition": "left",
+    "etymology": ["Javanese", ["ꦏꦶꦮ", "kiwa"], "left"],
+    "type": "modifier",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "wen",
+    "definition": "up",
+    "etymology": ["Japanese", ["上に", "ue ni"], "up"],
+    "type": "modifier",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "gylare",
+    "definition": "to laugh, to smile",
+    "etymology": ["Malay", "gelak", "to laugh"],
+    "type": "verb",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "idzhon",
+    "definition": "down",
+    "etymology": ["Mandarin Chinese", ["市中心", "shìzhōngxīn"], "downtown"],
+    "type": "modifier",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "dafniza",
+    "definition": "store",
+    "etymology": ["Macedonian", ["продавница", "prodavnica"], "store"],
+    "type": "noun",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "sentyre",
+    "definition": "to exist, there is",
+    "etymology": ["Romanian", "se-ntâmplă", "it happens"],
+    "type": "verb",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "buru",
+    "definition": "vegetable",
+    "etymology": ["Jeju", ["부루", "buru"], "lettuce"],
+    "type": "noun",
+    "date": "11-04-2026"
+  },
+  {
+    "word": "eloku",
+    "definition": "movie",
+    "etymology": ["Finnish", "elokuva", "movie"],
+    "type": "noun",
+    "date": "12-04-2026"
   }
 ]

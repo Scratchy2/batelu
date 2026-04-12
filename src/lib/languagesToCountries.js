@@ -166,4 +166,8 @@ export const languagesToCountries = {
   Swahili: ["tz", "ke"],
   Betawi: ["id"],
   Latvian: ["lv"],
+  "Central Atlas Tamazight": ["ma"],
+  Javanese: ["id"],
+  Malay: ["my"],
+  Jeju: ["kr"],
 };
