@@ -11,6 +11,7 @@
     "Proto-Indo-European",
     "Selsimicu",
     "Akkadian",
+    "Gothic",
   ]);
   const missingLanguages = new Set();
   const countryAmounts = new Map();

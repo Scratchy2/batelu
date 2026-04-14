@@ -1416,5 +1416,79 @@
     "etymology": ["Finnish", "elokuva", "movie"],
     "type": "noun",
     "date": "12-04-2026"
+  },
+  {
+    "word": "serure",
+    "definition": "to start, to begin",
+    "etymology": ["Persian", ["شروع", "šurū'"], "beginning"],
+    "type": "verb",
+    "date": "12-04-2026"
+  },
+  {
+    "word": "ghesy",
+    "definition": "peace",
+    "etymology": ["Mandarin Chinese", ["鸽子", "gēzi"], "dove"],
+    "type": "noun",
+    "date": "12-04-2026"
+  },
+  {
+    "word": "samijon",
+    "definition": "mission",
+    "etymology": ["Korean", ["사명", "samyeong"], "mission"],
+    "type": "noun",
+    "date": "12-04-2026"
+  },
+  {
+    "word": "kusko",
+    "definition": "poison",
+    "etymology": false,
+    "type": "noun",
+    "date": "12-04-2026"
+  },
+  {
+    "word": "kutere",
+    "definition": "to walk",
+    "etymology": ["Swahili", "kutembea", "to walk"],
+    "type": "verb",
+    "date": "12-04-2026"
+  },
+  {
+    "word": "orun",
+    "definition": "right",
+    "etymology": ["Korean", ["오른", "oreun"], "right"],
+    "type": "modifier",
+    "date": "13-04-2026"
+  },
+  {
+    "word": "guwa",
+    "definition": "circle",
+    "etymology": ["Cantonese", ["瓜", "gwaa1"], "melon"],
+    "type": "noun",
+    "date": "13-04-2026"
+  },
+  {
+    "word": "tojare",
+    "definition": "to make, to create",
+    "etymology": ["Gothic", ["𐍄𐌰𐌿𐌾𐌰𐌽", "taujan"], "to make"],
+    "type": "verb",
+    "date": "13-04-2026"
+  },
+  {
+    "word": "azhar",
+    "definition": "pink",
+    "etymology": [
+      "Arabic",
+      ["أزهار الكرز", "'azhār al-karazi"],
+      "cherry blossom"
+    ],
+    "type": "modifier",
+    "date": "13-04-2026"
+  },
+  {
+    "word": "vivlijotiki",
+    "definition": "library",
+    "etymology": ["Greek", ["βιβλιοθήκη", "bibliothéke"], "library"],
+    "type": "noun",
+    "date": "13-04-2026"
   }
 ]
