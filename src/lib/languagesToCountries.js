@@ -23,6 +23,7 @@ export const languagesToCountries = {
     "ci",
     "ma",
     "bj",
+    "ca",
   ],
   Afrikaans: ["za", "na"],
   Finnish: ["fi"],
