@@ -1490,5 +1490,26 @@
     "etymology": ["Greek", ["βιβλιοθήκη", "bibliothéke"], "library"],
     "type": "noun",
     "date": "13-04-2026"
+  },
+  {
+    "word": "novy",
+    "definition": "young, new",
+    "etymology": ["Polish", "nowy", "new"],
+    "type": "noun",
+    "date": "15-04-2026"
+  },
+  {
+    "word": "mojan",
+    "definition": "shape",
+    "etymology": ["Korean", ["모양", "moyang"], "appearance"],
+    "type": "noun",
+    "date": "15-04-2026"
+  },
+  {
+    "word": "zhuwan",
+    "definition": "theater",
+    "etymology": ["Mandarin Chinese", ["劇院", "jùyuàn"], "theater"],
+    "type": "noun",
+    "date": "15-04-3036"
   }
 ]
