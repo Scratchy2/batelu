@@ -14,7 +14,6 @@
   { "description": "Prefixes allowed", "tags": ["grammar", "affixes", "reduplication"] },
   { "description": "Reduplication allowed", "tags": ["grammar", "affixes", "reduplication"] },
   { "description": "Third-person pronouns distinguish subject vs. object", "tags": ["grammar", "pronouns"] },
-  { "description": "Tone contours: high–low and low–high", "tags": ["phonetics", "tones"] },
   { "description": "Reduplication conveys diminutive", "tags": ["grammar", "affixes", "reduplication"] },
   { "description": "V syllables occur only word-initially", "tags": ["phonotactics", "syllables"] },
   { "description": "Optional head nouns (like Toki Pona)", "tags": ["grammar", "optional"] },
@@ -59,5 +58,13 @@
   { "description": "Ordinal particle law requires definite article al", "tags": ["grammar", "number system"]},
   { "description": "Comparatives and superlatives are formed via affixes", "tags": ["grammar", "adjectives"]},
   { "description": "Reflexive verbs exist", "tags": ["grammar", "verbs", "pronouns"]},
-  { "description": "sh and ts can be abbreviated as s and z", "tags": ["orthography"]}
+  { "description": "sh and ts can be abbreviated as s and z", "tags": ["orthography"]},
+  { "description": "Personal pronouns are optional", "tags": ["grammar", "pronouns", "verbs"] },
+  { "description": "Words can be shortened for slang", "tags": ["grammar", "slang"]},
+  { "description": "Numbers can be written in Latin numerals with W for ten and A for eleven", "tags": ["orthography", "number system"]},
+  { "description": "A noun plus the definite article al may be spelled with a hyphen inbetween", "tags": ["orthography"]},
+  { "description": "The letter names of vowels are the vowels themselves", "tags": ["orthography", "words"]},
+  { "description": "The letter names of consonants are the sound plus a", "tags": ["orthography", "words"]},
+  { "description": "Statements that couldn't possibly have any intentionality behind them use intentional verbs", "tags": ["grammar", "verbs"]},
+  { "description": "Polygons with more angles than a hexagon are formed by the number plus mojan", "tags": ["words"]}
 ]
