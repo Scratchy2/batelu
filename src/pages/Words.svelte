@@ -270,7 +270,9 @@
         <p class="detail-type">{selected.type}</p>
         <label class="detail-label">definition</label>
         <p class="detail-text">{selected.definition}</p>
-
+        {#if selected.usage}
+          <label class="detail-label">usage</label>
+          <p class="detail-text">{selected.usage}</p>{/if}
         <label class="detail-label">etymology</label>
         {#snippet etymologyDescription(etymology)}
           {#if etymology === false}

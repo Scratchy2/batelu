@@ -51,6 +51,10 @@
         "type": "string",
         "pattern": "^\\d\\d-\\d\\d-\\d\\d\\d\\d$",
         "description": "The date the word's poll closed, after all tiebreakers.\nIn DD-MM-YYYY format."
+      },
+      "usage": {
+        "type": "string",
+        "description": "Usage information."
       }
     },
     "required": ["word", "definition", "etymology", "type", "date"],
