@@ -114,6 +114,22 @@
       <table>
         <thead>
           <tr>
+            <th>Infinitive Past</th>
+            <th>Infinitive Present</th>
+            <th>Infinitive Future</th>
+          </tr></thead
+        >
+        <tbody>
+          <tr>
+            <td>{@render conjugate("rera", true)}</td>
+            <td>{@render conjugate("re", true)}</td>
+            <td>{@render conjugate("reri", true)}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
             <th class="table-name" colspan="3">1st Person Singular</th>
             <th>Simple</th>
             <th>Continous</th>
