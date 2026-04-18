@@ -17,10 +17,6 @@
 //   FTP_HOST, FTP_PORT, FTP_USER, FTP_PASSWORD, FTP_SECURE, FTP_TLS_INSECURE
 //   REMOTE_DIR, LOCAL_DIR
 
-// TODO: create a copy of words.json and items.json and move them to the server as well
-// Probably just put them in /public_html/api even though it's not an actual API
-// Or maybe /data?
-
 import 'dotenv/config';
 import path from 'node:path';
 import * as fs from 'node:fs';
