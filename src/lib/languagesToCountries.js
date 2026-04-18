@@ -1,7 +1,7 @@
 // Data is generally from Wikipedia.
 export const languagesToCountries = {
   German: ["de", "at", "ch", "li"],
-  Ukranian: ["ua"],
+  Ukrainian: ["ua"],
   Welsh: ["gb"],
   // This is arbitrarily all the countries Wikipedia lists as having more than
   // 33.3% French proficiency.
