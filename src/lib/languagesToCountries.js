@@ -171,4 +171,7 @@ export const languagesToCountries = {
   Javanese: ["id"],
   Malay: ["my"],
   Jeju: ["kr"],
+  "Antarctic English": ["aq"],
+  Vietnamese: ["vn"],
+  Slovene: ["si"],
 };

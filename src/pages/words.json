@@ -1511,5 +1511,138 @@
     "etymology": ["Mandarin Chinese", ["劇院", "jùyuàn"], "theater"],
     "type": "noun",
     "date": "15-04-3036"
+  },
+  {
+    "word": "si",
+    "definition": "okay, affirmation",
+    "etymology": ["Batelu", "sini"],
+    "type": "interjection",
+    "date": "16-04-2026"
+  },
+  {
+    "word": "rixa",
+    "definition": "line",
+    "etymology": ["Hindi", ["रेखा", "rekhā"], "line"],
+    "type": "noun",
+    "date": "16-04-2026"
+  },
+  {
+    "word": "tyghil",
+    "definition": "triangle",
+    "etymology": ["Tagalog", "tagilo", "pyramid"],
+    "type": "noun",
+    "date": "16-04-2026"
+  },
+  {
+    "word": "zadare",
+    "definition": "to have",
+    "etymology": ["Finnish", "saada", "to get"],
+    "type": "verb",
+    "date": "16-04-2026"
+  },
+  {
+    "word": "ukubingelare",
+    "definition": "to sacrifice",
+    "etymology": ["Xhosa", "ukubingelela", "to sacrifice (maybe)"],
+    "type": "verb",
+    "date": "16-04-2026"
+  },
+  {
+    "word": "zhixe",
+    "definition": "chance, opportunity",
+    "etymology": ["Mandarin Chinese", ["機會", "jīhuì"], "chance"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "nijare",
+    "definition": "to jump",
+    "etymology": ["Vietnamese", "nhảy", "to jump"],
+    "type": "verb",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "tixi",
+    "definition": "luck",
+    "etymology": ["Greek", ["τύχη", "týchi"], "fate"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "ludi",
+    "definition": "roof",
+    "etymology": ["Kikongo", "ludi", "roof"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "kalde",
+    "definition": "basement",
+    "etymology": ["Danish", "kælder", "basement"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "sax",
+    "definition": "chess",
+    "etymology": ["German", "Schach", "chess"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "zhenka",
+    "definition": "woman, female person",
+    "etymology": ["Slovene", "ženska", "woman"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "ekuzh",
+    "definition": "non-binary person",
+    "etymology": ["Japanese", ["Xジェンダー", "ekkusu jendā"], "non-binary"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "kubiki",
+    "definition": "dice",
+    "etymology": ["Ukrainian", ["кубики", "kubiki"], "dice"],
+    "type": "noun",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "kijuwyre",
+    "definition": "to take, to borrow",
+    "etymology": ["Antarctic English", "skua", "to steal"],
+    "type": "verb",
+    "date": "17-04-2026"
+  },
+  {
+    "word": "jaxare",
+    "definition": "to lose",
+    "etymology": ["xɑ💥", "xɑ💥", "xɑ💥"],
+    "type": "verb",
+    "date": "18-04-2026"
+  },
+  {
+    "word": "mozere",
+    "definition": "to like",
+    "etymology": ["Georgian", ["მოეწონოს", "moets’onos"], "to like"],
+    "type": "verb",
+    "date": "18-04-2026"
+  },
+  {
+    "word": "owovere",
+    "definition": "to swim",
+    "etymology": ["Uwulang", "ôwöv", "to swim"],
+    "type": "verb",
+    "date": "18-04-2026"
+  },
+  {
+    "word": "kida",
+    "definition": "bug, insect",
+    "etymology": ["Hindi", "kīṛā", "bug"],
+    "type": "noun",
+    "date": "18-04-2026"
   }
 ]

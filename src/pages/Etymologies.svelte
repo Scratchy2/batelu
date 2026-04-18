@@ -12,6 +12,8 @@
     "Selsimicu",
     "Akkadian",
     "Gothic",
+    "xɑ💥",
+    "Uwulang",
   ]);
   const missingLanguages = new Set();
   const countryAmounts = new Map();
