@@ -6,9 +6,13 @@
         "Just smile and nod...",
         "Try something else.",
         "???",
+		"!!!",
+		"?!?",
+		"interrobang",
 		"Wrong page!",
 		"Turn back!",
-		"hey this is actually a 403 page and you can't view this url."
+		"hey this is actually a 403 page and you can't view this url.",
+		"hop off bro"
     ]
 
     let message = messages[Math.floor(Math.random() * messages.length)]
