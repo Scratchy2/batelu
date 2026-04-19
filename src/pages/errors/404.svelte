@@ -12,6 +12,9 @@
 		"Wrong page!",
 		"Turn back!",
 		"hey this is actually a 403 page and you can't view this url.",
+		"the server says nuh uh",
+		"did you think you were getting somewhere with this?",
+		"an iq too high?",
 		"hop off bro"
     ]
 
