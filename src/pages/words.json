@@ -1645,5 +1645,33 @@
     "etymology": ["Hindi", "kīṛā", "bug"],
     "type": "noun",
     "date": "18-04-2026"
+  },
+  {
+    "word": "emelet",
+    "definition": "floor",
+    "etymology": ["Hungarian", "emelet", "storey"],
+    "type": "noun",
+    "date": "19-04-2026"
+  },
+  {
+    "word": "lemyn",
+    "definition": "paper",
+    "etymology": ["Romanian", "lemn", "wood"],
+    "type": "noun",
+    "date": "19-04-2026"
+  },
+  {
+    "word": "kordo",
+    "definition": "scissors",
+    "etymology": ["Tajik", ["корд", "kord"], "knife"],
+    "type": "noun",
+    "date": "19-04-2026"
+  },
+  {
+    "word": "fanta",
+    "definition": "man, male person",
+    "etymology": ["Slovene", "fant", "boy"],
+    "type": "noun",
+    "date": "19-04-2026"
   }
 ]
