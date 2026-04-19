@@ -6,6 +6,23 @@
 
   const cleanWord = (w) => w.replace(/\d+$/, "");
 
+  function DamerauLevenshteinDistance(s1, s2) {
+      let dp = new Array(s1.length + 1).fill(0)
+      .map(() => new Array(s2.length + 1).fill(0));
+      for (let i = 0; i <= s1.length; i++) {dp[i][0] = i;}
+      for (let j = 0; j <= s2.length; j++) {dp[0][j] = j;}
+      for (let i = 1; i <= s1.length; i++) {
+          for (let j = 1; j <= s2.length; j++) {
+              if (s1[i - 1] === s2[j - 1]) {
+                  dp[i][j] = dp[i - 1][j - 1];
+              } else {
+                  dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+              }
+          }
+      }; return dp[s1.length][s2.length];
+  }
+  // Credit to lokeshpotta20 for algorithm
+
   let words = wordsData.map((w, index) => {
     const displayWord = cleanWord(w.word);
     const ipa = toIPA(displayWord);
@@ -78,7 +95,9 @@
     ? words.filter(
         (w) =>
           w.displayWord.toLowerCase().includes(normalized) ||
-          (w.definition && w.definition.toLowerCase().includes(normalized)),
+          (w.definition && w.definition.toLowerCase().includes(normalized)) ||
+          (DamerauLevenshteinDistance(normalized, w.displayWord.toLowerCase()) < 5) ||
+          (DamerauLevenshteinDistance(normalized, w.definition.toLowerCase()) < 4),
       )
     : words;
   $: sorted = (() => {
