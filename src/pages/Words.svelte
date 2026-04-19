@@ -499,7 +499,7 @@
 
     cursor: pointer;
     /* Same size, even less height */
-    height: clamp(110px, 16vh, 150px);
+    height: clamp(110px, 10.8rem, 150px);
     box-sizing: border-box;
   }
 
@@ -815,7 +815,7 @@
       border-radius: 12px;
       padding: 0.7rem 0.8rem;
       /* Consistent height on mobile too (even less) */
-      height: clamp(100px, 18vh, 140px);
+      height: clamp(100px, 12.15rem, 140px);
     }
 
     .card .accent {
