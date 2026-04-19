@@ -19,6 +19,7 @@
   let errors = words.filter((word) => word.ipa.error);
 
   import { tick, onMount } from "svelte";
+  import { preventDefault } from "svelte/legacy";
 
   let q = "";
   let sortBy = "alphabetical";
@@ -305,7 +306,19 @@
             {:else if etymology[0] === "Batelu"}
               {@const word = words.find((word) => word.word === etymology[1])}
               <span class="ety-lang">{etymology[0]}</span>
-              <em class="ety-word">{etymology[1]}</em>
+              <em class="ety-word"
+                ><a
+                  href={(() => {
+                    const url = new URL(location.href);
+                    url.searchParams.set("word", etymology[1]);
+                    return url.toString();
+                  })()}
+                  on:click={(e) => {
+                    e.preventDefault();
+                    open(word);
+                  }}>{etymology[1]}</a
+                ></em
+              >
               {#if word}
                 "<span class="ety-gloss">{word.definition.split(", ")[0]}</span
                 >"
