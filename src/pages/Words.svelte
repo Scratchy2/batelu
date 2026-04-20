@@ -13,7 +13,9 @@
       if (i < 2) cost += 0.5;
       return cost;
     }
+    let tokens = s2.split(", ");
     if (s1 === s2) return -1;
+    if (tokens.includes(s1)) return -0.5;
     const m = s1.length;
     const n = s2.length;
     const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
@@ -152,8 +154,15 @@
         });
       case "best-match":
         return copy.map(word => {
-          const dist = WeightedDL(normalized, word.displayWord.toLowerCase());
-          return {word,dist};
+          const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+          const defsplit = word.definition.toLowerCase().split(", ")
+          let mindef = 999;
+          let fdist = 999;
+          for (const def of defsplit) {
+            fdist = WeightedDL(normalized, def);
+            if (fdist < mindef) mindef = fdist;
+          }
+          return {word,Math.min(wdist, mindef)};
         }).sort((a, b) => a.dist - b.dist).map(x => x.word);
       default:
         return copy;
