@@ -6,22 +6,30 @@
 
   const cleanWord = (w) => w.replace(/\d+$/, "");
 
-  function DamerauLevenshteinDistance(s1, s2) {
-      let dp = new Array(s1.length + 1).fill(0)
-      .map(() => new Array(s2.length + 1).fill(0));
-      for (let i = 0; i <= s1.length; i++) {dp[i][0] = i;}
-      for (let j = 0; j <= s2.length; j++) {dp[0][j] = j;}
-      for (let i = 1; i <= s1.length; i++) {
-          for (let j = 1; j <= s2.length; j++) {
-              if (s1[i - 1] === s2[j - 1]) {
-                  dp[i][j] = dp[i - 1][j - 1];
-              } else {
-                  dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
-              }
-          }
-      }; return dp[s1.length][s2.length];
+  function WeightedDL(s1, s2) {
+    function substitutionCost(a, b, i, j) {
+      if (a === b) return 0;
+      let cost = 1;
+      if (i < 2) cost += 0.5;
+      return cost;
+    }
+    if (s1 === s2) return -1;
+    const m = s1.length;
+    const n = s2.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        const costSub = substitutionCost(s1[i - 1], s2[j - 1], i, j);
+        dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + costSub);
+        if (i > 1 && j > 1 && s1[i - 1] === s2[j - 2] && s1[i - 2] === s2[j - 1]) {
+          dp[i][j] = Math.min(dp[i][j], dp[i - 2][j - 2] + 0.5);
+        }
+      }
+    }
+    return dp[m][n] / Math.max(m, n);
   }
-  // Credit to lokeshpotta20 for algorithm
 
   let words = wordsData.map((w, index) => {
     const displayWord = cleanWord(w.word);
@@ -39,7 +47,7 @@
   import { preventDefault } from "svelte/legacy";
 
   let q = "";
-  let sortBy = "alphabetical";
+  let sortBy = "alphabetical"; // maybe make this best match by default? please test
   let selected = null;
   let drawerEl;
   let initialized = false;
@@ -96,8 +104,8 @@
         (w) =>
           w.displayWord.toLowerCase().includes(normalized) ||
           (w.definition && w.definition.toLowerCase().includes(normalized)) ||
-          (DamerauLevenshteinDistance(normalized, w.displayWord.toLowerCase()) < 5) ||
-          (DamerauLevenshteinDistance(normalized, w.definition.toLowerCase()) < 12),
+          (WeightedDL(normalized, w.displayWord.toLowerCase()) < 0.4) || // play with this number
+          (WeightedDL(normalized, w.definition.toLowerCase()) < 0.5), // this one too
       )
     : words;
   $: sorted = (() => {
@@ -142,6 +150,11 @@
             ? lengthCompare
             : a.displayWord.localeCompare(b.displayWord);
         });
+      case "best-match":
+        return copy.map(word => {
+          const dist = weightedDL(word, query);
+          return {word,dist};
+        }).sort((a, b) => a.dist - b.dist).map(x => x.word);
       default:
         return copy;
     }
@@ -209,6 +222,7 @@
       <option value="type">Type</option>
       <option value="length-short">Length (shortest first)</option>
       <option value="length-long">Length (longest first)</option>
+      <option value="best-match">Best Match</option>
     </select>
   </div>
   {#if errors.length !== 0}
