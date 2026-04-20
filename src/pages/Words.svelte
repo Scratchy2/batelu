@@ -152,7 +152,7 @@
         });
       case "best-match":
         return copy.map(word => {
-          const dist = WeightedDL(word, query);
+          const dist = WeightedDL(normalized, word.displayWord.toLowerCase());
           return {word,dist};
         }).sort((a, b) => a.dist - b.dist).map(x => x.word);
       default:
