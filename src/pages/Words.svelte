@@ -96,7 +96,7 @@
         (w) =>
           w.displayWord.toLowerCase().includes(normalized) ||
           (w.definition && w.definition.toLowerCase().includes(normalized)) ||
-          (DamerauLevenshteinDistance(normalized, w.displayWord.toLowerCase()) < 4) ||
+          (DamerauLevenshteinDistance(normalized, w.displayWord.toLowerCase()) < 5) ||
           (DamerauLevenshteinDistance(normalized, w.definition.toLowerCase()) < 12),
       )
     : words;
