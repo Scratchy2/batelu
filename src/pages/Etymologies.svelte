@@ -14,6 +14,8 @@
     "Gothic",
     "xɑ💥",
     "Uwulang",
+    "This Thing",
+    "Toki Pona",
   ]);
   const missingLanguages = new Set();
   const countryAmounts = new Map();
