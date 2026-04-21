@@ -174,4 +174,7 @@ export const languagesToCountries = {
   "Antarctic English": ["aq"],
   Vietnamese: ["vn"],
   Slovene: ["si"],
+  Lao: ["la"],
+  Venetian: ["it"],
+  Plautdietsch: ["de"],
 };

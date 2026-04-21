@@ -1673,5 +1673,103 @@
     "etymology": ["Slovene", "fant", "boy"],
     "type": "noun",
     "date": "19-04-2026"
+  },
+  {
+    "word": "ludinto",
+    "definition": "artificial, man-made",
+    "etymology": ["Batelu", "ludina tojare"],
+    "type": "modifier",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "kaj",
+    "definition": "egg",
+    "etymology": ["Lao", ["ໄກ່", "kai"], "chicken"],
+    "type": "noun",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "teran",
+    "definition": "happy",
+    "etymology": ["Malay", "terang", "bright"],
+    "type": "modifier",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "lobeni",
+    "definition": "sad",
+    "etymology": ["Czech", "rozzlobený", "angry"],
+    "type": "modifier",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "sumja",
+    "definition": "equal",
+    "etymology": ["This Thing", "zŭmĭoĭ😃", "equal"],
+    "type": "modifier",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "ludinatesa",
+    "definition": "democracy",
+    "etymology": ["Batelu", "ludina tesare"],
+    "type": "noun",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "wuwoji",
+    "definition": "incorrect, wrong",
+    "etymology": ["Toki Pona", "wuwojiti", "to violate Toki Pona phonotactics"],
+    "type": "modifier",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "tajde",
+    "definition": "art",
+    "etymology": ["Finnish", "taide", "art"],
+    "type": "noun",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "efra",
+    "definition": "between",
+    "etymology": ["Venetian", "fra", "between"],
+    "type": "adposition",
+    "date": "20-04-2026"
+  },
+  {
+    "word": "jemo",
+    "definition": "zero",
+    "etymology": ["Plautdietsch", "kjeenmol", "never"],
+    "type": "numeral",
+    "date": "21-04-2026"
+  },
+  {
+    "word": "catar",
+    "definition": "morning",
+    "etymology": ["Japanese", ["日当たり", "hiatari"], "receiving sunlight"],
+    "type": "noun",
+    "date": "21-04-2026"
+  },
+  {
+    "word": "itrej",
+    "definition": "evening",
+    "etymology": ["Norwegian", "trøytt", "sleepy"],
+    "type": "noun",
+    "date": "21-04-2026"
+  },
+  {
+    "word": "amcar",
+    "definition": "afternoon",
+    "etymology": ["Welsh", "amser", "time"],
+    "type": "noun",
+    "date": "21-04-2026"
+  },
+  {
+    "word": "rowon",
+    "definition": "noon",
+    "etymology": ["Thai", ["ร้อน", "rɔ́ɔn"], "hot"],
+    "type": "noun",
+    "date": "21-04-2026"
   }
 ]
