@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { toIPA } from "../lib/toIPA";
+  import wordsData from "./words.json";
 
   let wordType = "verb";
   let initialized = false;
@@ -21,7 +22,21 @@
     return { error: false, ipa: ipa.ipa, verbWord, word };
   };
   $: validatedWord = getError(word, wordType, verbWord);
-
+  $: deduceWordType = (() => {
+    let possibleWord = wordsData.find(w => w.word === word);
+    if (possibleWord) {
+      if (possibleWord.type === "verb") {
+        wordType = "verb";
+      } else if (possibleWord.type === "noun") {
+        wordType = "noun";
+      } else if (possibleWord.type === "modifier") {
+        wordType = "modifier";
+      } else if (possibleWord.type === "pronoun") {
+        wordType = "pronoun";
+      }
+    }
+    console.log(possibleWord);
+  })();
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has("type")) {
@@ -102,6 +117,10 @@
       </div>
     </div>
   </div>
+  <div class="warning" style="display: none;">
+    This word appears to be a verb. Did you mean to view the inflections for verbs instead?
+  </div>
+  <hr />
   <div class="inflect-tables">
     {#if wordType === "verb"}
       {#snippet conjugate(ending, vowel)}
@@ -669,7 +688,7 @@
                 ? /^[aeiouy]/.test(validatedWord.word)
                   ? "l"
                   : ""
-                : "[l]"}<span class="inflections-secondary"
+                : "(l)"}<span class="inflections-secondary"
                 >{validatedWord.word || "-"}</span
               >
             </td>
@@ -696,7 +715,7 @@
                 ? /^[aeiouy]/.test(validatedWord.word)
                   ? "r"
                   : ""
-                : "(r)"}<span class="inflections-secondary"
+                : "(l)"}<span class="inflections-secondary"
                 >{validatedWord.word || "-"}</span
               >
             </td>
@@ -794,6 +813,16 @@
 </main>
 
 <style>
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(-25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   .inflect-tables {
     width: 100%;
     overflow: auto;
@@ -806,6 +835,7 @@
   }
   .header button {
     width: auto;
+    height: 48px;
   }
   .word-entry-wrapper {
     flex: 1;
@@ -817,6 +847,16 @@
     width: auto;
     flex: 1;
   }
+  .warning {
+    color: var(--accent-error);
+    background-color: var(--accent-error-light);
+    padding: 0.6rem;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-top: 1rem;
+    animation: appear 0.3s ease-out;
+  }
   .word-entry-status-message {
     color: #888;
     text-align: right;
@@ -827,6 +867,12 @@
       flex: auto;
       width: 100%;
     }
+  }
+  input {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border);
+    font-size: 1rem;
+    height: 48px;
   }
   input.word-entry-error {
     --input-accent: var(--accent-error);
