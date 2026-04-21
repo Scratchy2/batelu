@@ -49,7 +49,7 @@
   import { preventDefault } from "svelte/legacy";
 
   let q = "";
-  let sortBy = "alphabetical"; // maybe make this best match by default? please test
+  let sortBy = "best-match";
   let selected = null;
   let drawerEl;
   let initialized = false;
@@ -73,7 +73,7 @@
       if (q.trim()) url.searchParams.set("q", q.trim());
       else url.searchParams.delete("q");
 
-      if (sortBy !== "alphabetical") url.searchParams.set("sort", sortBy);
+      if (sortBy !== "best-match") url.searchParams.set("sort", sortBy);
       else url.searchParams.delete("sort");
 
       if (selected) url.searchParams.set("word", selected.word);
@@ -153,6 +153,108 @@
             : a.displayWord.localeCompare(b.displayWord);
         });
       case "best-match":
+        if (normalized === "") {
+          return copy.sort((a, b) => {
+            let v = ['a','e','i','o','u','y'];
+            let c = ['r','n','s','k','m','l','t','j','d','b','w','p','v','f','z','x','g','c','gh','zh'];
+            const aScore = a.displayWord.split("").reduce((sum, char) => {
+              if (c.includes(char)) return sum + 3 * c.indexOf(char);
+              if (v.includes(char)) return sum + 2 * v.indexOf(char);
+              return sum;
+            }, 0);
+            const bScore = b.displayWord.split("").reduce((sum, char) => {
+              if (c.includes(char)) return sum + 3 * c.indexOf(char);
+              if (v.includes(char)) return sum + 2 * v.indexOf(char);
+              return sum;
+            }, 0);
+            return (aScore + a.length) - (bScore + b.length);
+          });
+        } else
+        if (normalized === "noun") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "noun").concat(words.filter((w) => w.type === "noun"));
+        } else if (normalized === "verb") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "verb").concat(words.filter((w) => w.type === "verb"));
+        } else if (normalized === "modifier") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "modifier").concat(words.filter((w) => w.type === "modifier"));
+        } else if (normalized === "particle") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "particle").concat(words.filter((w) => w.type === "particle"));
+        } else if (normalized === "numeral") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "numeral").concat(words.filter((w) => w.type === "numeral"));
+        } else if (normalized === "interjection") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "interjection").concat(words.filter((w) => w.type === "interjection"));
+        } else if (normalized === "adposition") {
+          return copy.map(word => {
+            const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
+            const defsplit = word.definition.toLowerCase().split(", ")
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return {word, dist: Math.min(wdist, mindef)};
+          }).sort((a, b) => a.dist - b.dist).map(x => x.word).filter((w) => w.type !== "adposition").concat(words.filter((w) => w.type === "adposition"));
+        }
         return copy.map(word => {
           const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
           const defsplit = word.definition.toLowerCase().split(", ")
@@ -162,8 +264,36 @@
             fdist = WeightedDL(normalized, def);
             if (fdist < mindef) mindef = fdist;
           }
-          return {word,Math.min(wdist, mindef)};
+          return {word, dist: Math.min(wdist, mindef)};
         }).sort((a, b) => a.dist - b.dist).map(x => x.word);
+      case "noun-match":
+        return copy
+          .filter((w) => w.type === "noun")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
+      case "verb-match":
+        return copy
+          .filter((w) => w.type === "verb")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
+      case "modifier-match":
+        return copy
+          .filter((w) => w.type === "modifier")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
+      case "particle-match":
+        return copy
+          .filter((w) => w.type === "particle")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
+      case "numeral-match":
+        return copy
+          .filter((w) => w.type === "numeral")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
+      case "interjection-match":
+        return copy
+          .filter((w) => w.type === "interjection")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
+      case "adposition-match":
+        return copy
+          .filter((w) => w.type === "adposition")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord))
       default:
         return copy;
     }
@@ -231,6 +361,13 @@
       <option value="type">Type</option>
       <option value="length-short">Length (shortest first)</option>
       <option value="length-long">Length (longest first)</option>
+      <option value="noun-match">Nouns Only</option>
+      <option value="verb-match">Verbs Only</option>
+      <option value="modifier-match">Modifiers Only</option>
+      <option value="particle-match">Particles Only</option>
+      <option value="numeral-match">Numerals Only</option>
+      <option value="interjection-match">Interjections Only</option>
+      <option value="adposition-match">Adpositions Only</option>
       <option value="best-match">Best Match</option>
     </select>
   </div>
@@ -247,9 +384,17 @@
   <div id="word-grid" class="grid" role="list">
     <!-- optionally add grid-scroll -->
     {#if sorted.length === 0}
-      <div class="empty">No matches. Try a different search.</div>
+      <div class="empty">
+        {#if [":3", ":3c"].includes(normalized)}
+        nya mrow purr uwu
+        {:else}
+        No matches. Try a different search.
+        {/if}
+      </div>
     {:else}
       {#each sorted as w (w.word)}
+        <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+        <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <div
           class="card"
           role="listitem"
@@ -274,6 +419,7 @@
 
 {#if selected}
   <div class="overlay" aria-hidden="true" on:click={close}></div>
+  <!-- svelte-ignore a11y_no_noninteractive_element_to_interactive_role -->
   <aside
     id="word-panel"
     class="drawer"
@@ -311,11 +457,14 @@
           {selected.ipa?.ipa ?? "this word is invalid"}
         </p>
         <p class="detail-type">{selected.type}</p>
+        <!-- svelte-ignore a11y_label_has_associated_control -->
         <label class="detail-label">definition</label>
         <p class="detail-text">{selected.definition}</p>
         {#if selected.usage}
+          <!-- svelte-ignore a11y_label_has_associated_control -->
           <label class="detail-label">usage</label>
           <p class="detail-text">{selected.usage}</p>{/if}
+        <!-- svelte-ignore a11y_label_has_associated_control -->
         <label class="detail-label">etymology</label>
         {#snippet etymologyDescription(etymology)}
           {#if etymology === false}
@@ -325,9 +474,7 @@
               {#if etymology.length > 2 && etymology[2]}
                 <span class="ety-lang">{etymology[0]}</span>
                 <em class="ety-word">{etymology[1][0]}</em>
-                (<span class="ety-roman">{etymology[1][1]}</span>) "<span
-                  class="ety-gloss">{etymology[2]}</span
-                >"
+                (<span class="ety-roman">{etymology[1][1]}</span>) "<span class='ety-gloss'>{etymology[2]}</span>"
               {:else}
                 <span class="ety-lang">{etymology[0]}</span>
                 <em class="ety-word">{etymology[1][0]}</em>
@@ -348,22 +495,16 @@
             {:else if etymology[0] === "Batelu"}
               {@const word = words.find((word) => word.word === etymology[1])}
               <span class="ety-lang">{etymology[0]}</span>
-              <em class="ety-word"
-                ><a
-                  href={(() => {
+              <em class="ety-word"><a href={(() => {
                     const url = new URL(location.href);
                     url.searchParams.set("word", etymology[1]);
                     return url.toString();
-                  })()}
-                  on:click={(e) => {
+                  })()} on:click={(e) => {
                     e.preventDefault();
                     open(word);
-                  }}>{etymology[1]}</a
-                ></em
-              >
+                  }}>{etymology[1]}</a></em>
               {#if word}
-                "<span class="ety-gloss">{word.definition.split(", ")[0]}</span
-                >"
+                "<span class="ety-gloss">{word.definition.split(", ")[0]}</span>"
                 <br />
                 <span class="ety-further">
                   ← {@render etymologyDescription(word.etymology)}
@@ -384,6 +525,7 @@
         </p>
 
         {#if selected.date}
+          <!-- svelte-ignore a11y_label_has_associated_control -->
           <label class="detail-label">creation date</label>
           <p class="detail-text">{formatDate(selected.date)}</p>
         {/if}
@@ -617,6 +759,7 @@
     font-size: 0.96rem;
     line-height: 1.4;
     display: -webkit-box;
+    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
