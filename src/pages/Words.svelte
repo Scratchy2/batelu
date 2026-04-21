@@ -154,23 +154,8 @@
         });
       case "best-match":
         if (normalized === "") {
-          return copy.sort((a, b) => {
-            let v = ['a','e','i','o','u','y'];
-            let c = ['r','n','s','k','m','l','t','j','d','b','w','p','v','f','z','x','g','c','gh','zh'];
-            const aScore = a.displayWord.split("").reduce((sum, char) => {
-              if (c.includes(char)) return sum + 3 * c.indexOf(char);
-              if (v.includes(char)) return sum + 2 * v.indexOf(char);
-              return sum;
-            }, 0);
-            const bScore = b.displayWord.split("").reduce((sum, char) => {
-              if (c.includes(char)) return sum + 3 * c.indexOf(char);
-              if (v.includes(char)) return sum + 2 * v.indexOf(char);
-              return sum;
-            }, 0);
-            return (aScore + a.length) - (bScore + b.length);
-          });
-        } else
-        if (normalized === "noun") {
+          return copy.sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+        } else if (normalized === "noun") {
           return copy.map(word => {
             const wdist = WeightedDL(normalized, word.displayWord.toLowerCase());
             const defsplit = word.definition.toLowerCase().split(", ")
