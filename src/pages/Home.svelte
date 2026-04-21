@@ -13,7 +13,7 @@
 	let v = 0;
 	let l = 0;
 	function increment() {
-	  vc += 0.025 * (147 - vc); // manually update until conjugation rules go in a json file retrieved by both this and the Inflections page
+	  vc += 0.025 * (183 - vc); // manually update until conjugation rules go in a json file retrieved by both this and the Inflections page
 	  w += 0.025 * (words - w);
 	  gr += 0.025 * (items - gr);
 	  c += 0.02 * (21 - c);
