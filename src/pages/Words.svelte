@@ -742,7 +742,7 @@
 
     cursor: pointer;
     /* Same size, even less height */
-    height: clamp(110px, 10.8rem, 150px);
+    height: clamp(110px, 16vh, 150px);
     box-sizing: border-box;
   }
 
@@ -818,7 +818,6 @@
     font-size: 0.96rem;
     line-height: 1.4;
     display: -webkit-box;
-    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -1059,7 +1058,7 @@
       border-radius: 12px;
       padding: 0.7rem 0.8rem;
       /* Consistent height on mobile too (even less) */
-      height: clamp(100px, 12.15rem, 140px);
+      height: clamp(100px, 18vh, 140px);
     }
 
     .card .accent {
