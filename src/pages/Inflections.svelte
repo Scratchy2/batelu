@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { toIPA } from "../lib/toIPA";
+  import wordsData from "./words.json";
 
   let wordType = "verb";
   let initialized = false;
@@ -21,7 +22,19 @@
     return { error: false, ipa: ipa.ipa, verbWord, word };
   };
   $: validatedWord = getError(word, wordType, verbWord);
-
+  $: deducedWordType = (() => {
+    if (wordType === "pronoun") return null;
+    let possibleWord = wordsData.find((w) => w.word === word);
+    if (
+      possibleWord &&
+      (possibleWord.type === "noun" ||
+        possibleWord.type === "verb" ||
+        possibleWord.type === "modifier")
+    ) {
+      return possibleWord.type;
+    }
+    return null;
+  })();
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has("type")) {
@@ -102,6 +115,13 @@
       </div>
     </div>
   </div>
+  {#if deducedWordType && deducedWordType !== wordType}
+    <div class="warning word-entry-status-message">
+      This word appears to be a {deducedWordType}. Did you mean to view the
+      inflections for {deducedWordType}s instead?
+    </div>
+  {/if}
+  <hr />
   <div class="inflect-tables">
     {#if wordType === "verb"}
       {#snippet conjugate(ending, vowel)}
@@ -669,7 +689,7 @@
                 ? /^[aeiouy]/.test(validatedWord.word)
                   ? "l"
                   : ""
-                : "(r)"}<span class="inflections-secondary"
+                : "(l)"}<span class="inflections-secondary"
                 >{validatedWord.word || "-"}</span
               >
             </td>
@@ -794,6 +814,16 @@
 </main>
 
 <style>
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   .inflect-tables {
     width: 100%;
     overflow: auto;
@@ -816,6 +846,9 @@
     --input-accent: var(--accent);
     width: auto;
     flex: 1;
+  }
+  .warning {
+    animation: appear 0.3s ease-out;
   }
   .word-entry-status-message {
     color: #888;

@@ -6,6 +6,42 @@
 
   const cleanWord = (w) => w.replace(/\d+$/, "");
 
+  function WeightedDL(s1, s2) {
+    function substitutionCost(a, b, i, j) {
+      if (a === b) return 0;
+      let cost = 1;
+      if (i < 2) cost += 0.5;
+      return cost;
+    }
+    let tokens = s2.split(", ");
+    if (s1 === s2) return -1;
+    if (tokens.includes(s1)) return -0.5;
+    const m = s1.length;
+    const n = s2.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        const costSub = substitutionCost(s1[i - 1], s2[j - 1], i, j);
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + costSub,
+        );
+        if (
+          i > 1 &&
+          j > 1 &&
+          s1[i - 1] === s2[j - 2] &&
+          s1[i - 2] === s2[j - 1]
+        ) {
+          dp[i][j] = Math.min(dp[i][j], dp[i - 2][j - 2] + 0.5);
+        }
+      }
+    }
+    return dp[m][n] / Math.max(m, n);
+  }
+
   let words = wordsData.map((w, index) => {
     const displayWord = cleanWord(w.word);
     const ipa = toIPA(displayWord);
@@ -22,7 +58,7 @@
   import { preventDefault } from "svelte/legacy";
 
   let q = "";
-  let sortBy = "alphabetical";
+  let sortBy = "best-match";
   let selected = null;
   let drawerEl;
   let initialized = false;
@@ -46,7 +82,7 @@
       if (q.trim()) url.searchParams.set("q", q.trim());
       else url.searchParams.delete("q");
 
-      if (sortBy !== "alphabetical") url.searchParams.set("sort", sortBy);
+      if (sortBy !== "best-match") url.searchParams.set("sort", sortBy);
       else url.searchParams.delete("sort");
 
       if (selected) url.searchParams.set("word", selected.word);
@@ -78,7 +114,9 @@
     ? words.filter(
         (w) =>
           w.displayWord.toLowerCase().includes(normalized) ||
-          (w.definition && w.definition.toLowerCase().includes(normalized)),
+          (w.definition && w.definition.toLowerCase().includes(normalized)) ||
+          WeightedDL(normalized, w.displayWord.toLowerCase()) < 0.4 || // play with this number
+          WeightedDL(normalized, w.definition.toLowerCase()) < 0.5, // this one too
       )
     : words;
   $: sorted = (() => {
@@ -123,6 +161,197 @@
             ? lengthCompare
             : a.displayWord.localeCompare(b.displayWord);
         });
+      case "best-match":
+        if (normalized === "") {
+          return copy.sort((a, b) =>
+            a.displayWord.localeCompare(b.displayWord),
+          );
+        } else if (normalized === "noun") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "noun")
+            .concat(words.filter((w) => w.type === "noun"));
+        } else if (normalized === "verb") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "verb")
+            .concat(words.filter((w) => w.type === "verb"));
+        } else if (normalized === "modifier") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "modifier")
+            .concat(words.filter((w) => w.type === "modifier"));
+        } else if (normalized === "particle") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "particle")
+            .concat(words.filter((w) => w.type === "particle"));
+        } else if (normalized === "numeral") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "numeral")
+            .concat(words.filter((w) => w.type === "numeral"));
+        } else if (normalized === "interjection") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "interjection")
+            .concat(words.filter((w) => w.type === "interjection"));
+        } else if (normalized === "adposition") {
+          return copy
+            .map((word) => {
+              const wdist = WeightedDL(
+                normalized,
+                word.displayWord.toLowerCase(),
+              );
+              const defsplit = word.definition.toLowerCase().split(", ");
+              let mindef = 999;
+              let fdist = 999;
+              for (const def of defsplit) {
+                fdist = WeightedDL(normalized, def);
+                if (fdist < mindef) mindef = fdist;
+              }
+              return { word, dist: Math.min(wdist, mindef) };
+            })
+            .sort((a, b) => a.dist - b.dist)
+            .map((x) => x.word)
+            .filter((w) => w.type !== "adposition")
+            .concat(words.filter((w) => w.type === "adposition"));
+        }
+        return copy
+          .map((word) => {
+            const wdist = WeightedDL(
+              normalized,
+              word.displayWord.toLowerCase(),
+            );
+            const defsplit = word.definition.toLowerCase().split(", ");
+            let mindef = 999;
+            let fdist = 999;
+            for (const def of defsplit) {
+              fdist = WeightedDL(normalized, def);
+              if (fdist < mindef) mindef = fdist;
+            }
+            return { word, dist: Math.min(wdist, mindef) };
+          })
+          .sort((a, b) => a.dist - b.dist)
+          .map((x) => x.word);
+      case "noun-match":
+        return copy
+          .filter((w) => w.type === "noun")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+      case "verb-match":
+        return copy
+          .filter((w) => w.type === "verb")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+      case "modifier-match":
+        return copy
+          .filter((w) => w.type === "modifier")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+      case "particle-match":
+        return copy
+          .filter((w) => w.type === "particle")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+      case "numeral-match":
+        return copy
+          .filter((w) => w.type === "numeral")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+      case "interjection-match":
+        return copy
+          .filter((w) => w.type === "interjection")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
+      case "adposition-match":
+        return copy
+          .filter((w) => w.type === "adposition")
+          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
       default:
         return copy;
     }
@@ -190,6 +419,14 @@
       <option value="type">Type</option>
       <option value="length-short">Length (shortest first)</option>
       <option value="length-long">Length (longest first)</option>
+      <option value="noun-match">Nouns Only</option>
+      <option value="verb-match">Verbs Only</option>
+      <option value="modifier-match">Modifiers Only</option>
+      <option value="particle-match">Particles Only</option>
+      <option value="numeral-match">Numerals Only</option>
+      <option value="interjection-match">Interjections Only</option>
+      <option value="adposition-match">Adpositions Only</option>
+      <option value="best-match">Best Match</option>
     </select>
   </div>
   {#if errors.length !== 0}
@@ -205,7 +442,13 @@
   <div id="word-grid" class="grid" role="list">
     <!-- optionally add grid-scroll -->
     {#if sorted.length === 0}
-      <div class="empty">No matches. Try a different search.</div>
+      <div class="empty">
+        {#if [":3", ":3c"].includes(normalized)}
+          nya mrow purr uwu
+        {:else}
+          No matches. Try a different search.
+        {/if}
+      </div>
     {:else}
       {#each sorted as w (w.word)}
         <div

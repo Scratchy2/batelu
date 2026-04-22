@@ -13,7 +13,7 @@
 	let v = 0;
 	let l = 0;
 	function increment() {
-	  vc += 0.025 * (180 - vc); // manually update until conjugation rules go in a json file retrieved by both this and the Conjugations page
+	  vc += 0.025 * (183 - vc); // manually update until conjugation rules go in a json file retrieved by both this and the Inflections page
 	  w += 0.025 * (words - w);
 	  gr += 0.025 * (items - gr);
 	  c += 0.02 * (21 - c);
@@ -22,7 +22,7 @@
 	}
 
 	onMount(() => {
-	  setTimeout(() => {setInterval(increment, 30)}, 500);
+	  setTimeout(() => {setInterval(increment, 30)}, 300);
 	});
 </script>
 
@@ -32,11 +32,11 @@
 	<h2>stats</h2>
 
 	<div class="stats">
-	  <div class="stat">
-	  	<span class="fancy">{Math.round(vc)}</span> verb conjugation{Math.round(vc) === 1 ? "" : "s"}
-		</div>
 		<div class="stat">
       <span class="fancy">{Math.round(w)}</span> word{Math.round(w) === 1 ? "" : "s"}
+		</div>
+		<div class="stat">
+	  	<span class="fancy">{Math.round(vc)}</span> verb conjugation{Math.round(vc) === 1 ? "" : "s"}
 		</div>
 		<div class="stat">
   	  <span class="fancy">{Math.round(gr)}</span> grammar rule{Math.round(gr) === 1 ? "" : "s"}
