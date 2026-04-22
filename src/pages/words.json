@@ -1771,5 +1771,47 @@
     "etymology": ["Thai", ["ร้อน", "rɔ́ɔn"], "hot"],
     "type": "noun",
     "date": "21-04-2026"
+  },
+  {
+    "word": "jesa",
+    "definition": "hungry",
+    "etymology": ["Batelu", "jesere tesare"],
+    "type": "modifier",
+    "date": "21-04-2026"
+  },
+  {
+    "word": "mawni",
+    "definition": "voice",
+    "etymology": ["Swahili", "maoni", "opinion"],
+    "type": "noun",
+    "date": "21-04-2026"
+  },
+  {
+    "word": "senci",
+    "definition": "angry",
+    "etymology": ["Mandarin", ["生氣", "shēngqì"], "to get angry"],
+    "type": "modifier",
+    "date": "22-04-2026"
+  },
+  {
+    "word": "dijo",
+    "definition": "night",
+    "etymology": ["Batelu", "dija jo"],
+    "type": "noun",
+    "date": "22-04-2026"
+  },
+  {
+    "word": "lavi",
+    "definition": "arm",
+    "etymology": ["Georgian", ["მკლავი", "მკლავი"], "arm"],
+    "type": "noun",
+    "date": "22-04-2026"
+  },
+  {
+    "word": "tanka",
+    "definition": "leg",
+    "etymology": ["Sanskrit", ["टङ्का", "ṭaṅkā"], "leg"],
+    "type": "noun",
+    "date": "22-04-2026"
   }
 ]
