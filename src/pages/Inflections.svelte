@@ -836,7 +836,6 @@
   }
   .header button {
     width: auto;
-    height: 48px;
   }
   .word-entry-wrapper {
     flex: 1;
