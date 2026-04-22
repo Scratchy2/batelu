@@ -116,8 +116,9 @@
       (specificWordTypes.size === 0 || specificWordTypes.has(w.type)) &&
       (w.displayWord.toLowerCase().includes(normalized) ||
         (w.definition && w.definition.toLowerCase().includes(normalized)) ||
-        WeightedDL(normalized, w.displayWord.toLowerCase()) < 0.4 || // play with this number
-        WeightedDL(normalized, w.definition.toLowerCase()) < 0.5), // this one too
+        (sortBy === "best-match" &&
+          (WeightedDL(normalized, w.displayWord.toLowerCase()) < 0.4 || // play with this number
+            WeightedDL(normalized, w.definition.toLowerCase()) < 0.5))), // this one too
   );
   $: sorted = (() => {
     const copy = [...filtered];
