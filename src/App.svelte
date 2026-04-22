@@ -69,11 +69,11 @@
 
 <nav class="nav">
 	<a href="/" on:click|preventDefault={() => navigate('/')}>Home</a>
-	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
 	<a href="/ref" on:click|preventDefault={() => navigate('/ref')}>Reference</a>
+	<a href="/words" on:click|preventDefault={() => navigate('/words')}>Words</a>
+	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
 	<a href="/phono" on:click|preventDefault={() => navigate('/phono')}>Phonology</a>
 	<a href="/inflect" on:click|preventDefault={() => navigate('/inflect')}>Inflections</a>
-	<a href="/about" on:click|preventDefault={() => navigate('/about')}>About</a>
 </nav>
 
 <svelte:component this={Component} {navigate} />
