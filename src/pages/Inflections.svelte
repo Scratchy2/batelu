@@ -22,20 +22,18 @@
     return { error: false, ipa: ipa.ipa, verbWord, word };
   };
   $: validatedWord = getError(word, wordType, verbWord);
-  $: deduceWordType = (() => {
-    let possibleWord = wordsData.find(w => w.word === word);
-    if (possibleWord) {
-      if (possibleWord.type === "verb") {
-        wordType = "verb";
-      } else if (possibleWord.type === "noun") {
-        wordType = "noun";
-      } else if (possibleWord.type === "modifier") {
-        wordType = "modifier";
-      } else if (possibleWord.type === "pronoun") {
-        wordType = "pronoun";
-      }
+  $: deducedWordType = (() => {
+    if (wordType === "pronoun") return null;
+    let possibleWord = wordsData.find((w) => w.word === word);
+    if (
+      possibleWord &&
+      (possibleWord.type === "noun" ||
+        possibleWord.type === "verb" ||
+        possibleWord.type === "modifier")
+    ) {
+      return possibleWord.type;
     }
-    console.log(possibleWord);
+    return null;
   })();
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
@@ -117,9 +115,12 @@
       </div>
     </div>
   </div>
-  <div class="warning" style="display: none;">
-    This word appears to be a verb. Did you mean to view the inflections for verbs instead?
-  </div>
+  {#if deducedWordType && deducedWordType !== wordType}
+    <div class="warning">
+      This word appears to be a {deducedWordType}. Did you mean to view the
+      inflections for {deducedWordType}s instead?
+    </div>
+  {/if}
   <hr />
   <div class="inflect-tables">
     {#if wordType === "verb"}
