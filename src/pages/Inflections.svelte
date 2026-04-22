@@ -116,7 +116,7 @@
     </div>
   </div>
   {#if deducedWordType && deducedWordType !== wordType}
-    <div class="warning">
+    <div class="warning word-entry-status-message">
       This word appears to be a {deducedWordType}. Did you mean to view the
       inflections for {deducedWordType}s instead?
     </div>
@@ -817,7 +817,7 @@
   @keyframes appear {
     from {
       opacity: 0;
-      transform: translateY(-25px);
+      transform: translateY(-10px);
     }
     to {
       opacity: 1;
@@ -849,13 +849,6 @@
     flex: 1;
   }
   .warning {
-    color: var(--accent-error);
-    background-color: var(--accent-error-light);
-    padding: 0.6rem;
-    text-align: center;
-    border-radius: 15px;
-    font-weight: bold;
-    margin-top: 1rem;
     animation: appear 0.3s ease-out;
   }
   .word-entry-status-message {
@@ -868,12 +861,6 @@
       flex: auto;
       width: 100%;
     }
-  }
-  input {
-    padding: 0.25rem 0.5rem;
-    border: 1px solid var(--border);
-    font-size: 1rem;
-    height: 48px;
   }
   input.word-entry-error {
     --input-accent: var(--accent-error);
