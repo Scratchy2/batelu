@@ -378,8 +378,6 @@
       </div>
     {:else}
       {#each sorted as w (w.word)}
-        <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-        <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <div
           class="card"
           role="listitem"
@@ -404,7 +402,6 @@
 
 {#if selected}
   <div class="overlay" aria-hidden="true" on:click={close}></div>
-  <!-- svelte-ignore a11y_no_noninteractive_element_to_interactive_role -->
   <aside
     id="word-panel"
     class="drawer"
@@ -442,14 +439,11 @@
           {selected.ipa?.ipa ?? "this word is invalid"}
         </p>
         <p class="detail-type">{selected.type}</p>
-        <!-- svelte-ignore a11y_label_has_associated_control -->
         <label class="detail-label">definition</label>
         <p class="detail-text">{selected.definition}</p>
         {#if selected.usage}
-          <!-- svelte-ignore a11y_label_has_associated_control -->
           <label class="detail-label">usage</label>
           <p class="detail-text">{selected.usage}</p>{/if}
-        <!-- svelte-ignore a11y_label_has_associated_control -->
         <label class="detail-label">etymology</label>
         {#snippet etymologyDescription(etymology)}
           {#if etymology === false}
@@ -510,7 +504,6 @@
         </p>
 
         {#if selected.date}
-          <!-- svelte-ignore a11y_label_has_associated_control -->
           <label class="detail-label">creation date</label>
           <p class="detail-text">{formatDate(selected.date)}</p>
         {/if}
