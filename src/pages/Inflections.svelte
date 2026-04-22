@@ -716,7 +716,7 @@
                 ? /^[aeiouy]/.test(validatedWord.word)
                   ? "r"
                   : ""
-                : "(l)"}<span class="inflections-secondary"
+                : "(r)"}<span class="inflections-secondary"
                 >{validatedWord.word || "-"}</span
               >
             </td>
