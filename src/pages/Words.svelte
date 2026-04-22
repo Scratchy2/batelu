@@ -109,16 +109,16 @@
     });
   };
 
+  let specificWordTypes = new Set();
   $: normalized = q.trim().toLowerCase();
-  $: filtered = normalized
-    ? words.filter(
-        (w) =>
-          w.displayWord.toLowerCase().includes(normalized) ||
-          (w.definition && w.definition.toLowerCase().includes(normalized)) ||
-          WeightedDL(normalized, w.displayWord.toLowerCase()) < 0.4 || // play with this number
-          WeightedDL(normalized, w.definition.toLowerCase()) < 0.5, // this one too
-      )
-    : words;
+  $: filtered = words.filter(
+    (w) =>
+      (specificWordTypes.size === 0 || specificWordTypes.has(w.type)) &&
+      (w.displayWord.toLowerCase().includes(normalized) ||
+        (w.definition && w.definition.toLowerCase().includes(normalized)) ||
+        WeightedDL(normalized, w.displayWord.toLowerCase()) < 0.4 || // play with this number
+        WeightedDL(normalized, w.definition.toLowerCase()) < 0.5), // this one too
+  );
   $: sorted = (() => {
     const copy = [...filtered];
     switch (sortBy) {
@@ -166,146 +166,6 @@
           return copy.sort((a, b) =>
             a.displayWord.localeCompare(b.displayWord),
           );
-        } else if (normalized === "noun") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "noun")
-            .concat(words.filter((w) => w.type === "noun"));
-        } else if (normalized === "verb") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "verb")
-            .concat(words.filter((w) => w.type === "verb"));
-        } else if (normalized === "modifier") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "modifier")
-            .concat(words.filter((w) => w.type === "modifier"));
-        } else if (normalized === "particle") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "particle")
-            .concat(words.filter((w) => w.type === "particle"));
-        } else if (normalized === "numeral") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "numeral")
-            .concat(words.filter((w) => w.type === "numeral"));
-        } else if (normalized === "interjection") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "interjection")
-            .concat(words.filter((w) => w.type === "interjection"));
-        } else if (normalized === "adposition") {
-          return copy
-            .map((word) => {
-              const wdist = WeightedDL(
-                normalized,
-                word.displayWord.toLowerCase(),
-              );
-              const defsplit = word.definition.toLowerCase().split(", ");
-              let mindef = 999;
-              let fdist = 999;
-              for (const def of defsplit) {
-                fdist = WeightedDL(normalized, def);
-                if (fdist < mindef) mindef = fdist;
-              }
-              return { word, dist: Math.min(wdist, mindef) };
-            })
-            .sort((a, b) => a.dist - b.dist)
-            .map((x) => x.word)
-            .filter((w) => w.type !== "adposition")
-            .concat(words.filter((w) => w.type === "adposition"));
         }
         return copy
           .map((word) => {
@@ -324,34 +184,6 @@
           })
           .sort((a, b) => a.dist - b.dist)
           .map((x) => x.word);
-      case "noun-match":
-        return copy
-          .filter((w) => w.type === "noun")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
-      case "verb-match":
-        return copy
-          .filter((w) => w.type === "verb")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
-      case "modifier-match":
-        return copy
-          .filter((w) => w.type === "modifier")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
-      case "particle-match":
-        return copy
-          .filter((w) => w.type === "particle")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
-      case "numeral-match":
-        return copy
-          .filter((w) => w.type === "numeral")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
-      case "interjection-match":
-        return copy
-          .filter((w) => w.type === "interjection")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
-      case "adposition-match":
-        return copy
-          .filter((w) => w.type === "adposition")
-          .sort((a, b) => a.displayWord.localeCompare(b.displayWord));
       default:
         return copy;
     }
@@ -419,13 +251,6 @@
       <option value="type">Type</option>
       <option value="length-short">Length (shortest first)</option>
       <option value="length-long">Length (longest first)</option>
-      <option value="noun-match">Nouns Only</option>
-      <option value="verb-match">Verbs Only</option>
-      <option value="modifier-match">Modifiers Only</option>
-      <option value="particle-match">Particles Only</option>
-      <option value="numeral-match">Numerals Only</option>
-      <option value="interjection-match">Interjections Only</option>
-      <option value="adposition-match">Adpositions Only</option>
       <option value="best-match">Best Match</option>
     </select>
   </div>
@@ -437,6 +262,29 @@
       {/each}
     </ul>
   {/if}
+  <div class="word-type-row">
+    {#snippet wordTypeButton(type, string)}
+      <button
+        class={{ "btn-primary": specificWordTypes.has(type) }}
+        on:click={() => {
+          if (specificWordTypes.has(type)) {
+            specificWordTypes.delete(type);
+          } else {
+            specificWordTypes.add(type);
+          }
+          specificWordTypes = specificWordTypes;
+        }}>{string}</button
+      >
+    {/snippet}
+    {@render wordTypeButton("noun", "Nouns")}
+    {@render wordTypeButton("verb", "Verbs")}
+    {@render wordTypeButton("modifier", "Modifiers")}
+    {@render wordTypeButton("particle", "Particles")}
+    {@render wordTypeButton("numeral", "Numerals")}
+    {@render wordTypeButton("interjection", "Interjections")}
+    {@render wordTypeButton("adposition", "Adpositions")}
+    {@render wordTypeButton("conjunction", "Conjunctions")}
+  </div>
 </main>
 <section class="cards-wrap">
   <div id="word-grid" class="grid" role="list">
@@ -678,6 +526,15 @@
 
   .sort-control select:hover {
     border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  }
+
+  .word-type-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .word-type-row button {
+    width: auto;
   }
 
   /* Wide, backgroundless wrapper (outside .container) */
